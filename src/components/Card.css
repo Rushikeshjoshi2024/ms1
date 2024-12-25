@@ -1,0 +1,135 @@
+/* Default styles for larger screens */
+.slideC {
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    width: 362px;
+    height: 272px;
+    margin: 0 auto;
+}
+
+.slide {
+    width: 362px;
+    height: 272px;
+    transition: transform 500ms ease 0s, opacity 500ms ease 0s,
+        visibility 500ms ease 0s;
+    position: absolute;
+    top: 0;
+    border-radius: 12px;
+}
+
+.reflection {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: -60px;
+    border-radius: 12px;
+    transition: transform 500ms ease 0s, opacity 500ms ease 0s,
+        visibility 500ms ease 0s;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliderContent {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 30px;
+    align-items: flex-start;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+
+
+.sliderContent h2 {
+    margin: 16px 0;
+}
+
+.sliderContent p {
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.btns {
+    padding-top: 50px;
+    /* align-self: center; */
+    padding-left: 46%;
+}
+
+.btns .btn {
+    cursor: pointer;
+}
+
+.btns .btn:last-child {
+    margin-left: 40px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .slideC {
+        width: 100%;
+        overflow: auto;
+        height: 305px;
+        position: relative;
+        overflow-y: hidden;
+
+    }
+
+    .slide,
+    .reflection {
+        width: 100%;
+        /* height: auto; */
+    }
+
+    .reflection {
+        bottom: -30px;
+        /* Adjust as needed for the reflection effect */
+    }
+
+
+    .btns {
+        padding-top: 10px;
+        padding-left: 37%;
+
+        /* Adjust as needed for smaller screens */
+    }
+}
+
+.product-card {
+    display: flex;
+    /* border: 1px solid #ddd; */
+    margin: 5px;
+    padding: 5px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
+
+.product-info {
+    text-align: center;
+
+}
+
+/* Fade out effect when changing the product */
+.product-card.fade-out {
+    opacity: 0;
+}

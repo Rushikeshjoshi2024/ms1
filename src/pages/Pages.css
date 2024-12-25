@@ -1,0 +1,40 @@
+/* @import url(https://fonts.bunny.net/css?family=lato:400,700,900|quicksand:400,500,600,700); */
+
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+
+.title.style-3 {
+    /* background-image: url(../imgs/theme/wave.png); */
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 25px;
+}
+
+
+
+
+
+
+.carausel {
+    overflow: scroll;
+    height: 15rem;
+    gap: 1rem;
+
+
+
+}
