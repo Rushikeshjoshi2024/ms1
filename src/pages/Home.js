@@ -26,7 +26,7 @@ function Home() {
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-        axios.get('http://localhost:8081')
+        axios.get('https://ms1-ahhe.vercel.app/')
             .then(res => {
                 // console.log(res.data.user);
                 // if (res.data.valid) {
