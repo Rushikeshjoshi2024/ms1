@@ -17,7 +17,7 @@ function Sellers_home_scr() {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.post('http://localhost:8081/all_sellers_home', values);
+                const response = await axios.post('https://server-f8g6.onrender.com/all_sellers_home', values);
                 if (response.data.success) {
                     // alert(response.seller_email);
                     // console.log(response.data);
