@@ -13,7 +13,7 @@ const Product_list = () => {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.get('http://localhost:8081/all_material');
+                const response = await axios.get('https://server-f8g6.onrender.com/all_material');
                 if (response.data.success) {
                     // alert(response.seller_email);
                     console.log(response.data);
