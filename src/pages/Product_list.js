@@ -14,7 +14,7 @@ const Product_list = () => {
         const handleSubmit = async () => {
             try {
                 // const response = await axios.get('https://server-f8g6.onrender.com/all_material');
-                const response = axios({
+                const response = await axios({
                     method: 'get',
                     url: 'https://server-f8g6.onrender.com/all_material',
                     params: {
