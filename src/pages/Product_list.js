@@ -14,6 +14,7 @@ const Product_list = () => {
         const handleSubmit = async () => {
             try {
                 const response = await axios.get('https://server-f8g6.onrender.com/all_material');
+                console.log(response);
                 if (response.data.success) {
                     // alert(response.seller_email);
                     console.log(response.data);

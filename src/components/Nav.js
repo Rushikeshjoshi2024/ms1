@@ -22,7 +22,7 @@ function Nav() {
     // console.log(service);
 
     useEffect(() => {
-        axios.get('http://localhost:8081')
+        axios.get('https://server-f8g6.onrender.com')
             .then(res => {
                 // console.log(res.data);
                 if (res.data.valid) {
@@ -50,7 +50,7 @@ function Nav() {
     }, [])
 
     const handleLogout = () => {
-        axios.get('http://localhost:8081/logout')
+        axios.get('https://server-f8g6.onrender.com/logout')
             .then(res => {
                 // console.log(res.data.valid);
                 window.location.reload();
