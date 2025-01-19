@@ -10,7 +10,7 @@ function Featured_category() {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.get('https://server-f8g6.onrender.com');
+                const response = await axios.get('https://server-f8g6.onrender.com/all_category');
                 if (response.data.success) {
                     // alert(response.seller_email);
                     // console.log(response.data);
