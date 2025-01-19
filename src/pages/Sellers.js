@@ -27,7 +27,7 @@ function Sellers() {
                     alert("Invalid data");
                 }
             } catch (err) {
-                alert("An error occurred: " + err);
+                // alert("An error occurred: " + err);
             }
         };
 

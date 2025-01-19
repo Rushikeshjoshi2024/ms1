@@ -51,10 +51,10 @@ function Sellers_materaial(props) {
 
                     // console.log(response.data.data[0].shop_name);
                 } else {
-                    alert("Invalid data");
+                    // alert("Invalid data");
                 }
             } catch (err) {
-                alert("An error occurred: " + err);
+                // alert("An error occurred: " + err);
             }
         };
 
