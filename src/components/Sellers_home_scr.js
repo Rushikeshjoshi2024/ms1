@@ -79,7 +79,13 @@ function Sellers_home_scr() {
                                                         // your data array of objects
                                                     }}
                                                 >
-                                                    <img src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`} className="img-fluid" alt="" /></Link>
+                                                    <img
+                                                        src={item.shop_logo ? `https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}` : 'https://server-f8g6.onrender.com/uploads/shop_logo/def_logo.jpg'}
+                                                        className="img-fluid"
+                                                        alt="Shop Logo"
+                                                    />
+
+                                                </Link>
                                             </div>
 
                                             <div className="contain-name">
