@@ -80,7 +80,7 @@ function Sellers_home_scr() {
                                                     }}
                                                 >
                                                     <img
-                                                        src={item.shop_logo ? `https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}` : 'https://server-f8g6.onrender.com/uploads/shop_logo/def_logo.jpg'}
+                                                        src={item.shop_logo ? `https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}` : `https://server-f8g6.onrender.com/uploads/shop_logo/def_logo.jpg`}
                                                         className="img-fluid"
                                                         alt="Shop Logo"
                                                     />
