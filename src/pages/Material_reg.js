@@ -36,7 +36,7 @@ function Material_reg() {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.get('http://localhost:8081/all_category');
+                const response = await axios.get('https://server-f8g6.onrender.com/all_category');
                 if (response.data.success) {
                     setCategories(response.data.data);
                 } else {
@@ -50,7 +50,7 @@ function Material_reg() {
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:8081')
+        axios.get('https://server-f8g6.onrender.com')
             .then(res => {
                 setId(res.data.id);
                 if (res.data.user === 'seller') {
@@ -78,7 +78,7 @@ function Material_reg() {
             formData.append('image', image);
         }
         if (true) {
-            axios.post('http://localhost:8081/mat_reg', formData, {
+            axios.post('https://server-f8g6.onrender.com/mat_reg', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

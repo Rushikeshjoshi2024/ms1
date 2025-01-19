@@ -14,7 +14,7 @@ const Category_material = (props) => {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.get('http://localhost:8081/all_material');
+                const response = await axios.get('https://server-f8g6.onrender.com/all_material');
                 if (response.data.success) {
                     // alert(response.seller_email);
                     // console.log(response.data);
@@ -112,7 +112,7 @@ const Category_material = (props) => {
                                                             // your data array of objects
                                                         }}
                                                     >
-                                                        <img className="default-img" src={`http://localhost:8081/uploads/${item.material_image}`} alt="" />
+                                                        <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`} alt="" />
                                                         {/* <img className="hover-img" src="../assets/imgs/shop/product-2-2.jpg" alt="" /> */}
                                                     </Link>
                                                 </div>

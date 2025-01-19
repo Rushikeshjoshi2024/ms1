@@ -18,7 +18,7 @@ function Login() {
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-        axios.get('http://localhost:8081')
+        axios.get('https://server-f8g6.onrender.com')
             .then(res => {
                 // console.log(res);
                 if (res.data.valid) {
@@ -36,7 +36,7 @@ function Login() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // Passwords match, proceed with form submission
-        axios.post('http://localhost:8081/user_login', values)
+        axios.post('https://server-f8g6.onrender.com/user_login', values)
             .then(res => {
                 if (res.data.Login) {
                     alert("Login successful. Welcome.");

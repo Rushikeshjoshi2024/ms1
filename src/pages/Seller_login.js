@@ -17,7 +17,7 @@ function Seller_login() {
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-        axios.get('http://localhost:8081')
+        axios.get('https://server-f8g6.onrender.com')
             .then(res => {
                 if (res.data.user === 'seller') {
                     // console.log(res);
@@ -35,7 +35,7 @@ function Seller_login() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // Passwords match, proceed with form submission
-        axios.post('http://localhost:8081/seller_login', values)
+        axios.post('https://server-f8g6.onrender.com/seller_login', values)
             .then(res => {
                 if (res.data.Login) {
                     alert("Login successful.Welcome.");

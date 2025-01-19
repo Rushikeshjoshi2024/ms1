@@ -23,7 +23,7 @@ function Sellers_materaial(props) {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.post('http://localhost:8081/all_material_by_seller', values);
+                const response = await axios.post('https://server-f8g6.onrender.com/all_material_by_seller', values);
                 if (response.data.success) {
                     // alert(response.seller_email);
                     setShopName(response.data.data[0].shop_name);
@@ -44,7 +44,7 @@ function Sellers_materaial(props) {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.get('http://localhost:8081/all_category');
+                const response = await axios.get('https://server-f8g6.onrender.com/all_category');
                 if (response.data.success) {
                     // alert(response.seller_email);
                     setCategoryData(response.data.data); // Assuming response.data.data contains the array of seller details
@@ -161,7 +161,7 @@ function Sellers_materaial(props) {
                                                             // your data array of objects
                                                         }}
                                                     >
-                                                        <img className="default-img" src={`http://localhost:8081/uploads/${item.material_image}`} alt="" />
+                                                        <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`} alt="" />
                                                     </Link>
                                                 </div>
 

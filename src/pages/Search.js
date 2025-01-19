@@ -17,7 +17,7 @@ function Search() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8081/search', searchVal);
+            const response = await axios.post('https://server-f8g6.onrender.com/search', searchVal);
             if (response.data.success) {
                 // console.log(response.data.data);
                 navigate('/Result', { state: { data: response.data.data, query: searchVal.searchQuery } });

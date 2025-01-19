@@ -24,7 +24,7 @@ function Signup() {
         event.preventDefault();
         if (values.user_password === values.user_cnf_password) {
             // Passwords match, proceed with form submission
-            axios.post('http://localhost:8081/user_reg', values)
+            axios.post('https://server-f8g6.onrender.com/user_reg', values)
                 .then(res => alert(res.data.message))
                 .catch(err => alert("An error occurred: " + err));
         } else {

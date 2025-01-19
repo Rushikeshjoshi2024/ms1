@@ -41,7 +41,7 @@ function Seller_account() {
         const formData = new FormData();
         formData.append('image', file);
         // Passwords match, proceed with form submission
-        axios.post('http://localhost:8081/update_seller_image', formData, {
+        axios.post('https://server-f8g6.onrender.com/update_seller_image', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -60,7 +60,7 @@ function Seller_account() {
         const formData = new FormData();
         formData.append('logo', logo);
         // Passwords match, proceed with form submission
-        axios.post('http://localhost:8081/update_seller_logo', formData, {
+        axios.post('https://server-f8g6.onrender.com/update_seller_logo', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -74,7 +74,7 @@ function Seller_account() {
         window.location.reload();
     };
     // const handleLogout = () => {
-    //     axios.get('http://localhost:8081/logout')
+    //     axios.get('https://server-f8g6.onrender.com/logout')
     //         .then(res => {
     //             // console.log(res.data.valid);
     //             window.location.reload();
@@ -120,7 +120,7 @@ function Seller_account() {
         event.preventDefault();
 
         // Passwords match, proceed with form submission
-        axios.post('http://localhost:8081/update_seller', formData)
+        axios.post('https://server-f8g6.onrender.com/update_seller', formData)
 
 
             .then(res => alert(res.data.message))
@@ -129,7 +129,7 @@ function Seller_account() {
         // window.location.reload();
     };
     useEffect(() => {
-        axios.get('http://localhost:8081')
+        axios.get('https://server-f8g6.onrender.com')
             .then(res => {
                 // console.log(res);
                 if (res.data.valid) {
@@ -146,7 +146,7 @@ function Seller_account() {
 
         const handleSubmit1 = async () => {
             try {
-                const response = await axios.get('http://localhost:8081/my_account');
+                const response = await axios.get('https://server-f8g6.onrender.com/my_account');
                 if (response.data.success) {
                     // alert(response.data.size);
                     // console.log(response.data.data[0]);
@@ -201,7 +201,7 @@ function Seller_account() {
     }
     // const fetchImages = async () => {
     //     try {
-    //         const response = await axios.get('http://localhost:8081/images');
+    //         const response = await axios.get('https://server-f8g6.onrender.com/images');
     //         console.log(response.data)
     //         setImages(response.data[0]);
     //     } catch (error) {
@@ -285,7 +285,7 @@ function Seller_account() {
 
                                     <div className="profile-box">
                                         <div className="cover-image">
-                                            <img src={`http://localhost:8081/uploads/${formData.img}`} className="img-fluid  lazyload"
+                                            <img src={`https://server-f8g6.onrender.com/uploads/${formData.img}`} className="img-fluid  lazyload"
                                                 alt="" />
                                         </div>
 
@@ -356,7 +356,7 @@ function Seller_account() {
                                 <div className="profile-box">
 
                                     <div className="cover-image">
-                                        <img src={`http://localhost:8081/uploads/${formData.img}`} className=" lazyload update_img"
+                                        <img src={`https://server-f8g6.onrender.com/uploads/${formData.img}`} className=" lazyload update_img"
                                             alt="" />
                                         <div className="cover-icon" style={{ height: '10px', width: '10px', }}>
                                             <i className="fa fa-upload">
@@ -370,7 +370,7 @@ function Seller_account() {
                                     <div className="profile-contain">
                                         <div className="profile-image">
                                             <div className="position-relative">
-                                                <img src={`http://localhost:8081/uploads/${formData.logo}`}
+                                                <img src={`https://server-f8g6.onrender.com/uploads/${formData.logo}`}
                                                     className=" lazyload update_img" alt="" />
                                                 <div className="cover-icon">
                                                     <i className="fa fa-upload">

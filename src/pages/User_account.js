@@ -25,7 +25,7 @@ function User_account() {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.get('http://localhost:8081/user_account');
+                const response = await axios.get('https://server-f8g6.onrender.com/user_account');
                 if (response.data.success) {
                     // alert(response.data.size);
                     // console.log(response.data.data[0]);
@@ -56,7 +56,7 @@ function User_account() {
         event.preventDefault();
 
         // Passwords match, proceed with form submission
-        axios.post('http://localhost:8081/update_user', values)
+        axios.post('https://server-f8g6.onrender.com/update_user', values)
             .then(res => alert(res.data.message))
             .catch(err => alert("An error occurred: " + err));
 

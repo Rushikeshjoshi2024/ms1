@@ -38,7 +38,7 @@ function Seller_details(props) {
     useEffect(() => {
         const handleFetch = async () => {
             try {
-                const response = await axios.post('http://localhost:8081/latest_material_by_seller', material);
+                const response = await axios.post('https://server-f8g6.onrender.com/latest_material_by_seller', material);
                 if (response.data.success) {
                     // alert(response.seller_email);
                     // console.log(response.data);
@@ -61,7 +61,7 @@ function Seller_details(props) {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.post('http://localhost:8081/seller_details', values);
+                const response = await axios.post('https://server-f8g6.onrender.com/seller_details', values);
                 if (response.data.success) {
                     // alert(response.data.size);
                     // console.log(response.data.data[0]);
@@ -116,7 +116,7 @@ function Seller_details(props) {
                                             <h3 className="mb-3">{values.shop_name}</h3>
                                             <div className="product-rate-cover mb-15" >
                                                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                                    <img className="mr-5" src={`http://localhost:8081/uploads/shop_cover_img/${values.shop_image}`} alt="" style={{
+                                                    <img className="mr-5" src={`https://server-f8g6.onrender.com/uploads/shop_cover_img/${values.shop_image}`} alt="" style={{
                                                         borderRadius: '1rem', maxWidth: '100%', maxHeight: '40rem'
                                                     }} /><br />
                                                 </div>
@@ -132,7 +132,7 @@ function Seller_details(props) {
                                                 <div className="col-lg-4">
                                                     <div className="vendor-info mb-15">
                                                         <ul className="font-sm">
-                                                            <li><img className="mr-5" src={`http://localhost:8081/uploads/shop_logo/${values.shop_logo}`} alt="" style={{ borderRadius: '50%', width: '7rem', height: '7rem' }} /><br /><strong>Shop name: </strong> <span>{values.shop_name}</span></li><br />
+                                                            <li><img className="mr-5" src={`https://server-f8g6.onrender.com/uploads/shop_logo/${values.shop_logo}`} alt="" style={{ borderRadius: '50%', width: '7rem', height: '7rem' }} /><br /><strong>Shop name: </strong> <span>{values.shop_name}</span></li><br />
                                                             <li><strong>Seller name</strong><span> {values.owner_name}</span></li>
                                                         </ul>
                                                     </div>
@@ -246,7 +246,7 @@ function Seller_details(props) {
                                                                         // your data array of objects
                                                                     }}
                                                                 >
-                                                                    <img classNameName="default-img" src={`http://localhost:8081/uploads/${item.material_image}`} alt="" />
+                                                                    <img classNameName="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`} alt="" />
                                                                     {/* <img classNameName="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" /> */}
                                                                 </Link>
                                                             </div>

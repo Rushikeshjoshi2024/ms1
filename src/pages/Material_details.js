@@ -34,7 +34,7 @@ const Material_details = (props) => {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.post('http://localhost:8081/material_details', values);
+                const response = await axios.post('https://server-f8g6.onrender.com/material_details', values);
                 if (response.data.success) {
                     // alert(response.data.size);
                     // console.log(response.data.data[0]);
@@ -90,7 +90,7 @@ const Material_details = (props) => {
                                         {/* <span className="zoom-icon"><i className="fi-rs-search"></i></span> */}
                                         <div className="product-image-slider">
                                             <figure className="border-radius-10">
-                                                <img src={`http://localhost:8081/uploads/${values.material_image}`} alt="product image" />
+                                                <img src={`https://server-f8g6.onrender.com/uploads/${values.material_image}`} alt="product image" />
                                             </figure>
 
                                         </div>
@@ -256,7 +256,7 @@ const Material_details = (props) => {
                                         </div>
                                         <div className="tab-pane fade" id="Vendor-info">
                                             <div className="vendor-logo d-flex mb-30">
-                                                <img src={`http://localhost:8081/uploads/shop_logo/${values.shop_logo}`} alt="" />
+                                                <img src={`https://server-f8g6.onrender.com/uploads/shop_logo/${values.shop_logo}`} alt="" />
                                                 <div className="vendor-name ml-15">
                                                     <h4>
                                                         <a href='vendor-details-2.html'>{values.shop_name}</a>

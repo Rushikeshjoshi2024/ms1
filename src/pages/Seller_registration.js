@@ -36,7 +36,7 @@ function Seller_registration() {
         event.preventDefault();
         if (values.shop_password === values.shop_cnf_password) {
             // Passwords match, proceed with form submission
-            axios.post('http://localhost:8081/seller_reg', values)
+            axios.post('https://server-f8g6.onrender.com/seller_reg', values)
                 .then(res => alert(res.data.message))
                 .catch(err => alert("An error occurred: " + err));
         } else {

@@ -16,7 +16,7 @@ function Sellers() {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.get('http://localhost:8081/all_sellers');
+                const response = await axios.get('https://server-f8g6.onrender.com/all_sellers');
                 if (response.data.success) {
                     // alert(response.seller_email);
                     // console.log(response.data);
@@ -138,7 +138,7 @@ function Sellers() {
                                                     }}
                                                 >
 
-                                                    <img className="default-img" src={`http://localhost:8081/uploads/shop_cover_img/${item.shop_image}`} alt="" style={{ borderRadius: '1rem', minWidth: '16rem', height: '9rem' }} />
+                                                    <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/shop_cover_img/${item.shop_image}`} alt="" style={{ borderRadius: '1rem', minWidth: '16rem', height: '9rem' }} />
                                                 </Link>
                                             </div>
                                             <div className="product-badges product-badges-position product-badges-mrg">

@@ -14,7 +14,7 @@ function Best_of() {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.post('http://localhost:8081/latest_material', values);
+                const response = await axios.post('https://server-f8g6.onrender.com/latest_material', values);
                 if (response.data.success) {
                     // alert(response.seller_email);
                     // console.log(response.data);
@@ -34,7 +34,7 @@ function Best_of() {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.post('http://localhost:8081/featured_material', values);
+                const response = await axios.post('https://server-f8g6.onrender.com/featured_material', values);
                 if (response.data.success) {
                     // alert(response.seller_email);
                     // console.log(response.data);
@@ -116,7 +116,7 @@ function Best_of() {
                                                                     // your data array of objects
                                                                 }}
                                                             >
-                                                                <img className="default-img" src={`http://localhost:8081/uploads/${item.material_image}`}
+                                                                <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`}
                                                                     alt="" style={{ height: '7rem' }} />
 
                                                             </Link>
@@ -231,7 +231,7 @@ function Best_of() {
                                                                     // your data array of objects
                                                                 }}
                                                             >
-                                                                <img className="default-img" src={`http://localhost:8081/uploads/${item.material_image}`}
+                                                                <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`}
                                                                     alt="" style={{ height: '7rem' }} />
 
                                                             </Link>
