@@ -11,7 +11,7 @@ const Contact = () => {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.get('https://ms1-ahhe.vercel.app/all_category');
+                const response = await axios.get('https://server-f8g6.onrender.com/all_category');
                 if (response.data.success) {
                     // alert(response.seller_email);
                     console.log(response.data);

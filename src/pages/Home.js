@@ -26,7 +26,7 @@ function Home() {
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-        axios.get('https://ms1-ahhe.vercel.app/')
+        axios.get('https://server-f8g6.onrender.com/')
             .then(res => {
                 // console.log(res.data.user);
                 // if (res.data.valid) {
