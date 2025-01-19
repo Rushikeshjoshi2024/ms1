@@ -24,7 +24,7 @@ const Product_list = () => {
 
                     // console.log(response.data.data[0].shop_name);
                 } else {
-                    alert("Invalid data");
+                    // alert("Invalid data");
                 }
             } catch (err) {
                 alert("An error occurred: " + err);

@@ -40,7 +40,7 @@ function Material_reg() {
                 if (response.data.success) {
                     setCategories(response.data.data);
                 } else {
-                    alert("Invalid data");
+                    // alert("Invalid data");
                 }
             } catch (err) {
                 alert("An error occurred: " + err);
