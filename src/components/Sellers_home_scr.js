@@ -18,7 +18,6 @@ function Sellers_home_scr() {
         const handleSubmit = async () => {
             try {
                 const response = await axios.post('https://server-f8g6.onrender.com/all_sellers_home', values);
-
                 if (response.data.success) {
                     // alert(response.seller_email);
                     // console.log(response.data);
@@ -26,10 +25,10 @@ function Sellers_home_scr() {
 
                     // console.log(response.data.data[0].shop_name);
                 } else {
-                    // alert("Invalid data");
+                    alert("Invalid data");
                 }
             } catch (err) {
-                // alert("An error occurred: " + err);
+                alert("An error occurred: " + err);
             }
         };
 
@@ -80,13 +79,7 @@ function Sellers_home_scr() {
                                                         // your data array of objects
                                                     }}
                                                 >
-                                                    <img
-                                                        src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`}
-                                                        className="img-fluid"
-                                                        alt="Shop Logo"
-                                                    />
-
-                                                </Link>
+                                                    <img src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`} className="img-fluid" alt="" /></Link>
                                             </div>
 
                                             <div className="contain-name">
