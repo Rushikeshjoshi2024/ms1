@@ -18,6 +18,7 @@ function Sellers_home_scr() {
         const handleSubmit = async () => {
             try {
                 const response = await axios.post('https://server-f8g6.onrender.com/all_sellers_home', values);
+
                 if (response.data.success) {
                     // alert(response.seller_email);
                     // console.log(response.data);
@@ -81,7 +82,7 @@ function Sellers_home_scr() {
                                                 >
                                                     <img
                                                         src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`}
-                                                        className="img-fluid"
+                                                        className=""
                                                         alt="Shop Logo"
                                                     />
 
