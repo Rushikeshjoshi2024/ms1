@@ -126,50 +126,49 @@ function Sellers_home_scr() {
                                                 </div>
                                                 <label className="product-label">{item.count}  Products</label>
                                             </div>
+                                        </div>
 
-                                            <div className="grid-contain">
-                                                <div className="seller-contact-details">
-                                                    <div className="seller-contact">
-                                                        {/* <div className="seller-icon">
+                                        <div className="grid-contain">
+                                            <div className="seller-contact-details">
+                                                <div className="seller-contact">
+                                                    {/* <div className="seller-icon">
                                                     <i className="fa-solid fa-map-pin"></i>
                                                 </div> */}
 
-                                                        <div className="contact-detail">
-                                                            <h5>City: <span> {item.district}</span></h5>
-                                                        </div>
+                                                    <div className="contact-detail">
+                                                        <h5>City: <span> {item.district}</span></h5>
                                                     </div>
-
                                                 </div>
 
-                                                <div className="seller-category">
+                                            </div>
 
-                                                    <Link
-                                                        to={{
-                                                            pathname: `/Sellers_material/${item.seller_id}`,
-                                                            // your data array of objects
-                                                        }}
-                                                    >  <button onclick="location.href = 'shop-left-sidebar.html';"
-                                                        className="btn btn-sm theme-bg-color text-white fw-bold">Visit Store  <i
-                                                            className="fi-rs-arrow-small-right"></i></button></Link>
-                                                    <ul className="product-image">
-                                                        <li>
-                                                            <img src="assets/imgs/category/cat-2.png" className="img-fluid" alt="" />
-                                                        </li>
-                                                        <li>
-                                                            <img src="assets/imgs/category/cat-3.png" className="img-fluid" alt="" />
-                                                        </li>
-                                                        <li>
-                                                            <img src="assets/imgs/category/cat-4.png" className="img-fluid" alt="" />
-                                                        </li>
-                                                        <li>
-                                                            <img src="assets/imgs/category/cat-5.png" className="img-fluid" alt="" />
-                                                        </li>
-                                                        <li>+15</li>
-                                                    </ul>
-                                                </div>
+                                            <div className="seller-category">
+
+                                                <Link
+                                                    to={{
+                                                        pathname: `/Sellers_material/${item.seller_id}`,
+                                                        // your data array of objects
+                                                    }}
+                                                >  <button onclick="location.href = 'shop-left-sidebar.html';"
+                                                    className="btn btn-sm theme-bg-color text-white fw-bold">Visit Store  <i
+                                                        className="fi-rs-arrow-small-right"></i></button></Link>
+                                                <ul className="product-image">
+                                                    <li>
+                                                        <img src="assets/imgs/category/cat-2.png" className="img-fluid" alt="" />
+                                                    </li>
+                                                    <li>
+                                                        <img src="assets/imgs/category/cat-3.png" className="img-fluid" alt="" />
+                                                    </li>
+                                                    <li>
+                                                        <img src="assets/imgs/category/cat-4.png" className="img-fluid" alt="" />
+                                                    </li>
+                                                    <li>
+                                                        <img src="assets/imgs/category/cat-5.png" className="img-fluid" alt="" />
+                                                    </li>
+                                                    <li>+15</li>
+                                                </ul>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
 
