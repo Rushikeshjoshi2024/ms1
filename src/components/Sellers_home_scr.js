@@ -46,77 +46,96 @@ function Sellers_home_scr() {
 
     return (
         <div>
+            <div className="container-fluid-lg">
+                <div className="section-title style-2 wow animate__animated animate__fadeIn">
+                    <h3>Our Sellers</h3>
+                    <ul className="nav nav-tabs links" id="myTab" role="tablist">
+                        <li className="nav-item" role="presentation">
+                            <Link className='btn btn-xs'
+                                to={{
+                                    pathname: `/Sellers`,
+                                    // your data array of objects
+                                }}
+                            >
+                                <button className="nav-link" type="button">
+                                    All
+                                </button>
 
-            <div className="row vendor-grid" >
-                {data.map(item => (
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+                <div className="row vendor-grid" >
+                    {data.map(item => (
 
-                    <div className="col-lg-3 col-md-6 col-12 col-sm-6" >
+                        <div className="col-lg-3 col-md-6 col-12 col-sm-6" >
 
 
 
-                        <div className="vendor-wrap mb-40" key={item.id} >
-                            <div className="vendor-img-action-wrap">
-                                <div className="vendor-img">
-                                    <Link
+                            <div className="vendor-wrap mb-40" key={item.id} >
+                                <div className="vendor-img-action-wrap">
+                                    <div className="vendor-img">
+                                        <Link
+                                            to={{
+                                                pathname: `/Seller_details/${item.seller_id}`,
+                                                // your data array of objects
+                                            }}
+                                        >
+
+                                            <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`} alt="" style={{ borderRadius: '1rem', minWidth: '16rem', height: '9rem' }} />
+                                        </Link>
+                                    </div>
+                                    <div className="product-badges product-badges-position product-badges-mrg">
+                                        <span className="hot">Since {item.reg_date.slice(0, 4)}</span>
+                                    </div>
+                                </div>
+                                <div className="vendor-content-wrap">
+                                    <div className="d-flex justify-content-between align-items-end mb-30">
+                                        <div>
+                                            {/* <div className="product-category">
+                                                        <span className="text-muted">Since {item.reg_date.slice(0, 4)}</span>
+                                                    </div> */}
+                                            <h4 className="mb-5">
+                                                <Link
+                                                    to={{
+                                                        pathname: `/Seller_details/${item.seller_id}`,
+                                                        // your data array of objects
+                                                    }}
+                                                >
+                                                    {item.shop_name}</Link></h4>
+                                            <div className="product-rate-cover">
+                                                <div className="product-rate d-inline-block">
+                                                    <div className="product-rating" style={{ width: '90%' }}></div>
+                                                </div>
+                                                <span className="font-small ml-5 text-muted"> (4.0)</span>
+                                            </div>
+                                        </div>
+                                        <div className="mb-10">
+                                            <span className="font-small total-product">{item.count} products</span>
+                                        </div>
+                                    </div>
+                                    <div className="vendor-info mb-30">
+                                        <ul className="contact-infor text-muted">
+                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>{item.seller_address}</span></li>
+                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) {item.seller_mobile_no}</span></li>
+                                        </ul>
+
+                                    </div>
+                                    {/* <a className='btn btn-xs' href='vendor-details-1.html'> */}
+                                    <Link className='btn btn-xs'
                                         to={{
-                                            pathname: `/Seller_details/${item.seller_id}`,
+                                            pathname: `/Sellers_material/${item.seller_id}`,
                                             // your data array of objects
                                         }}
                                     >
-
-                                        <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/shop_cover_img/${item.shop_image}`} alt="" style={{ borderRadius: '1rem', minWidth: '16rem', height: '9rem' }} />
-                                    </Link>
-                                </div>
-                                <div className="product-badges product-badges-position product-badges-mrg">
-                                    <span className="hot">Since {item.reg_date.slice(0, 4)}</span>
+                                        Visit Store <i className="fi-rs-arrow-small-right"></i></Link>
                                 </div>
                             </div>
-                            <div className="vendor-content-wrap">
-                                <div className="d-flex justify-content-between align-items-end mb-30">
-                                    <div>
-                                        {/* <div className="product-category">
-                                                        <span className="text-muted">Since {item.reg_date.slice(0, 4)}</span>
-                                                    </div> */}
-                                        <h4 className="mb-5">
-                                            <Link
-                                                to={{
-                                                    pathname: `/Seller_details/${item.seller_id}`,
-                                                    // your data array of objects
-                                                }}
-                                            >
-                                                {item.shop_name}</Link></h4>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '90%' }}></div>
-                                            </div>
-                                            <span className="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div>
-                                    </div>
-                                    <div className="mb-10">
-                                        <span className="font-small total-product">{item.count} products</span>
-                                    </div>
-                                </div>
-                                <div className="vendor-info mb-30">
-                                    <ul className="contact-infor text-muted">
-                                        <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>{item.seller_address}</span></li>
-                                        <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) {item.seller_mobile_no}</span></li>
-                                    </ul>
 
-                                </div>
-                                {/* <a className='btn btn-xs' href='vendor-details-1.html'> */}
-                                <Link className='btn btn-xs'
-                                    to={{
-                                        pathname: `/Sellers_material/${item.seller_id}`,
-                                        // your data array of objects
-                                    }}
-                                >
-                                    Visit Store <i className="fi-rs-arrow-small-right"></i></Link>
-                            </div>
-                        </div>
+                        </div >
+                    ))}
 
-                    </div >
-                ))}
-
+                </div>
             </div>
 
 
