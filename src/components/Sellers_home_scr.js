@@ -121,33 +121,36 @@ function Sellers_home_scr() {
                                         </ul>
 
                                     </div>
-                                    <div className="grid-contain">
+                                    <div className="seller-grid-box seller-grid-box-1">
 
-                                        <div className="seller-category">
+                                        <div className="grid-contain">
 
-                                            <Link
-                                                to={{
-                                                    pathname: `/Sellers_material/${item.seller_id}`,
-                                                    // your data array of objects
-                                                }}
-                                            >  <button onclick="location.href = 'shop-left-sidebar.html';"
-                                                className="btn btn-sm theme-bg-color text-white fw-bold">Visit Store  <i
-                                                    className="fi-rs-arrow-small-right"></i></button></Link>
-                                            <ul className="product-image">
-                                                <li>
-                                                    <img src="assets/imgs/category/cat-2.png" className="img-fluid" alt="" />
-                                                </li>
-                                                <li>
-                                                    <img src="assets/imgs/category/cat-3.png" className="img-fluid" alt="" />
-                                                </li>
-                                                <li>
-                                                    <img src="assets/imgs/category/cat-4.png" className="img-fluid" alt="" />
-                                                </li>
-                                                <li>
-                                                    <img src="assets/imgs/category/cat-5.png" className="img-fluid" alt="" />
-                                                </li>
-                                                <li>+15</li>
-                                            </ul>
+                                            <div className="seller-category">
+
+                                                <Link
+                                                    to={{
+                                                        pathname: `/Sellers_material/${item.seller_id}`,
+                                                        // your data array of objects
+                                                    }}
+                                                >  <button onclick="location.href = 'shop-left-sidebar.html';"
+                                                    className="btn btn-sm theme-bg-color text-white fw-bold">Visit Store  <i
+                                                        className="fi-rs-arrow-small-right"></i></button></Link>
+                                                <ul className="product-image">
+                                                    <li>
+                                                        <img src="assets/imgs/category/cat-2.png" className="img-fluid" alt="" />
+                                                    </li>
+                                                    <li>
+                                                        <img src="assets/imgs/category/cat-3.png" className="img-fluid" alt="" />
+                                                    </li>
+                                                    <li>
+                                                        <img src="assets/imgs/category/cat-4.png" className="img-fluid" alt="" />
+                                                    </li>
+                                                    <li>
+                                                        <img src="assets/imgs/category/cat-5.png" className="img-fluid" alt="" />
+                                                    </li>
+                                                    <li>+15</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                     {/* <a className='btn btn-xs' href='vendor-details-1.html'> */}
