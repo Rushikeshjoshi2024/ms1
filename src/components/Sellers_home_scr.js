@@ -124,7 +124,6 @@ function Sellers_home_scr() {
                                     <div className="seller-grid-box seller-grid-box-1">
 
                                         <div className="grid-contain">
-
                                             <div className="seller-category">
 
                                                 <Link className='btn btn-xs'
@@ -133,7 +132,7 @@ function Sellers_home_scr() {
                                                         // your data array of objects
                                                     }}
                                                 >
-                                                    Visit Store <i className="fi-rs-arrow-small-right"></i></Link>
+                                                    <p style={{ display: 'flex', flexDirection: 'row' }}>Visit Store <i className="fi-rs-arrow-small-right"></i></p></Link>
                                                 <ul className="product-image">
                                                     <li>
                                                         <img src="assets/imgs/category/cat-2.png" className="img-fluid" alt="" />
