@@ -60,7 +60,10 @@ function Sellers_home_scr() {
                                             // your data array of objects
                                         }}
                                     >
-                                        <button className="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">All</button>
+                                        <button className="nav-link" type="button">
+                                            All
+                                        </button>
+                                        {/* <button className="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">All</button> */}
                                     </Link>
                                 </li>
                             </ul>
