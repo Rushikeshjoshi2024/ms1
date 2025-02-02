@@ -67,8 +67,8 @@ function Sellers_home_scr() {
                         </div>
                         {/* <h3 className=""></h3> */}
                         {/* <br /> */}
-                        <div className="row g-4">
-                            {data.map(item => (
+                        {data.map(item => (
+                            <div className="row g-4">
                                 <div className="col-xxl-3 col-md-4" key={item.id}>
                                     <div className="seller-grid-box seller-grid-box-1">
                                         <div className="grid-image">
@@ -165,9 +165,9 @@ function Sellers_home_scr() {
                                     </div>
                                 </div>
 
-                            ))}
 
-                        </div>
+                            </div>
+                        ))}
 
 
                     </div>
