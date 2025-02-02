@@ -141,9 +141,9 @@ function Sellers_home_scr() {
                                                     <li>
                                                         <img src="assets/imgs/category/cat-3.png" className="img-fluid" alt="" />
                                                     </li>
-                                                    <li>
+                                                    {/* <li>
                                                         <img src="assets/imgs/category/cat-4.png" className="img-fluid" alt="" />
-                                                    </li>
+                                                    </li> */}
                                                     <li>
                                                         <img src="assets/imgs/category/cat-5.png" className="img-fluid" alt="" />
                                                     </li>
