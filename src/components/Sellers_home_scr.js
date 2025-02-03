@@ -114,13 +114,13 @@ function Sellers_home_scr() {
                                             <span className="font-small total-product">{item.count} products</span>
                                         </div>
                                     </div>
-                                    {/* <div className="vendor-info mb-30">
+                                    <div className="vendor-info mb-30">
                                         <ul className="contact-infor text-muted">
                                             <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>{item.seller_address}</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) {item.seller_mobile_no}</span></li>
+                                            {/* <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) {item.seller_mobile_no}</span></li> */}
                                         </ul>
 
-                                    </div> */}
+                                    </div>
                                     <div className="seller-grid-box seller-grid-box-1">
 
                                         <div className="grid-contain">
