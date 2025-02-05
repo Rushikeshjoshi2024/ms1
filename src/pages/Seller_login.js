@@ -20,7 +20,7 @@ function Seller_login() {
         axios.get('https://server-f8g6.onrender.com')
             .then(res => {
                 if (res.data.user === 'seller') {
-                    console.log(res);
+                    console.log(req.data);
                     navigate('/')
 
 
