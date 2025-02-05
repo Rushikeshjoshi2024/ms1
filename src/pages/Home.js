@@ -28,7 +28,7 @@ function Home() {
     useEffect(() => {
         axios.get('https://server-f8g6.onrender.com/')
             .then(res => {
-                console.log(res.data);
+                console.log(res);
                 // if (res.data.valid) {
                 //     // setName(res.data.user_email);
                 //     navigate('/')
