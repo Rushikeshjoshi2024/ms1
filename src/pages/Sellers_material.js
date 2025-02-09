@@ -23,7 +23,7 @@ function Sellers_materaial(props) {
     useEffect(() => {
         const handleSubmit = async () => {
             try {
-                const response = await axios.post('https://server-f8g6.onrender.com/all_material_by_seller', values);
+                const response = await axios.post('https://server-f8g6.onrender.com/all_material_by_seller_list', values);
                 if (response.data.success) {
                     // alert(response.seller_email);
                     setShopName(response.data.data[0].shop_name);
