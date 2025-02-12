@@ -19,6 +19,8 @@ const Result = () => {
     const filteredData = data.filter(item =>
         (item.district && item.district.toLowerCase().includes(filterquery.toLowerCase())) || (item.seller_address && item.seller_address.toLowerCase().includes(filterquery.toLowerCase()))
     );
+    console.log(data);
+    console.log(filteredData);
     // alert(filterquery);
 
     return (
