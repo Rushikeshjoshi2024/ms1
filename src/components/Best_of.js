@@ -116,7 +116,7 @@ function Best_of() {
                                                                     // your data array of objects
                                                                 }}
                                                             >
-                                                                <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`}
+                                                                <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`}
                                                                     alt="" style={{ height: '7rem' }} />
 
                                                             </Link>
@@ -231,7 +231,7 @@ function Best_of() {
                                                                     // your data array of objects
                                                                 }}
                                                             >
-                                                                <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`}
+                                                                <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`}
                                                                     alt="" style={{ height: '7rem' }} />
 
                                                             </Link>
