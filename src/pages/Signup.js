@@ -67,7 +67,7 @@ function Signup() {
                                 <a href="/"><i className="fab fa-facebook-f"></i>Facebook</a><a href="/"><i className="fab fa-google"></i>Google</a><a href="/"></a>
                             </div>
                             <div className="page-links">
-                                <a href="/Login">Login to account</a>
+                                <a href="/#/Login">Login to account</a>
                             </div>
                         </div>
                     </div>

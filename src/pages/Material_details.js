@@ -147,8 +147,8 @@ const Material_details = (props) => {
                                             </div> */}
                                             <div className="product-extra-link2">
                                                 <button type="submit" className="button button-add-to-cart"><i className="fi-rs-shopping-cart"></i>Add to cart</button>
-                                                <a aria-label='Add To Wishlist' className='action-btn hover-up' href='shop-wishlist.html'><i className="fi-rs-heart"></i></a>
-                                                <a aria-label='Compare' className='action-btn hover-up' href='shop-compare.html'><i className="fi-rs-shuffle"></i></a>
+                                                <a aria-label='Add To Wishlist' className='action-btn hover-up' href='/#'><i className="fi-rs-heart"></i></a>
+                                                <a aria-label='Compare' className='action-btn hover-up' href='/#'><i className="fi-rs-shuffle"></i></a>
                                             </div>
                                         </div>
                                         {/* <div className="font-xs">
@@ -259,7 +259,7 @@ const Material_details = (props) => {
                                                 <img src={`https://server-f8g6.onrender.com/uploads/shop_logo/${values.shop_logo}`} alt="" />
                                                 <div className="vendor-name ml-15">
                                                     <h4>
-                                                        <a href='vendor-details-2.html'>{values.shop_name}</a>
+                                                        <a href='/#'>{values.shop_name}</a>
                                                     </h4>
                                                     <div className="product-rate-cover text-end">
                                                         <div className="product-rate d-inline-block">
@@ -436,14 +436,14 @@ const Material_details = (props) => {
                                             <div className="product-cart-wrap hover-up">
                                                 <div className="product-img-action-wrap">
                                                     <div className="product-img product-img-zoom">
-                                                        <a href='shop-product-right.html' tabindex='0'>
+                                                        <a href='/#' tabindex='0'>
                                                             <img className="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="" />
                                                             <img className="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="" />
                                                         </a>
                                                     </div>
                                                     <div className="product-action-1">
                                                         <a aria-label="Quick view" className="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i className="fi-rs-search"></i></a>
-                                                        <a aria-label='Add To Wishlist' className='action-btn small hover-up' href='shop-wishlist.html' tabindex='0'><i className="fi-rs-heart"></i></a>
+                                                        <a aria-label='Add To Wishlist' className='action-btn small hover-up' href='/#' tabindex='0'><i className="fi-rs-heart"></i></a>
                                                         <a aria-label='Compare' className='action-btn small hover-up' href='shop-compare.html' tabindex='0'><i className="fi-rs-shuffle"></i></a>
                                                     </div>
                                                     <div className="product-badges product-badges-position product-badges-mrg">
@@ -451,7 +451,7 @@ const Material_details = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="product-content-wrap">
-                                                    <h2><a href='shop-product-right.html' tabindex='0'>Ulstra Bass Headphone</a></h2>
+                                                    <h2><a href='/#' tabindex='0'>Ulstra Bass Headphone</a></h2>
                                                     <div className="rating-result" title="90%">
                                                         <span> </span>
                                                     </div>
@@ -466,22 +466,22 @@ const Material_details = (props) => {
                                             <div className="product-cart-wrap hover-up">
                                                 <div className="product-img-action-wrap">
                                                     <div className="product-img product-img-zoom">
-                                                        <a href='shop-product-right.html' tabindex='0'>
+                                                        <a href='/#' tabindex='0'>
                                                             <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
                                                             <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
                                                         </a>
                                                     </div>
                                                     <div className="product-action-1">
                                                         <a aria-label="Quick view" className="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i className="fi-rs-search"></i></a>
-                                                        <a aria-label='Add To Wishlist' className='action-btn small hover-up' href='shop-wishlist.html' tabindex='0'><i className="fi-rs-heart"></i></a>
-                                                        <a aria-label='Compare' className='action-btn small hover-up' href='shop-compare.html' tabindex='0'><i className="fi-rs-shuffle"></i></a>
+                                                        <a aria-label='Add To Wishlist' className='action-btn small hover-up' href='/#' tabindex='0'><i className="fi-rs-heart"></i></a>
+                                                        <a aria-label='Compare' className='action-btn small hover-up' href='/#' tabindex='0'><i className="fi-rs-shuffle"></i></a>
                                                     </div>
                                                     <div className="product-badges product-badges-position product-badges-mrg">
                                                         <span className="sale">-12%</span>
                                                     </div>
                                                 </div>
                                                 <div className="product-content-wrap">
-                                                    <h2><a href='shop-product-right.html' tabindex='0'>Smart Bluetooth Speaker</a></h2>
+                                                    <h2><a href='/#' tabindex='0'>Smart Bluetooth Speaker</a></h2>
                                                     <div className="rating-result" title="90%">
                                                         <span> </span>
                                                     </div>
@@ -496,22 +496,22 @@ const Material_details = (props) => {
                                             <div className="product-cart-wrap hover-up">
                                                 <div className="product-img-action-wrap">
                                                     <div className="product-img product-img-zoom">
-                                                        <a href='shop-product-right.html' tabindex='0'>
+                                                        <a href='/#' tabindex='0'>
                                                             <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
                                                             <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
                                                         </a>
                                                     </div>
                                                     <div className="product-action-1">
                                                         <a aria-label="Quick view" className="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i className="fi-rs-search"></i></a>
-                                                        <a aria-label='Add To Wishlist' className='action-btn small hover-up' href='shop-wishlist.html' tabindex='0'><i className="fi-rs-heart"></i></a>
-                                                        <a aria-label='Compare' className='action-btn small hover-up' href='shop-compare.html' tabindex='0'><i className="fi-rs-shuffle"></i></a>
+                                                        <a aria-label='Add To Wishlist' className='action-btn small hover-up' href='/#' tabindex='0'><i className="fi-rs-heart"></i></a>
+                                                        <a aria-label='Compare' className='action-btn small hover-up' href='/#' tabindex='0'><i className="fi-rs-shuffle"></i></a>
                                                     </div>
                                                     <div className="product-badges product-badges-position product-badges-mrg">
                                                         <span className="new">New</span>
                                                     </div>
                                                 </div>
                                                 <div className="product-content-wrap">
-                                                    <h2><a href='shop-product-right.html' tabindex='0'>HomeSpeak 12UEA Goole</a></h2>
+                                                    <h2><a href='/#' tabindex='0'>HomeSpeak 12UEA Goole</a></h2>
                                                     <div className="rating-result" title="90%">
                                                         <span> </span>
                                                     </div>
@@ -526,22 +526,22 @@ const Material_details = (props) => {
                                             <div className="product-cart-wrap hover-up mb-0">
                                                 <div className="product-img-action-wrap">
                                                     <div className="product-img product-img-zoom">
-                                                        <a href='shop-product-right.html' tabindex='0'>
+                                                        <a href='/#' tabindex='0'>
                                                             <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
                                                             <img className="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="" />
                                                         </a>
                                                     </div>
                                                     <div className="product-action-1">
                                                         <a aria-label="Quick view" className="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i className="fi-rs-search"></i></a>
-                                                        <a aria-label='Add To Wishlist' className='action-btn small hover-up' href='shop-wishlist.html' tabindex='0'><i className="fi-rs-heart"></i></a>
-                                                        <a aria-label='Compare' className='action-btn small hover-up' href='shop-compare.html' tabindex='0'><i className="fi-rs-shuffle"></i></a>
+                                                        <a aria-label='Add To Wishlist' className='action-btn small hover-up' href='/#' tabindex='0'><i className="fi-rs-heart"></i></a>
+                                                        <a aria-label='Compare' className='action-btn small hover-up' href='/#' tabindex='0'><i className="fi-rs-shuffle"></i></a>
                                                     </div>
                                                     <div className="product-badges product-badges-position product-badges-mrg">
                                                         <span className="hot">Hot</span>
                                                     </div>
                                                 </div>
                                                 <div className="product-content-wrap">
-                                                    <h2><a href='shop-product-right.html' tabindex='0'>Dadua Camera 4K 2024EF</a></h2>
+                                                    <h2><a href='/#' tabindex='0'>Dadua Camera 4K 2024EF</a></h2>
                                                     <div className="rating-result" title="90%">
                                                         <span> </span>
                                                     </div>

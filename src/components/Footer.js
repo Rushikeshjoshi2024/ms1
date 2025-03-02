@@ -12,7 +12,7 @@ function Footer() {
                                 <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0 wow animate__animated animate__fadeInUp"
                                     data-wow-delay="0">
                                     <div class="logo mb-30">
-                                        <a class='mb-15' href='index.html'></a>
+                                        <a class='mb-15' href='/'></a>
                                         <p class="font-lg text-heading">Build dream with us</p>
                                     </div>
                                     <ul class="contact-infor">
@@ -32,11 +32,11 @@ function Footer() {
                             <div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
                                 <h4 class="widget-title">Company</h4>
                                 <ul class="footer-list mb-sm-5 mb-md-0">
-                                    <li><a href="/About">About Us</a></li>
+                                    <li><a href="/#/About">About Us</a></li>
                                     {/* <li><a href="/">Delivery Information</a></li> */}
                                     {/* <li><a href="/">Privacy Policy</a></li> */}
                                     <li><a href="/">Terms &amp; Conditions</a></li>
-                                    <li><a href="/Contact">Contact Us</a></li>
+                                    <li><a href="/#/Contact">Contact Us</a></li>
                                     {/* <li><a href="/">Support Center</a></li> */}
                                     {/* <li><a href="/">Careers</a></li> */}
                                 </ul>
@@ -44,10 +44,10 @@ function Footer() {
                             <div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
                                 <h4 class="widget-title">Account</h4>
                                 <ul class="footer-list mb-sm-5 mb-md-0">
-                                    <li><a href="/Login">User Sign In</a></li>
-                                    <li><a href="/Signup">User Sign up</a></li>
-                                    <li><a href="/Seller_login">Seller Sign In</a></li>
-                                    <li><a href="/Seller_registration">Seller Sign up</a></li>
+                                    <li><a href="/#/Login">User Sign In</a></li>
+                                    <li><a href="/#/Signup">User Sign up</a></li>
+                                    <li><a href="/#/Seller_login">Seller Sign In</a></li>
+                                    <li><a href="/#/Seller_registration">Seller Sign up</a></li>
                                     {/* <li><a href="/">View Cart</a></li>
                                     <li><a href="/">My Wishlist</a></li> */}
                                     {/* <li><a href="/">Track My Order</a></li> */}

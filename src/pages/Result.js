@@ -172,7 +172,7 @@ const Result = () => {
                             <section className="section-padding pb-5">
                                 <div className="section-title">
                                     <h3 className="">Deals Of The Day</h3>
-                                    <a className='show-all' href='shop-grid-right.html'>
+                                    <a className='show-all' href='/#'>
                                         All Deals
                                         <i className="fi-rs-angle-right"></i>
                                     </a>
@@ -182,7 +182,7 @@ const Result = () => {
                                         <div className="product-cart-wrap style-2">
                                             <div className="product-img-action-wrap">
                                                 <div className="product-img">
-                                                    <a href='shop-product-right.html'>
+                                                    <a href='/#'>
                                                         <img src="../assets/imgs/banner/banner-5.png" alt="" />
                                                     </a>
                                                 </div>
@@ -192,7 +192,7 @@ const Result = () => {
                                                     <div className="deals-countdown" data-countdown="2025/03/25 00:00:00"></div>
                                                 </div>
                                                 <div className="deals-content">
-                                                    <h2><a href='shop-product-right.html'>Seeds of Change Organic Quinoa,
+                                                    <h2><a href='/#'>Seeds of Change Organic Quinoa,
                                                         Brown</a></h2>
                                                     <div className="product-rate-cover">
                                                         <div className="product-rate d-inline-block">
@@ -202,7 +202,7 @@ const Result = () => {
                                                     </div>
                                                     <div>
                                                         <span className="font-small text-muted">By <a
-                                                            href='vendor-details-1.html'>NestFood</a></span>
+                                                            href='/#'>NestFood</a></span>
                                                     </div>
                                                     <div className="product-card-bottom">
                                                         <div className="product-price">
@@ -210,7 +210,7 @@ const Result = () => {
                                                             <span className="old-price">$33.8</span>
                                                         </div>
                                                         <div className="add-cart">
-                                                            <a className='add' href='shop-cart.html'><i
+                                                            <a className='add' href='/#'><i
                                                                 className="fi-rs-shopping-cart mr-5"></i>Add </a>
                                                         </div>
                                                     </div>
@@ -226,32 +226,32 @@ const Result = () => {
                                 <h5 className="section-title style-1 mb-30">Cities</h5>
                                 <ul style={{ overflow: 'auto', height: '18rem' }}>
                                     <li style={{ maxHeight: '3rem' }}>
-                                        <a href='shop-grid-right.html'> Nanded</a><span><input className="form-check" type="radio" name="checkbox" id="exampleCheckbox" value="Nanded" onChange={handleSearchChange} />
+                                        <a href='/#'> Nanded</a><span><input className="form-check" type="radio" name="checkbox" id="exampleCheckbox" value="Nanded" onChange={handleSearchChange} />
                                         </span>
                                     </li>
                                     <li style={{
                                         maxHeight: '3rem'
                                     }}>
-                                        <a href='shop-grid-right.html'> Pune</a><span> <input className="form-check" type="radio" name="checkbox"
+                                        <a href='/#'> Pune</a><span> <input className="form-check" type="radio" name="checkbox"
                                             id="exampleCheckbox1" value="Pune" onChange={handleSearchChange} />
                                         </span>
                                     </li>
                                     <li style={{
                                         maxHeight: '3rem'
                                     }}>
-                                        <a href='shop-grid-right.html'> Mumbai</a><span > <input className="form-check" type="radio" name="checkbox"
+                                        <a href='/#'> Mumbai</a><span > <input className="form-check" type="radio" name="checkbox"
                                             id="exampleCheckbox" value="Mumbai" onChange={handleSearchChange} />
                                         </span>
                                     </li>
                                     <li style={{
                                         maxHeight: '3rem'
-                                    }}><a href='shop-grid-right.html'> Delhi</a><span><input className="form-check" type="radio" name="checkbox"
+                                    }}><a href='/#'> Delhi</a><span><input className="form-check" type="radio" name="checkbox"
                                         id="exampleCheckbox" value="Delhi" onChange={handleSearchChange} />
                                         </span>
                                     </li>
                                     <li style={{
                                         maxHeight: '3rem'
-                                    }}><a href='shop-grid-right.html'> Hyderabad</a><span> <input className="form-check" type="radio" name="checkbox"
+                                    }}><a href='/#'> Hyderabad</a><span> <input className="form-check" type="radio" name="checkbox"
                                         id="exampleCheckbox" value="Hyderabad" onChange={handleSearchChange} />
                                         </span>
                                     </li>
@@ -319,7 +319,7 @@ const Result = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <a className='btn btn-sm btn-default' href='shop-grid-right.html'><i className="fi-rs-filter mr-5"></i>
+                                {/* <a className='btn btn-sm btn-default' href='/#'><i className="fi-rs-filter mr-5"></i>
                                     Fillter</a> */}
                             </div>
                             {/* <div className="sidebar-widget product-sidebar mb-30 p-30 bg-grey border-radius-10">

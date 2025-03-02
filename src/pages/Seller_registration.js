@@ -143,7 +143,7 @@ function Seller_registration() {
                                     <button type="submit" className="btn btn-primary btn-lg"
                                         // style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
                                         style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem', }} >Register</button>
-                                    <p className="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="/Seller_login"
+                                    <p className="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="/#/Seller_login"
                                         className="link-danger">Login</a></p>
                                 </div>
 

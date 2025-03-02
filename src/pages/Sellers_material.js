@@ -217,7 +217,7 @@ function Sellers_materaial(props) {
                             <section className="section-padding pb-5">
                                 <div className="section-title">
                                     <h3 className="">Deals Of The Day</h3>
-                                    <a className='show-all' href='shop-grid-right.html'>
+                                    <a className='show-all' href='/#'>
                                         All Deals
                                         <i className="fi-rs-angle-right"></i>
                                     </a>
@@ -247,7 +247,7 @@ function Sellers_materaial(props) {
                                                     </div>
                                                     <div>
                                                         <span className="font-small text-muted">By <a
-                                                            href='vendor-details-1.html'>NestFood</a></span>
+                                                            href='/#'>NestFood</a></span>
                                                     </div>
                                                     <div className="product-card-bottom">
                                                         <div className="product-price">
@@ -255,7 +255,7 @@ function Sellers_materaial(props) {
                                                             <span className="old-price">$33.8</span>
                                                         </div>
                                                         <div className="add-cart">
-                                                            <a className='add' href='shop-cart.html'><i
+                                                            <a className='add' href='/#'><i
                                                                 className="fi-rs-shopping-cart mr-5"></i>Add </a>
                                                         </div>
                                                     </div>
@@ -329,7 +329,7 @@ function Sellers_materaial(props) {
                                         </div>
                                     </div>
                                 </div>
-                                <a className='btn btn-sm btn-default' href='shop-grid-right.html'><i className="fi-rs-filter mr-5"></i>
+                                <a className='btn btn-sm btn-default' href='/#'><i className="fi-rs-filter mr-5"></i>
                                     Fillter</a>
                             </div>
                             {/* <div className="sidebar-widget product-sidebar mb-30 p-30 bg-grey border-radius-10">

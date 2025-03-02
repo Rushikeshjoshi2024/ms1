@@ -143,7 +143,7 @@ const Category_material = (props) => {
                                                 {/* <span className="old-price">$245.</span> */}
                                             </div>
                                             <div className="mt-30 d-flex align-items-center">
-                                                <a aria-label='Buy now' className='btn' href='shop-cart.html'><i className="fi-rs-shopping-cart mr-5"></i>Add to Cart</a>
+                                                <a aria-label='Buy now' className='btn' href='/#'><i className="fi-rs-shopping-cart mr-5"></i>Add to Cart</a>
                                                 {/* <a href="/" className="add-wishlish ml-30 text-body font-sm font-heading font-weight-bold"><i className="fi-rs-shuffle mr-5"></i>Add Compare</a> */}
                                             </div>
                                         </div>

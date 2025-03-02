@@ -130,7 +130,7 @@ function Best_of() {
                                                         <div className="product-" style={{ marginBlock: '1rem' }}>
                                                             #{item.category}
                                                         </div>
-                                                        <h2><a href='shop-product-right.html'>{item.material_name}</a></h2>
+                                                        <h2><a href='#'>{item.material_name}</a></h2>
                                                         <div className="product-rate d-inline-block">
                                                             <div className="product-rating" style={{ width: '80%' }}></div>
                                                         </div>
@@ -149,7 +149,7 @@ function Best_of() {
                                                         </div>
                                                         <span className="font-xs text-heading"> {item.material_brand}</span>
                                                     </div> */}
-                                                        <a className='btn w-100 hover-up' href='shop-cart.html'><i
+                                                        <a className='btn w-100 hover-up' href='#'><i
                                                             className="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                                     </div>
                                                 </div>
@@ -166,7 +166,7 @@ function Best_of() {
                                             <div className="product-cart-wrap card">
                                                 <div className="product-img-action-wrap">
                                                     <div className="product-img product-img-zoom">
-                                                        <a href='shop-product-right.html'>
+                                                        <a href='#'>
                                                             <img className="default-img" src="assets/imgs/shop/product-10-1.jpg"
                                                                 alt="" />
                                                             <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg"
@@ -178,9 +178,9 @@ function Best_of() {
                                                             data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                                 className="fi-rs-eye"></i></a>
                                                         <a aria-label='Add To Wishlist' className='action-btn small hover-up'
-                                                            href='shop-wishlist.html'><i className="fi-rs-heart"></i></a>
+                                                            href='#'><i className="fi-rs-heart"></i></a>
                                                         <a aria-label='Compare' className='action-btn small hover-up'
-                                                            href='shop-compare.html'><i className="fi-rs-shuffle"></i></a>
+                                                            href='#'><i className="fi-rs-shuffle"></i></a>
                                                     </div>
                                                     <div className="product-badges product-badges-position product-badges-mrg">
                                                         <span className="hot">Save 15%</span>
@@ -188,9 +188,9 @@ function Best_of() {
                                                 </div>
                                                 <div className="product-content-wrap">
                                                     <div className="product-category">
-                                                        <a href='shop-grid-right.html'>Hodo Foods</a>
+                                                        <a href='#'>Hodo Foods</a>
                                                     </div>
-                                                    <h2><a href='shop-product-right.html'>Canada Dry Ginger Ale – 2 L
+                                                    <h2><a href='#'>Canada Dry Ginger Ale – 2 L
                                                         Bottle</a></h2>
                                                     <div className="product-rate d-inline-block">
                                                         <div className="product-rating" style={{ width: '80%' }}></div>
@@ -206,7 +206,7 @@ function Best_of() {
                                                         </div>
                                                         <span className="font-xs text-heading"> Sold: 90/120</span>
                                                     </div>
-                                                    <a className='btn w-100 hover-up' href='shop-cart.html'><i
+                                                    <a className='btn w-100 hover-up' href='#'><i
                                                         className="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                                 </div>
                                             </div>
@@ -243,9 +243,9 @@ function Best_of() {
                                                     </div>
                                                     <div className="product-content-wrap">
                                                         <div className="product-category" style={{ marginBlock: '1rem' }}>
-                                                            <a href='shop-grid-right.html'>{item.category}</a>
+                                                            <a href='#'>{item.category}</a>
                                                         </div>
-                                                        <h2><a href='shop-product-right.html'>{item.material_name}</a></h2>
+                                                        <h2><a href='#'>{item.material_name}</a></h2>
                                                         <div className="product-rate d-inline-block">
                                                             <div className="product-rating" style={{ width: '80%' }}></div>
                                                         </div>
@@ -264,7 +264,7 @@ function Best_of() {
                                                             </div>
                                                             <span className="font-xs text-heading"> {item.material_brand}</span>
                                                         </div> */}
-                                                        <a className='btn w-100 hover-up' href='shop-cart.html'><i
+                                                        <a className='btn w-100 hover-up' href='#'><i
                                                             className="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                                     </div>
                                                 </div>

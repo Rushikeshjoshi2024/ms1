@@ -159,40 +159,40 @@ function Nav() {
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
                                                         <a className="menu-title" href="/">Fruit & Vegetables</a>
                                                         <ul>
-                                                            <li><a href='shop-product-right.html'>Meat & Poultry</a></li>
-                                                            <li><a href='shop-product-right.html'>Fresh Vegetables</a></li>
-                                                            <li><a href='shop-product-right.html'>Herbs & Seasonings</a></li>
-                                                            <li><a href='shop-product-right.html'>Cuts & Sprouts</a></li>
-                                                            <li><a href='shop-product-right.html'>Exotic Fruits & Veggies</a>
+                                                            <li><a href='/#'>Meat & Poultry</a></li>
+                                                            <li><a href='/#'>Fresh Vegetables</a></li>
+                                                            <li><a href='/#'>Herbs & Seasonings</a></li>
+                                                            <li><a href='/#'>Cuts & Sprouts</a></li>
+                                                            <li><a href='/#'>Exotic Fruits & Veggies</a>
                                                             </li>
-                                                            <li><a href='shop-product-right.html'>Packaged Produce</a></li>
+                                                            <li><a href='/#'>Packaged Produce</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
                                                         <a className="menu-title" href="/">Breakfast & Dairy</a>
                                                         <ul>
-                                                            <li><a href='shop-product-right.html'>Milk & Flavoured Milk</a></li>
-                                                            <li><a href='shop-product-right.html'>Butter and Margarine</a></li>
-                                                            <li><a href='shop-product-right.html'>Eggs Substitutes</a></li>
-                                                            <li><a href='shop-product-right.html'>Marmalades</a></li>
-                                                            <li><a href='shop-product-right.html'>Sour Cream</a></li>
-                                                            <li><a href='shop-product-right.html'>Cheese</a></li>
+                                                            <li><a href='/#'>Milk & Flavoured Milk</a></li>
+                                                            <li><a href='/#'>Butter and Margarine</a></li>
+                                                            <li><a href='/#'>Eggs Substitutes</a></li>
+                                                            <li><a href='/#'>Marmalades</a></li>
+                                                            <li><a href='/#'>Sour Cream</a></li>
+                                                            <li><a href='/#'>Cheese</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
                                                         <a className="menu-title" href="/">Meat & Seafood</a>
                                                         <ul>
-                                                            <li><a href='shop-product-right.html'>Breakfast Sausage</a></li>
-                                                            <li><a href='shop-product-right.html'>Dinner Sausage</a></li>
-                                                            <li><a href='shop-product-right.html'>Chicken</a></li>
-                                                            <li><a href='shop-product-right.html'>Sliced Deli Meat</a></li>
-                                                            <li><a href='shop-product-right.html'>Wild Caught Fillets</a></li>
-                                                            <li><a href='shop-product-right.html'>Crab and Shellfish</a></li>
+                                                            <li><a href='/#'>Breakfast Sausage</a></li>
+                                                            <li><a href='/#'>Dinner Sausage</a></li>
+                                                            <li><a href='/#'>Chicken</a></li>
+                                                            <li><a href='/#'>Sliced Deli Meat</a></li>
+                                                            <li><a href='/#'>Wild Caught Fillets</a></li>
+                                                            <li><a href='/#'>Crab and Shellfish</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="sub-mega-menu sub-mega-menu-width-34">
                                                         <div className="menu-banner-wrap">
-                                                            <a href='shop-product-right.html'><img
+                                                            <a href='/#'><img
                                                                 src="assets/imgs/banner/banner-menu.png" alt="Nest" /></a>
                                                             <div className="menu-banner-content">
                                                                 <h4>Hot deals</h4>
@@ -204,7 +204,7 @@ function Nav() {
                                                                     <span className="new-price text-success">Save to 50%</span>
                                                                 </div>
                                                                 <div className="menu-banner-btn">
-                                                                    <a href='shop-product-right.html'>Shop now</a>
+                                                                    <a href='/#'>Shop now</a>
                                                                 </div>
                                                             </div>
                                                             <div className="menu-banner-discount">
@@ -273,11 +273,11 @@ function Nav() {
                                             <ul>
                                                 <li>
                                                     <div className="shopping-cart-img">
-                                                        <a href='shop-product-right.html'><img alt="Nest"
+                                                        <a href='/#'><img alt="Nest"
                                                             src="assets/imgs/shop/thumbnail-3.jpg" /></a>
                                                     </div>
                                                     <div className="shopping-cart-title">
-                                                        <h4><a href='shop-product-right.html'>Plain Striola Shirts</a></h4>
+                                                        <h4><a href='/#'>Plain Striola Shirts</a></h4>
                                                         <h3><span>1 × </span>$800.00</h3>
                                                     </div>
                                                     <div className="shopping-cart-delete">
@@ -286,11 +286,11 @@ function Nav() {
                                                 </li>
                                                 <li>
                                                     <div className="shopping-cart-img">
-                                                        <a href='shop-product-right.html'><img alt="Nest"
+                                                        <a href='/#'><img alt="Nest"
                                                             src="assets/imgs/shop/thumbnail-4.jpg" /></a>
                                                     </div>
                                                     <div className="shopping-cart-title">
-                                                        <h4><a href='shop-product-right.html'>Macbook Pro 2024</a></h4>
+                                                        <h4><a href='/#'>Macbook Pro 2024</a></h4>
                                                         <h3><span>1 × </span>$3500.00</h3>
                                                     </div>
                                                     <div className="shopping-cart-delete">
@@ -303,8 +303,8 @@ function Nav() {
                                                     <h4>Total <span>$383.00</span></h4>
                                                 </div>
                                                 <div className="shopping-cart-button">
-                                                    <a href='shop-cart.html'>View cart</a>
-                                                    <a href='shop-checkout.html'>Checkout</a>
+                                                    <a href='/#'>View cart</a>
+                                                    <a href='/#'>Checkout</a>
                                                 </div>
                                             </div>
                                         </div>

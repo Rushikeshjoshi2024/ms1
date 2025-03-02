@@ -5,7 +5,7 @@ function ForgotPassword() {
         <div>
             <div className="form-body without-side">
                 <div className="website-logo">
-                    <a href="index.html">
+                    <a href="/">
                         <div className="logo">
                             <img className="logo-size" src="assets/imgs/logo-light.svg" alt="" />
                         </div>

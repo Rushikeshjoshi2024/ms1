@@ -55,7 +55,7 @@ function Login() {
 
             <div className="form-body without-side">
                 <div className="website-logo">
-                    <a href="index.html">
+                    <a href="/">
                         <div className="logo">
                             {/* <img className="logo-size" src="assets/imgs/logo-light.svg" alt="" /> */}
                             {/* <h4>MaterialSeller</h4> */}
@@ -78,7 +78,7 @@ function Login() {
                                     <input className="form-control" type="email" name="user_email" placeholder="E-mail Address" required onChange={handleChange} />
                                     <input className="form-control" type="password" name="user_password" placeholder="Password" required onChange={handleChange} />
                                     <div className="form-button">
-                                        <button id="submit" type="submit" className="ibtn">Login</button> <a href="forget20.html">Forget password?</a>
+                                        <button id="submit" type="submit" className="ibtn">Login</button> <a href="/#">Forget password?</a>
                                     </div>
                                 </form>
                                 <div className="other-links">
@@ -86,7 +86,7 @@ function Login() {
                                     <a href="'"><i className="fab fa-facebook-f"></i>Facebook</a><a href="/"><i className="fab fa-google"></i>Google</a><a href="/"><i className="fab fa-linkedin-in"></i>Linkedin</a>
                                 </div>
                                 <div className="page-links">
-                                    <a href="register20.html">Register new account</a>
+                                    <a href="/#">Register new account</a>
                                 </div>
                             </div>
                         </div>
