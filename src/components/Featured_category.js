@@ -49,9 +49,9 @@ function Featured_category() {
                                 {data.map(item => (
                                     <div className="card-2 bg-9 wow animate__animated animate__fadeInUp" data-wow-delay=".1s" key={item.id}>
                                         <figure className="img-hover-scale overflow-hidden">
-                                            <a href='#'><img src={"assets/imgs/category/" + item.logo} alt="" style={{ margin: '10px', height: '4rem', width: '4.5rem' }} /></a>
+                                            <a href={'/#/Category_material/' + item.category}><img src={"assets/imgs/category/" + item.logo} alt="" style={{ margin: '10px', height: '4rem', width: '4.5rem' }} /></a>
                                         </figure>
-                                        <h6><a href='#'>{item.category}</a></h6>
+                                        <h6><a href={'/#/Category_material/' + item.category}>{item.category}</a></h6>
                                         <span>{item.count} items</span>
                                     </div>
                                 ))}
