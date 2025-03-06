@@ -112,7 +112,7 @@ const Category_material = (props) => {
                                                             // your data array of objects
                                                         }}
                                                     >
-                                                        <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}${item.material_image}`} alt="" />
+                                                        <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`} alt="" />
                                                         {/* <img className="hover-img" src="../assets/imgs/shop/product-2-2.jpg" alt="" /> */}
                                                     </Link>
                                                 </div>
