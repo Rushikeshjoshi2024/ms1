@@ -117,7 +117,7 @@ function Best_of() {
                                                                 }}
                                                             >
                                                                 <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`}
-                                                                    alt="" style={{ height: '10rem' }} />
+                                                                    alt="" style={{ height: '14rem' }} />
 
                                                             </Link>
                                                         </div>
