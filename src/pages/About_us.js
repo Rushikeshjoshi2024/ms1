@@ -17,7 +17,7 @@ const About_us = () => {
                             <div className="col-xl-10 col-lg-12 m-auto">
                                 <section className="row align-items-center mb-50">
                                     <div className="col-lg-6">
-                                        <img src="assets/imgs/page/about-1.png" alt="" className="border-radius-15 mb-md-3 mb-lg-0 mb-sm-4" />
+                                        <img src="img.png" alt="" className="border-radius-15 mb-md-3 mb-lg-0 mb-sm-4" />
                                     </div>
                                     <div className="col-lg-6">
                                         <div className="pl-25">
@@ -26,10 +26,10 @@ const About_us = () => {
                                             <p align='justify' className="mb-50">One of the main benefits of MateralSeller is its ability to connect buyers with sellers who may be outside of their immediate area. Whether you're searching for a specific material that's hard to find locally or you're interested in exploring offerings from sellers in different regions, MateralSeller opens up a world of possibilities.</p>
 
                                             <div className="carausel" style={{ display: 'flex' }}>
-                                                <img src="assets/imgs/page/about-2.png" alt="" />
-                                                <img src="assets/imgs/page/about-3.png" alt="" />
-                                                <img src="assets/imgs/page/about-4.png" alt="" />
-                                                <img src="assets/imgs/page/about-2.png" alt="" />
+                                                <img src="img1.png" alt="" />
+                                                <img src="img1.png" alt="" />
+                                                <img src="img1.png" alt="" />
+                                                <img src="img1.png" alt="" />
                                             </div>
                                         </div>
 
@@ -91,7 +91,7 @@ const About_us = () => {
                                 <section className="row align-items-center mb-50">
                                     <div className="row mb-50 align-items-center">
                                         <div className="col-lg-7 pr-30">
-                                            <img src="assets/imgs/page/about-5.png" alt="" className="mb-md-3 mb-lg-0 mb-sm-4" />
+                                            <img src="img1.png" alt="" className="mb-md-3 mb-lg-0 mb-sm-4" />
                                         </div>
                                         <div className="col-lg-5">
                                             <h4 className="mb-20 text-muted">About</h4>
@@ -178,7 +178,7 @@ const About_us = () => {
                                             <div className="row">
                                                 <div className="col-lg-6 col-md-6">
                                                     <div className="team-card">
-                                                        <img src="assets/imgs/page/founder.jpeg" alt="" />
+                                                        <img src="img1.png" alt="" />
                                                         <div className="content text-center">
                                                             <h4 className="mb-5">Rushikesh R. Joshi</h4>
                                                             <span>CEO & Co-Founder</span>
@@ -193,7 +193,7 @@ const About_us = () => {
                                                 </div>
                                                 <div className="col-lg-6 col-md-6">
                                                     <div className="team-card">
-                                                        <img src="assets/imgs/page/about-8.png" alt="" />
+                                                        <img src="img1.png" alt="" />
                                                         <div className="content text-center">
                                                             <h4 className="mb-5"></h4>
                                                             <span></span>
