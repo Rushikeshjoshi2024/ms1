@@ -8,7 +8,6 @@ function Products() {
 
     const [values, setValues] = useState({
         val: 8
-
     });
     axios.defaults.withCredentials = true;
     useEffect(() => {
@@ -18,8 +17,7 @@ function Products() {
                 if (response.data.success) {
                     // alert(response.seller_email);
                     console.log(response.data);
-                    setData(response.data.data); // Assuming response.data.data contains the array of seller details
-
+                    setData(response.data.data);
                     // console.log(response.data.data[0].shop_name);
                 } else {
                     // alert("Invalid data");
@@ -133,17 +131,12 @@ function Products() {
                                         </div>
                                     </div>
                                 ))}
-
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-
-
     );
 
 };
