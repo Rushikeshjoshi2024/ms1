@@ -7,7 +7,7 @@ function Products() {
     const [searchQuery, setSearchQuery] = useState('');
 
     const [values, setValues] = useState({
-        val: 6
+        val: 8
 
     });
     axios.defaults.withCredentials = true;
