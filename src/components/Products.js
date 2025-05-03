@@ -38,94 +38,67 @@ function Products() {
 
             <section className="product-tabs section-padding position-relative">
                 <div className="container">
-                    <div className="section-title style-2 wow animate__animated animate__fadeIn">
+                    <div className="section-title style-2 d-flex justify-content-between align-items-center mb-4">
                         <h3>Latest Products</h3>
                         <ul className="nav nav-tabs links" id="myTab" role="tablist">
                             <li className="nav-item" role="presentation">
-                                <Link className='btn btn-xs'
-                                    to={{
-                                        pathname: `/Products`,
-                                        // your data array of objects
-                                    }}
-                                >
-                                    <button className="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">All</button>
+                                <Link to="/Products" className="btn bg-transparent p-0 border-0">
+                                    <i className="fas fa-angle-right" style={{ color: 'black', fontSize: '1.5rem' }}></i>
                                 </Link>
                             </li>
-                            {/* <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="nav-tab-two" data-bs-toggle="tab" data-bs-target="#tab-two" type="button" role="tab" aria-controls="tab-two" aria-selected="false">Cement</button>
-                            </li>
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="nav-tab-three" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="tab-three" aria-selected="false">Tiles</button>
-                            </li>
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="nav-tab-four" data-bs-toggle="tab" data-bs-target="#tab-four" type="button" role="tab" aria-controls="tab-four" aria-selected="false">Marbel</button>
-                            </li>
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="nav-tab-five" data-bs-toggle="tab" data-bs-target="#tab-five" type="button" role="tab" aria-controls="tab-five" aria-selected="false">Steel</button>
-                            </li>
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="nav-tab-six" data-bs-toggle="tab" data-bs-target="#tab-six" type="button" role="tab" aria-controls="tab-six" aria-selected="false">Sanitary products</button>
-                            </li> */}
-                            {/* <li className="nav-item" role="presentation">
-                            <button className="nav-link" id="nav-tab-seven" data-bs-toggle="tab" data-bs-target="#tab-seven" type="button" role="tab" aria-controls="tab-seven" aria-selected="false">Fruits</button>
-                        </li> */}
                         </ul>
                     </div>
-                    {/* <!--End nav-tabs--> */}
+
                     <div className="tab-content" id="myTabContent">
                         <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
-                            <div className="row product-grid-4" >
+                            <div className="row g-4">
                                 {data.map(item => (
-                                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6" key={item.id}>
-                                        <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                            <div className="product-img-action-wrap">
-                                                <div className="product-img product-img-zoom">
-                                                    <Link
-                                                        to={{
-                                                            pathname: `/Material_details/${item.id}`,
-                                                            // your data array of objects
+                                    <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={item.id}>
+                                        <div
+                                            className="product-card border rounded h-100 d-flex flex-column shadow-sm"
+                                            style={{ transition: 'transform 0.3s ease' }}
+                                        >
+                                            <div className="position-relative">
+                                                <Link to={`/Material_details/${item.id}`}>
+                                                    <img
+                                                        src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`}
+                                                        alt={item.material_brand}
+                                                        className="w-100"
+                                                        style={{
+                                                            height: '14rem',
+                                                            objectFit: 'cover',
+                                                            borderTopLeftRadius: '0.5rem',
+                                                            borderTopRightRadius: '0.5rem',
                                                         }}
-                                                    >
-                                                        <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`} style={{ height: '14rem' }} alt="" />
-                                                        {/* <img className="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" /> */}
-                                                    </Link>
-                                                </div>
-                                                {/* <div className="product-action-1">
-                                            <a aria-label='Add To Wishlist' className='action-btn' href='shop-wishlist.html'><i className="fi-rs-heart"></i></a>
-                                            <a aria-label='Compare' className='action-btn' href='shop-compare.html'><i className="fi-rs-shuffle"></i></a>
-                                            <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i className="fi-rs-eye"></i></a>
-                                        </div> */}
-                                                <div className="product-badges product-badges-position product-badges-mrg">
-                                                    <span className="hot">New</span>
-                                                </div>
+                                                    />
+                                                </Link>
+                                                <span className="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
                                             </div>
-                                            <div className="product-content-wrap">
-                                                <div className="product-" style={{ marginBlock: '1rem' }}>
-                                                    #{item.category}
+
+                                            <div className="p-3 d-flex flex-column flex-grow-1">
+                                                <small className="text-muted mb-1">#{item.category}</small>
+
+                                                <h6 className="mb-2">
+                                                    <Link to={`/Material_details/${item.id}`} className="text-dark text-decoration-none">
+                                                        {item.material_brand}
+                                                    </Link>
+                                                </h6>
+
+                                                <div className="d-flex align-items-center mb-2">
+                                                    <div
+                                                        className="bg-warning rounded me-2"
+                                                        style={{ width: '80px', height: '8px' }}
+                                                    ></div>
+                                                    <span className="small text-muted">(4.0)</span>
                                                 </div>
-                                                <h2> <Link
-                                                    to={{
-                                                        pathname: `/Material_details/${item.id}`,
-                                                    }}
-                                                >
-                                                    {item.material_brand}</Link></h2>
-                                                <div className="product-rate-cover">
-                                                    <div className="product-rate d-inline-block">
-                                                        <div className="product-rating" style={{ width: '90%' }}></div>
-                                                    </div>
-                                                    <span className="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span className="font-small text-muted">By <a href='#'>{item.shop_name}</a></span>
-                                                </div>
-                                                <div className="product-card-bottom">
-                                                    <div className="product-price">
-                                                        <span>{item.material_price}/Unit</span>
-                                                        {/* <span className="old-price">2500</span> */}
-                                                    </div>
-                                                    <div className="add-cart">
-                                                        <a className='add' href='/'><i className="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
+
+                                                <small className="text-muted mb-3">By <span className="fw-semibold">{item.shop_name}</span></small>
+
+                                                <div className="d-flex justify-content-between align-items-center mt-auto">
+                                                    <span className="fw-bold text-dark">{item.material_price} /Unit</span>
+                                                    <a href="/" className="btn btn-sm btn-outline-primary d-flex align-items-center gap-1">
+                                                        <i className="fi-rs-shopping-cart"></i> Add
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,6 +109,7 @@ function Products() {
                     </div>
                 </div>
             </section>
+
         </div>
     );
 
