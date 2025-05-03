@@ -68,7 +68,7 @@ function Sellers_home_scr() {
                 <div className="row vendor-grid" >
                     {data.map(item => (
 
-                        <div className="col-lg-3 col-md-6 col-12 col-sm-6" >
+                        <div className="col-lg-3 col-md-6 col-12 col-sm-6" style={{ height: '10rem' }}>
 
 
 
