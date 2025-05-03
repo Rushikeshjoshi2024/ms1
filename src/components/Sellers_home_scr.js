@@ -68,10 +68,7 @@ function Sellers_home_scr() {
                 <div className="row vendor-grid" >
                     {data.map(item => (
 
-                        <div className="col-lg-3 col-md-6 col-12 col-sm-6" style={{ height: '10rem' }}>
-
-
-
+                        <div className="col-lg-3 col-md-6 col-12 col-sm-6" style={{ height: '25rem' }}>
                             <div className="vendor-wrap mb-40" key={item.id} >
                                 <div className="vendor-img-action-wrap">
                                     <div className="vendor-img">
