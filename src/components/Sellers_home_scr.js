@@ -51,7 +51,7 @@ function Sellers_home_scr() {
                     <h3 className="mb-4">Our Sellers</h3>
                     <ul className="nav nav-tabs links" id="myTab" role="tablist">
                         <li className="nav-item" role="presentation">
-                            <Link className="btn btn-secondary btn-sm" to="/Sellers">
+                            <Link className="btn btn-primary btn-sm" to="/Sellers">
                                 <i className="fa-solid fa-angle-right"></i>
                             </Link>
                         </li>
