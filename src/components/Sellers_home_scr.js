@@ -86,6 +86,7 @@ function Sellers_home_scr() {
                                         }}
                                     />
 
+
                                 </Link>
 
                                 <div className="card-body d-flex flex-column justify-content-between">
