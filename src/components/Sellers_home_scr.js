@@ -83,8 +83,8 @@ function Sellers_home_scr() {
                                     />
                                 </Link>
 
-                                {/* Seller Info */}
-                                <div className="card-body d-flex flex-column justify-content-between flex-grow-1">
+                                {/* Card Body with Padding */}
+                                <div className="card-body p-3 d-flex flex-column justify-content-between flex-grow-1">
                                     <div>
                                         <h5 className="card-title mb-1">
                                             <Link to={`/Seller_details/${item.seller_id}`} className="text-decoration-none text-dark">
@@ -115,7 +115,6 @@ function Sellers_home_scr() {
                                         <p className="text-muted small mb-2">{item.count} products</p>
                                     </div>
 
-                                    {/* Visit Store + Categories */}
                                     <div className="mt-auto">
                                         <Link
                                             to={`/Sellers_material/${item.seller_id}`}
