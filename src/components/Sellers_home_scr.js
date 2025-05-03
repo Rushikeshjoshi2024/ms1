@@ -73,15 +73,19 @@ function Sellers_home_scr() {
                             >
                                 <Link to={`/Seller_details/${item.seller_id}`}>
                                     <img
-                                        src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`}
-                                        alt={item.shop_name}
-                                        className="card-img-top"
+                                        src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`}
+                                        alt={item.material_brand}
+                                        className="w-100"
                                         style={{
-                                            height: '10rem',
-                                            objectFit: 'cover',
-                                            width: '100%',
+                                            height: '14rem',
+                                            objectFit: 'contain',
+                                            padding: '0.5rem',
+                                            backgroundColor: '#f9f9f9', // optional: adds contrast
+                                            borderTopLeftRadius: '0.5rem',
+                                            borderTopRightRadius: '0.5rem',
                                         }}
                                     />
+
                                 </Link>
 
                                 <div className="card-body d-flex flex-column justify-content-between">
