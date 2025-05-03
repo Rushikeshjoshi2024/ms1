@@ -48,11 +48,11 @@ function Sellers_home_scr() {
         <div>
             <div className="container-fluid-lg">
                 <div className="section-title style-2 wow animate__animated animate__fadeIn">
-                    <h3>Our Sellers</h3>
+                    <h3 className="mb-4">Our Sellers</h3>
                     <ul className="nav nav-tabs links" id="myTab" role="tablist">
                         <li className="nav-item" role="presentation">
-                            <Link className="btn btn-xs" to="/Sellers">
-                                <button className="nav-link" type="button">All</button>
+                            <Link className="btn btn-primary btn-sm" to="/Sellers">
+                                All
                             </Link>
                         </li>
                     </ul>
@@ -60,67 +60,70 @@ function Sellers_home_scr() {
 
                 <div className="row vendor-grid">
                     {data.map((item) => (
-                        <div className="col-lg-3 col-md-6 col-12 col-sm-6" key={item.id}>
-                            <div className="vendor-wrap mb-40" style={{ height: '32rem', overflow: 'hidden' }}>
-                                <div className="vendor-img-action-wrap">
-                                    <div className="vendor-img">
-                                        <Link to={`/Seller_details/${item.seller_id}`}>
-                                            <img
-                                                className="default-img"
-                                                src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`}
-                                                alt={item.shop_name}
-                                                style={{ borderRadius: '1rem', minWidth: '16rem', height: '9rem', objectFit: 'cover' }}
-                                            />
+                        <div className="col-lg-3 col-md-6 col-sm-6 mb-4" key={item.id}>
+                            <div
+                                className="card h-100 border-0 shadow-sm"
+                                style={{
+                                    borderRadius: '1rem',
+                                    overflow: 'hidden',
+                                    transition: 'transform 0.3s ease',
+                                    height: '32rem',
+                                }}
+                            >
+                                <Link to={`/Seller_details/${item.seller_id}`}>
+                                    <img
+                                        src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`}
+                                        alt={item.shop_name}
+                                        className="card-img-top"
+                                        style={{
+                                            height: '10rem',
+                                            objectFit: 'cover',
+                                            width: '100%',
+                                        }}
+                                    />
+                                </Link>
+
+                                <div className="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 className="card-title">
+                                            <Link to={`/Seller_details/${item.seller_id}`} className="text-decoration-none text-dark">
+                                                {item.shop_name}
+                                            </Link>
+                                        </h5>
+                                        <p className="text-muted mb-2" style={{ fontSize: '0.9rem' }}>
+                                            Since <strong>{item.reg_date.slice(0, 4)}</strong>
+                                        </p>
+
+                                        <div className="d-flex align-items-center mb-2">
+                                            <div className="product-rating bg-warning rounded-pill me-2" style={{ width: '60px', height: '8px' }}>
+                                                {/* Optionally replace this with an actual star icon system */}
+                                            </div>
+                                            <span className="text-muted small">(4.0)</span>
+                                        </div>
+
+                                        <p className="small text-muted mb-2">
+                                            <img src="assets/imgs/theme/icons/icon-location.svg" alt="location" style={{ width: '1rem', marginRight: '0.5rem' }} />
+                                            {item.seller_address}
+                                        </p>
+
+                                        <p className="text-muted small">{item.count} products</p>
+                                    </div>
+
+                                    <div className="mt-auto">
+                                        <Link to={`/Sellers_material/${item.seller_id}`} className="btn btn-outline-primary btn-sm w-100 mt-3">
+                                            Visit Store <i className="fi-rs-arrow-small-right"></i>
                                         </Link>
-                                    </div>
-                                    <div className="product-badges product-badges-position product-badges-mrg">
-                                        <span className="hot">Since {item.reg_date.slice(0, 4)}</span>
-                                    </div>
-                                </div>
-
-                                <div className="vendor-content-wrap">
-                                    <div className="d-flex justify-content-between align-items-end mb-30">
-                                        <div>
-                                            <h4 className="mb-5">
-                                                <Link to={`/Seller_details/${item.seller_id}`}>{item.shop_name}</Link>
-                                            </h4>
-                                            <div className="product-rate-cover">
-                                                <div className="product-rate d-inline-block">
-                                                    <div className="product-rating" style={{ width: '90%' }}></div>
-                                                </div>
-                                                <span className="font-small ml-5 text-muted"> (4.0)</span>
-                                            </div>
-                                        </div>
-                                        <div className="mb-10">
-                                            <span className="font-small total-product">{item.count} products</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="vendor-info mb-30">
-                                        <ul className="contact-infor text-muted">
-                                            <li>
-                                                <img src="assets/imgs/theme/icons/icon-location.svg" alt="location icon" />
-                                                <strong>Address: </strong> <span>{item.seller_address}</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div className="seller-grid-box seller-grid-box-1">
-                                        <div className="grid-contain">
-                                            <div className="seller-category">
-                                                <Link className="btn btn-xs" to={`/Sellers_material/${item.seller_id}`}>
-                                                    <p style={{ display: 'flex', flexDirection: 'row' }}>
-                                                        Visit Store <i className="fi-rs-arrow-small-right"></i>
-                                                    </p>
-                                                </Link>
-
-                                                <ul className="product-image">
-                                                    <li><img src="assets/imgs/category/cat-2.png" className="img-fluid" alt="category" /></li>
-                                                    <li><img src="assets/imgs/category/cat-3.png" className="img-fluid" alt="category" /></li>
-                                                    <li><img src="assets/imgs/category/cat-5.png" className="img-fluid" alt="category" /></li>
-                                                    <li>+15</li>
-                                                </ul>
-                                            </div>
+                                        <div className="d-flex justify-content-between mt-3">
+                                            {[2, 3, 5].map((num) => (
+                                                <img
+                                                    key={num}
+                                                    src={`assets/imgs/category/cat-${num}.png`}
+                                                    className="img-fluid rounded"
+                                                    style={{ width: '2.5rem', height: '2.5rem', objectFit: 'cover' }}
+                                                    alt={`Category ${num}`}
+                                                />
+                                            ))}
+                                            <span className="text-muted small align-self-center">+15</span>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +132,8 @@ function Sellers_home_scr() {
                     ))}
                 </div>
             </div>
-            {/* </div> */}
+            {/* <?/div> */}
+
 
             {/* <div className="section-title wow animate__animated animate__fadeIn">
                 <section className="seller-grid-section  pb-5">
