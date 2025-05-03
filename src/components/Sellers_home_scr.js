@@ -62,7 +62,7 @@ function Sellers_home_scr() {
                 <div className="row vendor-grid">
                     {data.map((item) => (
                         <div className="col-lg-3 col-md-6 col-sm-6 mb-4" key={item.id}>
-                            <div
+                            {/* <div
                                 className="card h-100 border-0 shadow-sm"
                                 style={{
                                     borderRadius: '1rem',
@@ -70,7 +70,10 @@ function Sellers_home_scr() {
                                     transition: 'transform 0.3s ease',
                                     height: '32rem',
                                 }}
-                            >
+                            > */}
+
+                            <div className="product-card border rounded h-100 d-flex flex-column shadow-sm"
+                                style={{ transition: 'transform 0.3s ease' }} >
 
 
                                 <Link to={`/Seller_details/${item.seller_id}`}>
@@ -82,7 +85,7 @@ function Sellers_home_scr() {
                                             height: '14rem',
                                             objectFit: 'contain',
                                             padding: '0.5rem',
-                                            backgroundColor: '#f9f9f9', // optional: adds contrast
+                                            backgroundColor: '#f9f9f9',
                                             borderTopLeftRadius: '0.5rem',
                                             borderTopRightRadius: '0.5rem',
                                         }}
