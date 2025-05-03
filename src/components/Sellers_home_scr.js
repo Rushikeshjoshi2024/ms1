@@ -62,25 +62,16 @@ function Sellers_home_scr() {
                 <div className="row vendor-grid">
                     {data.map((item) => (
                         <div className="col-lg-3 col-md-6 col-sm-6 mb-4" key={item.id}>
-                            {/* <div
-                                className="card h-100 border-0 shadow-sm"
-                                style={{
-                                    borderRadius: '1rem',
-                                    overflow: 'hidden',
-                                    transition: 'transform 0.3s ease',
-                                    height: '32rem',
-                                }}
-                            > */}
-
-                            <div className="product-card border rounded h-100 d-flex flex-column shadow-sm"
-                                style={{ transition: 'transform 0.3s ease' }} >
-
-
+                            <div
+                                className="product-card border rounded h-100 d-flex flex-column shadow-sm"
+                                style={{ transition: 'transform 0.3s ease' }}
+                            >
+                                {/* Seller Logo */}
                                 <Link to={`/Seller_details/${item.seller_id}`}>
                                     <img
                                         src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`}
                                         alt={item.shop_name}
-                                        className="card-img-top"
+                                        className="w-100"
                                         style={{
                                             height: '14rem',
                                             objectFit: 'contain',
@@ -92,44 +83,55 @@ function Sellers_home_scr() {
                                     />
                                 </Link>
 
-                                <div className="card-body d-flex flex-column justify-content-between">
+                                {/* Seller Info */}
+                                <div className="card-body d-flex flex-column justify-content-between flex-grow-1">
                                     <div>
-                                        <h5 className="card-title">
+                                        <h5 className="card-title mb-1">
                                             <Link to={`/Seller_details/${item.seller_id}`} className="text-decoration-none text-dark">
                                                 {item.shop_name}
                                             </Link>
                                         </h5>
-                                        <p className="text-muted mb-2" style={{ fontSize: '0.9rem' }}>
+                                        <small className="text-muted d-block mb-2">
                                             Since <strong>{item.reg_date.slice(0, 4)}</strong>
-                                        </p>
+                                        </small>
 
                                         <div className="d-flex align-items-center mb-2">
-                                            <div className="product-rating bg-warning rounded-pill me-2" style={{ width: '60px', height: '8px' }}>
-                                                {/* Optionally replace this with an actual star icon system */}
-                                            </div>
+                                            <div
+                                                className="bg-warning rounded-pill me-2"
+                                                style={{ width: '60px', height: '8px' }}
+                                            ></div>
                                             <span className="text-muted small">(4.0)</span>
                                         </div>
 
-                                        <p className="small text-muted mb-2">
-                                            <img src="assets/imgs/theme/icons/icon-location.svg" alt="location" style={{ width: '1rem', marginRight: '0.5rem' }} />
+                                        <p className="text-muted small mb-2 d-flex align-items-center">
+                                            <img
+                                                src="assets/imgs/theme/icons/icon-location.svg"
+                                                alt="location"
+                                                style={{ width: '1rem', marginRight: '0.5rem' }}
+                                            />
                                             {item.seller_address}
                                         </p>
 
-                                        <p className="text-muted small">{item.count} products</p>
+                                        <p className="text-muted small mb-2">{item.count} products</p>
                                     </div>
 
+                                    {/* Visit Store + Categories */}
                                     <div className="mt-auto">
-                                        <Link to={`/Sellers_material/${item.seller_id}`} className="btn btn-outline-primary btn-sm w-100 mt-3">
+                                        <Link
+                                            to={`/Sellers_material/${item.seller_id}`}
+                                            className="btn btn-outline-primary btn-sm w-100 mt-2"
+                                        >
                                             Visit Store <i className="fi-rs-arrow-small-right"></i>
                                         </Link>
-                                        <div className="d-flex justify-content-between mt-3">
+
+                                        <div className="d-flex justify-content-between align-items-center mt-3">
                                             {[2, 3, 5].map((num) => (
                                                 <img
                                                     key={num}
                                                     src={`assets/imgs/category/cat-${num}.png`}
                                                     className="img-fluid rounded"
-                                                    style={{ width: '2.5rem', height: '2.5rem', objectFit: 'cover' }}
                                                     alt={`Category ${num}`}
+                                                    style={{ width: '2.5rem', height: '2.5rem', objectFit: 'cover' }}
                                                 />
                                             ))}
                                             <span className="text-muted small align-self-center">+15</span>
@@ -140,6 +142,7 @@ function Sellers_home_scr() {
                         </div>
                     ))}
                 </div>
+
             </div>
             {/* <?/div> */}
 
