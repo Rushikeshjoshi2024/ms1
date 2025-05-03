@@ -51,11 +51,12 @@ function Sellers_home_scr() {
                     <h3 className="mb-4">Our Sellers</h3>
                     <ul className="nav nav-tabs links" id="myTab" role="tablist">
                         <li className="nav-item" role="presentation">
-                            <Link className="btn btn-primary btn-sm" to="/Sellers">
-                                All
+                            <Link to="/Sellers" className="btn p-0 border-0 bg-transparent">
+                                <i className="fas fa-angle-right" style={{ color: 'black', fontSize: '1.5rem' }}></i>
                             </Link>
                         </li>
                     </ul>
+
                 </div>
 
                 <div className="row vendor-grid">
