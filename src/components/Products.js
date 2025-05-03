@@ -66,11 +66,14 @@ function Products() {
                                                         className="w-100"
                                                         style={{
                                                             height: '14rem',
-                                                            objectFit: 'cover',
+                                                            objectFit: 'contain',
+                                                            padding: '0.5rem',
+                                                            backgroundColor: '#f9f9f9', // optional: adds contrast
                                                             borderTopLeftRadius: '0.5rem',
                                                             borderTopRightRadius: '0.5rem',
                                                         }}
                                                     />
+
                                                 </Link>
                                                 <span className="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
                                             </div>
