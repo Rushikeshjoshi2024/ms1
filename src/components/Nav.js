@@ -459,7 +459,7 @@ function Nav() {
                                                         :
                                                         // <div className="account" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                                         // </div>
-                                                        <li><a href="/#/login">Login</a></li>
+                                                        <li><a onClick={() => loginWithRedirect()}>Login</a></li>
 
                                                 }
                                                     {
