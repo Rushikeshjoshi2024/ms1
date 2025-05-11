@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { useNavigate } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 import '../components/component.css';
 import axios from "axios";
@@ -59,6 +60,8 @@ function Nav() {
             })
             .catch(err => console.log(err))
     };
+
+    const { logout } = useAuth0();
     return (
         <div>
             <header className="header-area header-style-1 header-height-2">
