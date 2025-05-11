@@ -61,7 +61,7 @@ function Nav() {
             .catch(err => console.log(err))
     };
 
-    const { logout } = useAuth0();
+    const { loginWithRedirect } = useAuth0();
     return (
         <div>
             <header className="header-area header-style-1 header-height-2">
@@ -130,7 +130,7 @@ function Nav() {
                                                             :
                                                             // <div className="account" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                                             // </div>
-                                                            <li><a href="/#/login">Login</a></li>
+                                                            <li><a onClick={() => loginWithRedirect()}>Login</a></li>
 
                                                     }
                                                         {
