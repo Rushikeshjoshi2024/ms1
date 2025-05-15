@@ -10,6 +10,8 @@ function Nav() {
     const [auth, setAuth] = useState(false);
     const [email, setEmail] = useState('');
     const [utype, userType] = useState('');
+    const { user, isAuthenticated, isLoading } = useAuth0();
+
     // const navigate = useNavigate();
     // console.log(utype);
     var location = Location;
@@ -118,13 +120,13 @@ function Nav() {
                                                 <a>Account <i className="fi-rs-angle-down"></i></a>
                                                 <ul className="sub-menu">
                                                     <li>  {
-                                                        auth ?
+                                                        isAuthenticated ?
                                                             <div>
 
 
                                                                 {/* <button type="button"  onClick={handleLogout}>Logout</button> */}
-                                                                Hello, {email}
-                                                                <li><a onClick={handleLogout}>Logout</a></li>
+                                                                Hello, {user.name}
+                                                                <li><a onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</a></li>
                                                                 <li><a href="/#/Seller_account"> My account</a></li>
                                                             </div>
                                                             :
@@ -450,13 +452,13 @@ function Nav() {
                                             <a href="/">Account <i className="fi-rs-angle-down"></i></a>
                                             <ul className="sub-menu">
                                                 <li>  {
-                                                    auth ?
+                                                    isAuthenticated ?
                                                         <div>
 
 
                                                             {/* <button type="button"  onClick={handleLogout}>Logout</button> */}
-                                                            Hello, {email}
-                                                            <li><a onClick={handleLogout}>Logout</a></li>
+                                                            Hello, {user.name}
+                                                            <li><a onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</a></li>
                                                             <li><a href="/#/Seller_account"> My account</a></li>
                                                         </div>
                                                         :
