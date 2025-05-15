@@ -10,18 +10,20 @@ import { HashRouter } from 'react-router-dom';  // Import HashRouter
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Auth0Provider
-      domain="dev-nu0ywg02q7o04x3e.us.auth0.com"
-      clientId="cNZwzIb6M2BE3e02EFSg0bS398BBDxIw"
-      authorizationParams={{
-        redirect_uri: `${window.location.origin}/#/`
-      }}
 
-    >
-      <HashRouter>
+    <HashRouter>
+      <Auth0Provider
+        domain="dev-nu0ywg02q7o04x3e.us.auth0.com"
+        clientId="cNZwzIb6M2BE3e02EFSg0bS398BBDxIw"
+        authorizationParams={{
+          redirect_uri: `${window.location.origin}/#/`
+        }}
+
+      >
         <App />
-      </HashRouter>
-    </Auth0Provider>
+      </Auth0Provider>
+
+    </HashRouter>
   </React.StrictMode>
 );
 
