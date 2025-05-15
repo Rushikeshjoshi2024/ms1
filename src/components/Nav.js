@@ -13,7 +13,8 @@ function Nav() {
     const { user, isAuthenticated, isLoading } = useAuth0();
 
     // const navigate = useNavigate();
-    // console.log(utype);
+    console.log(user);
+    console.log(isAuthenticated);
     var location = Location;
     const search_value = (event) => {
         setSearch(event.target.value);//gives the search field value
