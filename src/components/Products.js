@@ -72,10 +72,26 @@ function Products() {
                                                             borderTopLeftRadius: '0.5rem',
                                                             borderTopRightRadius: '0.5rem',
                                                         }}
+<<<<<<< HEAD
                                                     />
 
                                                 </Link>
                                                 <span className="badge bg-danger position-absolute top-0 start-0 m-2">New</span>
+=======
+                                                    >
+                                                        <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`} alt="" />
+                                                        {/* <img className="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" /> */}
+                                                    </Link>
+                                                </div>
+                                                {/* <div className="product-action-1">
+                                            <a aria-label='Add To Wishlist' className='action-btn' href='shop-wishlist.html'><i className="fi-rs-heart"></i></a>
+                                            <a aria-label='Compare' className='action-btn' href='shop-compare.html'><i className="fi-rs-shuffle"></i></a>
+                                            <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i className="fi-rs-eye"></i></a>
+                                        </div> */}
+                                                <div className="product-badges product-badges-position product-badges-mrg">
+                                                    <span className="hot">New</span>
+                                                </div>
+>>>>>>> parent of 884b006 (added image links)
                                             </div>
 
                                             <div className="p-3 d-flex flex-column flex-grow-1">

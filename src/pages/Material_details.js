@@ -90,7 +90,7 @@ const Material_details = (props) => {
                                         {/* <span className="zoom-icon"><i className="fi-rs-search"></i></span> */}
                                         <div className="product-image-slider">
                                             <figure className="border-radius-10">
-                                                <img src={`https://server-f8g6.onrender.com/uploads/regd_material/${values.material_image}`} alt="product image" />
+                                                <img src={`https://server-f8g6.onrender.com/uploads/${values.material_image}`} alt="product image" />
                                             </figure>
 
                                         </div>
