@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 // import { useNavigate } from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
 
 import '../components/component.css';
 import axios from "axios";
@@ -10,11 +9,8 @@ function Nav() {
     const [auth, setAuth] = useState(false);
     const [email, setEmail] = useState('');
     const [utype, userType] = useState('');
-    const { user, isAuthenticated, isLoading } = useAuth0();
-
     // const navigate = useNavigate();
-    console.log(user);
-    console.log(isAuthenticated);
+    // console.log(utype);
     var location = Location;
     const search_value = (event) => {
         setSearch(event.target.value);//gives the search field value
@@ -26,9 +22,9 @@ function Nav() {
     // console.log(service);
 
     useEffect(() => {
-        axios.get('https://server-f8g6.onrender.com/')
+        axios.get('http://localhost:8081')
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.valid) {
                     // setName(res.data.user_email);
                     setAuth(true)
@@ -54,7 +50,7 @@ function Nav() {
     }, [])
 
     const handleLogout = () => {
-        axios.get('https://server-f8g6.onrender.com/logout')
+        axios.get('http://localhost:8081/logout')
             .then(res => {
                 // console.log(res.data.valid);
                 window.location.reload();
@@ -63,8 +59,6 @@ function Nav() {
             })
             .catch(err => console.log(err))
     };
-
-    const { loginWithRedirect } = useAuth0();
     return (
         <div>
             <header className="header-area header-style-1 header-height-2">
@@ -104,57 +98,57 @@ function Nav() {
 
                                             </li>
                                             <li>
-                                                <a href='/#/About'>About</a>
+                                                <a href='/About'>About</a>
                                             </li>
                                             <li>
-                                                <a href='/#/Contact'>Contact</a>
+                                                <a href='/Contact'>Contact</a>
                                             </li>
                                             <li>
-                                                <a>Services <i className="fi-rs-angle-down"></i></a>
+                                                <a href="/">Services <i className="fi-rs-angle-down"></i></a>
                                                 <ul className="sub-menu">
-                                                    <li><a href='/#/Products'>Buy Material</a></li>
-                                                    <li><a href='/#/Seller_registration'>Register as seller</a></li>
+                                                    <li><a href='/Products'>Buy Material</a></li>
+                                                    <li><a href='/Seller_registration'>Register as seller</a></li>
 
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a>Account <i className="fi-rs-angle-down"></i></a>
+                                                <a href="/">Account <i className="fi-rs-angle-down"></i></a>
                                                 <ul className="sub-menu">
                                                     <li>  {
-                                                        isAuthenticated ?
+                                                        auth ?
                                                             <div>
 
 
                                                                 {/* <button type="button"  onClick={handleLogout}>Logout</button> */}
-                                                                Hello, {user.name}
-                                                                <li><a onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</a></li>
-                                                                <li><a href="/#/Seller_account"> My account</a></li>
+                                                                Hello, {email}
+                                                                <li><a onClick={handleLogout}>Logout</a></li>
+                                                                <li><a href="/Seller_account"> My account</a></li>
                                                             </div>
                                                             :
                                                             // <div className="account" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                                             // </div>
-                                                            <li><a onClick={() => loginWithRedirect()}>Login</a></li>
+                                                            <li><a href="/login">Login</a></li>
 
                                                     }
                                                         {
                                                             utype ?
 
                                                                 <div>
-                                                                    <li ><a href="/#/Material_reg"> Material Register</a></li>
+                                                                    <li ><a href="/Material_reg"> Material Register</a></li>
                                                                 </div>
                                                                 :
                                                                 null
 
                                                         }
-                                                        <li><a href="/#/ForgotPassword">Forgot Password</a></li>
-                                                        <li><a href="/#/Sellers">Sellers</a></li>
-                                                        <li><a href="/#/Signup">Signup</a></li>
-                                                        <li><a href="/#/Seller_login">Sellers login</a></li>
-                                                        <li><a href="/#/Sellers">Sellers list</a></li>
-                                                        <li><a href="/#/Products">Products</a></li>
-                                                        <li><a href="/#/categories">Category</a></li>
+                                                        <li><a href="/ForgotPassword">Forgot Password</a></li>
+                                                        <li><a href="/Sellers">Sellers</a></li>
+                                                        <li><a href="/Signup">Signup</a></li>
+                                                        <li><a href="/Seller_login">Sellers login</a></li>
+                                                        <li><a href="/Sellers">Sellers list</a></li>
+                                                        <li><a href="/Products">Products</a></li>
+                                                        <li><a href="/categories">Category</a></li>
                                                     </li>
-                                                    <li><a href='/#/Seller_registration'>Register as seller</a></li>
+                                                    <li><a href='/Seller_registration'>Register as seller</a></li>
 
                                                 </ul>
                                             </li>
@@ -165,40 +159,40 @@ function Nav() {
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
                                                         <a className="menu-title" href="/">Fruit & Vegetables</a>
                                                         <ul>
-                                                            <li><a href='/#'>Meat & Poultry</a></li>
-                                                            <li><a href='/#'>Fresh Vegetables</a></li>
-                                                            <li><a href='/#'>Herbs & Seasonings</a></li>
-                                                            <li><a href='/#'>Cuts & Sprouts</a></li>
-                                                            <li><a href='/#'>Exotic Fruits & Veggies</a>
+                                                            <li><a href='shop-product-right.html'>Meat & Poultry</a></li>
+                                                            <li><a href='shop-product-right.html'>Fresh Vegetables</a></li>
+                                                            <li><a href='shop-product-right.html'>Herbs & Seasonings</a></li>
+                                                            <li><a href='shop-product-right.html'>Cuts & Sprouts</a></li>
+                                                            <li><a href='shop-product-right.html'>Exotic Fruits & Veggies</a>
                                                             </li>
-                                                            <li><a href='/#'>Packaged Produce</a></li>
+                                                            <li><a href='shop-product-right.html'>Packaged Produce</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
                                                         <a className="menu-title" href="/">Breakfast & Dairy</a>
                                                         <ul>
-                                                            <li><a href='/#'>Milk & Flavoured Milk</a></li>
-                                                            <li><a href='/#'>Butter and Margarine</a></li>
-                                                            <li><a href='/#'>Eggs Substitutes</a></li>
-                                                            <li><a href='/#'>Marmalades</a></li>
-                                                            <li><a href='/#'>Sour Cream</a></li>
-                                                            <li><a href='/#'>Cheese</a></li>
+                                                            <li><a href='shop-product-right.html'>Milk & Flavoured Milk</a></li>
+                                                            <li><a href='shop-product-right.html'>Butter and Margarine</a></li>
+                                                            <li><a href='shop-product-right.html'>Eggs Substitutes</a></li>
+                                                            <li><a href='shop-product-right.html'>Marmalades</a></li>
+                                                            <li><a href='shop-product-right.html'>Sour Cream</a></li>
+                                                            <li><a href='shop-product-right.html'>Cheese</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="sub-mega-menu sub-mega-menu-width-22">
                                                         <a className="menu-title" href="/">Meat & Seafood</a>
                                                         <ul>
-                                                            <li><a href='/#'>Breakfast Sausage</a></li>
-                                                            <li><a href='/#'>Dinner Sausage</a></li>
-                                                            <li><a href='/#'>Chicken</a></li>
-                                                            <li><a href='/#'>Sliced Deli Meat</a></li>
-                                                            <li><a href='/#'>Wild Caught Fillets</a></li>
-                                                            <li><a href='/#'>Crab and Shellfish</a></li>
+                                                            <li><a href='shop-product-right.html'>Breakfast Sausage</a></li>
+                                                            <li><a href='shop-product-right.html'>Dinner Sausage</a></li>
+                                                            <li><a href='shop-product-right.html'>Chicken</a></li>
+                                                            <li><a href='shop-product-right.html'>Sliced Deli Meat</a></li>
+                                                            <li><a href='shop-product-right.html'>Wild Caught Fillets</a></li>
+                                                            <li><a href='shop-product-right.html'>Crab and Shellfish</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="sub-mega-menu sub-mega-menu-width-34">
                                                         <div className="menu-banner-wrap">
-                                                            <a href='/#'><img
+                                                            <a href='shop-product-right.html'><img
                                                                 src="assets/imgs/banner/banner-menu.png" alt="Nest" /></a>
                                                             <div className="menu-banner-content">
                                                                 <h4>Hot deals</h4>
@@ -210,7 +204,7 @@ function Nav() {
                                                                     <span className="new-price text-success">Save to 50%</span>
                                                                 </div>
                                                                 <div className="menu-banner-btn">
-                                                                    <a href='/#'>Shop now</a>
+                                                                    <a href='shop-product-right.html'>Shop now</a>
                                                                 </div>
                                                             </div>
                                                             <div className="menu-banner-discount">
@@ -232,7 +226,7 @@ function Nav() {
                             </div>
                             <div className="d-none d-lg-flex">
                                 <div className="srch-acc-logo">
-                                    <a href='/#/Search'>
+                                    <a href='/Search'>
                                         <div className="search ">
 
 
@@ -265,7 +259,7 @@ function Nav() {
                             <div className="header-action-right d-block d-lg-none">
                                 <div className="header-action-2">
                                     <div className="header-action-icon-2">
-                                        <a href='/#/Search'>
+                                        <a href='/Search'>
                                             <img alt="Nest" src="assets/imgs/theme/icons/search.svg" />
                                             {/* <span className="pro-count white">4</span> */}
                                         </a>
@@ -279,11 +273,11 @@ function Nav() {
                                             <ul>
                                                 <li>
                                                     <div className="shopping-cart-img">
-                                                        <a href='/#'><img alt="Nest"
+                                                        <a href='shop-product-right.html'><img alt="Nest"
                                                             src="assets/imgs/shop/thumbnail-3.jpg" /></a>
                                                     </div>
                                                     <div className="shopping-cart-title">
-                                                        <h4><a href='/#'>Plain Striola Shirts</a></h4>
+                                                        <h4><a href='shop-product-right.html'>Plain Striola Shirts</a></h4>
                                                         <h3><span>1 × </span>$800.00</h3>
                                                     </div>
                                                     <div className="shopping-cart-delete">
@@ -292,15 +286,15 @@ function Nav() {
                                                 </li>
                                                 <li>
                                                     <div className="shopping-cart-img">
-                                                        <a href='/#'><img alt="Nest"
+                                                        <a href='shop-product-right.html'><img alt="Nest"
                                                             src="assets/imgs/shop/thumbnail-4.jpg" /></a>
                                                     </div>
                                                     <div className="shopping-cart-title">
-                                                        <h4><a href='/#'>Macbook Pro 2024</a></h4>
+                                                        <h4><a href='shop-product-right.html'>Macbook Pro 2024</a></h4>
                                                         <h3><span>1 × </span>$3500.00</h3>
                                                     </div>
                                                     <div className="shopping-cart-delete">
-                                                        <a href="/#"><i className="fi-rs-cross-small"></i></a>
+                                                        <a href="/"><i className="fi-rs-cross-small"></i></a>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -309,8 +303,8 @@ function Nav() {
                                                     <h4>Total <span>$383.00</span></h4>
                                                 </div>
                                                 <div className="shopping-cart-button">
-                                                    <a href='/#'>View cart</a>
-                                                    <a href='/#'>Checkout</a>
+                                                    <a href='shop-cart.html'>View cart</a>
+                                                    <a href='shop-checkout.html'>Checkout</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -422,26 +416,26 @@ function Nav() {
                                         <li>
                                             <a href="/">Login <i className="fi-rs-angle-down"></i></a>
                                             <ul className="sub-menu" >
-                                                <li ><a href='/#/Login'>As user</a></li>
-                                                <li><a href='/#/Seller_login'>As seller</a></li>
+                                                <li ><a href='/Login'>As user</a></li>
+                                                <li><a href='/Seller_login'>As seller</a></li>
 
                                             </ul>
                                         </li>
                                         <br />
                                         <li>
-                                            <a href='/#/About'>About</a>
+                                            <a href='/About'>About</a>
                                         </li>
                                         <br />
                                         <li>
-                                            <a href='/#/Contact'>Contact</a>
+                                            <a href='/Contact'>Contact</a>
                                         </li>
                                         <br />
 
                                         <li>
                                             <a href="/">Services <i className="fi-rs-angle-down"></i></a>
                                             <ul className="sub-menu" >
-                                                <li ><a href='/#/Products'>Buy Material</a></li>
-                                                <li><a href='/#/Seller_registration'>Register as seller</a></li>
+                                                <li ><a href='/Products'>Buy Material</a></li>
+                                                <li><a href='/Seller_registration'>Register as seller</a></li>
 
                                             </ul>
                                         </li>
@@ -453,40 +447,40 @@ function Nav() {
                                             <a href="/">Account <i className="fi-rs-angle-down"></i></a>
                                             <ul className="sub-menu">
                                                 <li>  {
-                                                    isAuthenticated ?
+                                                    auth ?
                                                         <div>
 
 
                                                             {/* <button type="button"  onClick={handleLogout}>Logout</button> */}
-                                                            Hello, {user.name}
-                                                            <li><a onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</a></li>
-                                                            <li><a href="/#/Seller_account"> My account</a></li>
+                                                            Hello, {email}
+                                                            <li><a onClick={handleLogout}>Logout</a></li>
+                                                            <li><a href="/Seller_account"> My account</a></li>
                                                         </div>
                                                         :
                                                         // <div className="account" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                                         // </div>
-                                                        <li><a onClick={() => loginWithRedirect()}>Login</a></li>
+                                                        <li><a href="/login">Login</a></li>
 
                                                 }
                                                     {
                                                         utype ?
 
                                                             <div>
-                                                                <li ><a href="/#/Material_reg"> Material Register</a></li>
+                                                                <li ><a href="/Material_reg"> Material Register</a></li>
                                                             </div>
                                                             :
                                                             null
 
                                                     }
-                                                    <li><a href="/#/ForgotPassword">Forgot Password</a></li>
-                                                    <li><a href="/#/Sellers">Sellers</a></li>
-                                                    <li><a href="/#/Signup">Signup</a></li>
-                                                    <li><a href="/#/Seller_login">Sellers login</a></li>
-                                                    <li><a href="/#/Sellers">Sellers list</a></li>
-                                                    <li><a href="/#/Products">Products</a></li>
-                                                    <li><a href="/#/categories">Category</a></li>
+                                                    <li><a href="/ForgotPassword">Forgot Password</a></li>
+                                                    <li><a href="/Sellers">Sellers</a></li>
+                                                    <li><a href="/Signup">Signup</a></li>
+                                                    <li><a href="/Seller_login">Sellers login</a></li>
+                                                    <li><a href="/Sellers">Sellers list</a></li>
+                                                    <li><a href="/Products">Products</a></li>
+                                                    <li><a href="/categories">Category</a></li>
                                                 </li>
-                                                <li><a href='/#/Seller_registration'>Register as seller</a></li>
+                                                <li><a href='/Seller_registration'>Register as seller</a></li>
 
                                             </ul>
                                         </li>
