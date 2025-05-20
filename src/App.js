@@ -32,9 +32,9 @@ function App() {
       <>
         {/* This is the alias of BrowserRouter i.e. Router */}
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/Login" element={<Login />} />
-          <Route exact path="/Contact" element={<Contact_us />} />
+          <Route exact path="/#/" element={<Home />} />
+          <Route exact path="/#/Login" element={<Login />} />
+          <Route exact path="/#/Contact" element={<Contact_us />} />
           <Route exact path="/About" element={<About_us />} />
           <Route exact path="/Signup" element={<Signup />} />
           <Route exact path="/Categories" element={<Category />} />
