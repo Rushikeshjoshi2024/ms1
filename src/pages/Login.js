@@ -122,14 +122,30 @@ function Login() {
 
                                     <a href="'"><i className="fab fa-facebook-f"></i>Facebook</a><a href="/"><i className="fab fa-google"></i>Google</a><a href="/"><i className="fab fa-linkedin-in"></i>Linkedin</a>
                                 </div>
-                                <div className="login-card">
-                                    <h2>Please Log In</h2>
-                                    <p>Sign in with your Google account to continue.</p>
-                                    <GoogleLogin
-                                        onSuccess={handleLoginSuccess}
-                                        onError={handleLoginError}
-                                    />
-                                </div>
+                                <main className="main-content">
+                                    {user ? (
+                                        // If user is logged in, show their info and a logout button
+                                        <div className="profile-card">
+                                            <h2>Welcome!</h2>
+                                            <img src={user.picture} alt={user.fullName} className="profile-picture" />
+                                            <h3>{user.fullName}</h3>
+                                            <p>{user.email}</p>
+                                            <button onClick={handleLogout} className="logout-button">
+                                                Logout
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        // If user is not logged in, show the login button
+                                        <div className="login-card">
+                                            <h2>Please Log In</h2>
+                                            <p>Sign in with your Google account to continue.</p>
+                                            <GoogleLogin
+                                                onSuccess={handleLoginSuccess}
+                                                onError={handleLoginError}
+                                            />
+                                        </div>
+                                    )}
+                                </main>
                                 <div className="page-links">
                                     <a href="/#">Register new account</a>
                                 </div>
