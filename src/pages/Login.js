@@ -109,7 +109,6 @@ function Login() {
                         <div className="form-content">
                             <div className="form-items">
                                 <h3>Login to account</h3>
-                                <p>Access to the most powerfull tool in the entire design and web industry.</p>
                                 <form onSubmit={handleSubmit}>
                                     <input className="form-control" type="email" name="user_email" placeholder="E-mail Address" required onChange={handleChange} />
                                     <input className="form-control" type="password" name="user_password" placeholder="Password" required onChange={handleChange} />
