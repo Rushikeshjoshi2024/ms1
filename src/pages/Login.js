@@ -6,35 +6,7 @@ import { GoogleLogin } from '@react-oauth/google';
 // import Nav from "../components/Nav";
 
 
-const [user, setUser] = useState(null);
 
-const handleLoginSuccess = async (credentialResponse) => {
-    console.log("Google Login Success:", credentialResponse);
-    const token = credentialResponse.credential;
-
-    try {
-        // Send the token to the backend for verification
-        const serverResponse = await axios.post(
-            `http://localhost:8080/api/auth/google`,
-            { token }
-        );
-
-        console.log("Server Response:", serverResponse.data);
-        // Set the user state with the data from the backend
-        setUser(serverResponse.data.user);
-
-    } catch (error) {
-        console.error("Login Failed:", error);
-    }
-};
-
-const handleLoginError = () => {
-    console.log('Login Failed');
-};
-
-const handleLogout = () => {
-    setUser(null);
-};
 
 function Login() {
     // const [name, setName] = useState('');
@@ -43,11 +15,43 @@ function Login() {
         user_password: '',
 
     });
+
+    const [user, setUser] = useState(null);
+
+    const handleLoginSuccess = async (credentialResponse) => {
+        console.log("Google Login Success:", credentialResponse);
+        const token = credentialResponse.credential;
+
+        try {
+            // Send the token to the backend for verification
+            const serverResponse = await axios.post(
+                `https://server-f8g6.onrender.com/api/auth/google`,
+                { token }
+            );
+
+            console.log("Server Response:", serverResponse.data);
+            // Set the user state with the data from the backend
+            setUser(serverResponse.data.user);
+
+        } catch (error) {
+            console.error("Login Failed:", error);
+        }
+    };
+
+    const handleLoginError = () => {
+        console.log('Login Failed');
+    };
+
+    const handleLogout = () => {
+        setUser(null);
+    };
     const navigate = useNavigate();
     const handleChange = (event) => {
         setValues({ ...values, [event.target.name]: event.target.value });
     };
     axios.defaults.withCredentials = true;
+
+
 
     useEffect(() => {
         axios.get('https://server-f8g6.onrender.com')
