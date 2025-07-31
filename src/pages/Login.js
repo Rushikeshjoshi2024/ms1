@@ -119,11 +119,16 @@ function Login() {
                                 </form>
                                 <div className="other-links">
                                     {/* <div className="text">Or login with</div> */}
+
+                                    <a href="'"><i className="fab fa-facebook-f"></i>Facebook</a><a href="/"><i className="fab fa-google"></i>Google</a><a href="/"><i className="fab fa-linkedin-in"></i>Linkedin</a>
+                                </div>
+                                <div className="login-card">
+                                    <h2>Please Log In</h2>
+                                    <p>Sign in with your Google account to continue.</p>
                                     <GoogleLogin
                                         onSuccess={handleLoginSuccess}
                                         onError={handleLoginError}
                                     />
-                                    <a href="'"><i className="fab fa-facebook-f"></i>Facebook</a><a href="/"><i className="fab fa-google"></i>Google</a><a href="/"><i className="fab fa-linkedin-in"></i>Linkedin</a>
                                 </div>
                                 <div className="page-links">
                                     <a href="/#">Register new account</a>
