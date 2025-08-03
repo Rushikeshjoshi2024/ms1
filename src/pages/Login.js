@@ -188,6 +188,7 @@ function Login() {
                                             <GoogleLogin
                                                 onSuccess={handleLoginSuccess}
                                                 onError={handleLoginError}
+                                                ux_mode="redirect"
                                             />
                                         </div>
                                     )}
