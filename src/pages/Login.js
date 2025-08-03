@@ -180,12 +180,15 @@ function Login() {
                                         <div className="login-card">
                                             <h2>Please Log In</h2>
                                             <p>Sign in with your Google account to continue.</p>
+                                            {/* <GoogleLogin
+                                                onSuccess={handleLoginSuccess}
+                                                onError={handleLoginError}
+                                                ux_mode="redirect" 
+                                            /> */}
                                             <GoogleLogin
                                                 onSuccess={handleLoginSuccess}
                                                 onError={handleLoginError}
-                                                ux_mode="redirect" // <-- Add this line
                                             />
-
                                         </div>
                                     )}
                                 </main>
