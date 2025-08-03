@@ -25,7 +25,7 @@ function Login() {
                 try {
                     // Verify the token with the backend
                     const serverResponse = await axios.get(
-                        `${process.env.REACT_APP_API_URL}/api/auth/me`,
+                        'https://server-f8g6.onrender.com/me',
                         { headers: { 'Authorization': `Bearer ${token}` } }
                     );
                     setUser(serverResponse.data.user);
@@ -43,7 +43,7 @@ function Login() {
         const googleToken = credentialResponse.credential;
         try {
             const serverResponse = await axios.post(
-                'https://server-f8g6.onrender.com/api/auth/google',
+                'https://server-f8g6.onrender.com/google',
                 { token: googleToken }
             );
 
