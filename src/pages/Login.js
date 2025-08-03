@@ -25,7 +25,7 @@ function Login() {
         try {
             // Send the token to the backend for verification
             const serverResponse = await axios.post(
-                `https://server-f8g6.onrender.com/api/auth/google`,
+                'https://server-f8g6.onrender.com/google',
                 { token }
             );
 
