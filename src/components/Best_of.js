@@ -116,13 +116,8 @@ function Best_of() {
                                                                     // your data array of objects
                                                                 }}
                                                             >
-<<<<<<< HEAD
                                                                 <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`}
                                                                     alt="" style={{ height: '14rem' }} />
-=======
-                                                                <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`}
-                                                                    alt="" style={{ height: '7rem' }} />
->>>>>>> parent of 884b006 (added image links)
 
                                                             </Link>
                                                         </div>

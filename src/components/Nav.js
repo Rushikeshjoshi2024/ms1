@@ -98,16 +98,16 @@ function Nav() {
 
                                             </li>
                                             <li>
-                                                <a href='/About'>About</a>
+                                                <a href='/#/About'>About</a>
                                             </li>
                                             <li>
-                                                <a href='/Contact'>Contact</a>
+                                                <a href='/#/Contact'>Contact</a>
                                             </li>
                                             <li>
                                                 <a href="/">Services <i className="fi-rs-angle-down"></i></a>
                                                 <ul className="sub-menu">
-                                                    <li><a href='/Products'>Buy Material</a></li>
-                                                    <li><a href='/Seller_registration'>Register as seller</a></li>
+                                                    <li><a href='/#/Products'>Buy Material</a></li>
+                                                    <li><a href='/#/Seller_registration'>Register as seller</a></li>
 
                                                 </ul>
                                             </li>
@@ -122,33 +122,33 @@ function Nav() {
                                                                 {/* <button type="button"  onClick={handleLogout}>Logout</button> */}
                                                                 Hello, {email}
                                                                 <li><a onClick={handleLogout}>Logout</a></li>
-                                                                <li><a href="/Seller_account"> My account</a></li>
+                                                                <li><a href="/#/Seller_account"> My account</a></li>
                                                             </div>
                                                             :
                                                             // <div className="account" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                                             // </div>
-                                                            <li><a href="/login">Login</a></li>
+                                                            <li><a href="/#/login">Login</a></li>
 
                                                     }
                                                         {
                                                             utype ?
 
                                                                 <div>
-                                                                    <li ><a href="/Material_reg"> Material Register</a></li>
+                                                                    <li ><a href="/#/Material_reg"> Material Register</a></li>
                                                                 </div>
                                                                 :
                                                                 null
 
                                                         }
-                                                        <li><a href="/ForgotPassword">Forgot Password</a></li>
-                                                        <li><a href="/Sellers">Sellers</a></li>
-                                                        <li><a href="/Signup">Signup</a></li>
-                                                        <li><a href="/Seller_login">Sellers login</a></li>
-                                                        <li><a href="/Sellers">Sellers list</a></li>
-                                                        <li><a href="/Products">Products</a></li>
-                                                        <li><a href="/categories">Category</a></li>
+                                                        <li><a href="/#/ForgotPassword">Forgot Password</a></li>
+                                                        <li><a href="/#/Sellers">Sellers</a></li>
+                                                        <li><a href="/#/Signup">Signup</a></li>
+                                                        <li><a href="/#/Seller_login">Sellers login</a></li>
+                                                        <li><a href="/#/Sellers">Sellers list</a></li>
+                                                        <li><a href="/#/Products">Products</a></li>
+                                                        <li><a href="/#/categories">Category</a></li>
                                                     </li>
-                                                    <li><a href='/Seller_registration'>Register as seller</a></li>
+                                                    <li><a href='/#/Seller_registration'>Register as seller</a></li>
 
                                                 </ul>
                                             </li>
@@ -226,7 +226,7 @@ function Nav() {
                             </div>
                             <div className="d-none d-lg-flex">
                                 <div className="srch-acc-logo">
-                                    <a href='/Search'>
+                                    <a href='/#/Search'>
                                         <div className="search ">
 
 
@@ -259,7 +259,7 @@ function Nav() {
                             <div className="header-action-right d-block d-lg-none">
                                 <div className="header-action-2">
                                     <div className="header-action-icon-2">
-                                        <a href='/Search'>
+                                        <a href='/#/Search'>
                                             <img alt="Nest" src="assets/imgs/theme/icons/search.svg" />
                                             {/* <span className="pro-count white">4</span> */}
                                         </a>
