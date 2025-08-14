@@ -20,6 +20,7 @@ function Nav() {
     };
     // console.log(search);
     // console.log(service);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         const checkSession = async () => {
