@@ -25,23 +25,7 @@ function Login() {
             localStorage.setItem('app_token', token);
             navigate('/'); // clear token from URL
         }
-        const checkSession = async () => {
-            const token = localStorage.getItem('app_token');
-            if (token) {
-                try {
-                    // Verify the token with the backend
-                    const serverResponse = await axios.get(
-                        'https://server-f8g6.onrender.com/me',
-                        { headers: { 'Authorization': `Bearer ${token}` } }
-                    );
-                    setUser(serverResponse.data.user);
-                } catch (error) {
-                    console.error("Session verification failed", error);
-                    localStorage.removeItem('app_token'); // Clear invalid token
-                }
-            }
-        };
-        checkSession(); // as you're already doing
+
     }, []);
 
     // useEffect(() => {
