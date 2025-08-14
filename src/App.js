@@ -24,8 +24,6 @@ import User_account from './pages/User_account';
 import Material_details from './pages/Material_details';
 import Category_material from './pages/Category_material';
 import Sellers_home_scr from './components/Sellers_home_scr';
-import OAuthCallback from './components/OAuthCallback';
-
 function App() {
 
 
@@ -55,8 +53,6 @@ function App() {
           <Route exact path="/Seller_details/:seller_id" element={<Seller_details />} />
           <Route exact path="/Seller_account" element={<Seller_account />} />
           <Route exact path="/Material_reg" element={<Material_reg />} />
-          <Route path="/oauth/callback" element={<OAuthCallback />} />
-
         </Routes>
 
         {/* <Home /> */}
