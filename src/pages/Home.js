@@ -16,6 +16,7 @@ import Sellers_home_scr from '../components/Sellers_home_scr';
 import data from '../components/data';
 import Card_section from '../components/Card_section';
 import Best_of from '../components/Best_of';
+
 function Home() {
     // console.log(req.sessionID);
     const navigate = useNavigate();

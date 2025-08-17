@@ -5,8 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';  // Import HashRouter
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import axios from 'axios'; // Import axios
 
 const googleClientId = "952339138614-n4jja1bk5mc9mksahc093ogq33ggp1ac.apps.googleusercontent.com";
+
+axios.defaults.withCredentials = true;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

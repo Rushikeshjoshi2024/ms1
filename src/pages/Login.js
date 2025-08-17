@@ -18,47 +18,45 @@ function Login() {
 
     const [user, setUser] = useState(null);
 
-
-
-
+    useEffect(() => {
+        const checkSession = async () => {
+            const token = localStorage.getItem('app_token');
+            if (token) {
+                try {
+                    // Verify the token with the backend
+                    const serverResponse = await axios.get(
+                        'https://server-f8g6.onrender.com/me',
+                        { headers: { 'Authorization': `Bearer ${token}` } }
+                    );
+                    setUser(serverResponse.data.user);
+                } catch (error) {
+                    console.error("Session verification failed", error);
+                    localStorage.removeItem('app_token'); // Clear invalid token
+                }
+            }
+        };
+        checkSession();
+    }, []);
 
     const handleLoginSuccess = async (credentialResponse) => {
-        const googleToken = credentialResponse.credential;
+        console.log("Google Login Success:", credentialResponse);
+        const token = credentialResponse.credential;
+
         try {
+            // Send the token to the backend for verification
             const serverResponse = await axios.post(
                 'https://server-f8g6.onrender.com/google',
-                { token: googleToken }
+                { token }
             );
 
-            const { user, token: appToken } = serverResponse.data;
+            console.log("Server Response:", serverResponse.data);
+            // Set the user state with the data from the backend
+            setUser(serverResponse.data.user);
 
-            // --- Store our app's token in localStorage ---
-            localStorage.setItem('app_token', appToken);
-
-            setUser(user);
         } catch (error) {
             console.error("Login Failed:", error);
         }
     };
-    // const handleLoginSuccess = async (credentialResponse) => {
-    //     console.log("Google Login Success:", credentialResponse);
-    //     const token = credentialResponse.credential;
-
-    //     try {
-    //         // Send the token to the backend for verification
-    //         const serverResponse = await axios.post(
-    //             'https://server-f8g6.onrender.com/google',
-    //             { token }
-    //         );
-
-    //         console.log("Server Response:", serverResponse.data);
-    //         // Set the user state with the data from the backend
-    //         setUser(serverResponse.data.user);
-
-    //     } catch (error) {
-    //         console.error("Login Failed:", error);
-    //     }
-    // };
 
     const handleLoginError = () => {
         console.log('Login Failed');

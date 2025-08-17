@@ -20,27 +20,7 @@ function Nav() {
     };
     // console.log(search);
     // console.log(service);
-    const [user, setUser] = useState(null);
 
-    useEffect(() => {
-        const checkSession = async () => {
-            const token = localStorage.getItem('app_token');
-            if (token) {
-                try {
-                    // Verify the token with the backend
-                    const serverResponse = await axios.get(
-                        'https://server-f8g6.onrender.com/me',
-                        { headers: { 'Authorization': `Bearer ${token}` } }
-                    );
-                    setUser(serverResponse.data.user);
-                } catch (error) {
-                    console.error("Session verification failed", error);
-                    localStorage.removeItem('app_token'); // Clear invalid token
-                }
-            }
-        };
-        checkSession();
-    }, []);
     useEffect(() => {
         axios.get('https://server-f8g6.onrender.com')
             .then(res => {
