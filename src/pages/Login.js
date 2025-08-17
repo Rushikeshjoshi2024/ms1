@@ -18,55 +18,55 @@ function Login() {
 
     const [user, setUser] = useState(null);
 
-    useEffect(() => {
-        const checkSession = async () => {
-            const token = localStorage.getItem('app_token');
-            if (token) {
-                try {
-                    // Verify the token with the backend
-                    const serverResponse = await axios.get(
-                        'https://server-f8g6.onrender.com/me',
-                        { headers: { 'Authorization': `Bearer ${token}` } }
-                    );
-                    setUser(serverResponse.data.user);
-                } catch (error) {
-                    console.error("Session verification failed", error);
-                    localStorage.removeItem('app_token'); // Clear invalid token
-                }
-            }
-        };
-        checkSession();
-    }, []);
+    // useEffect(() => {
+    //     const checkSession = async () => {
+    //         const token = localStorage.getItem('app_token');
+    //         if (token) {
+    //             try {
+    //                 // Verify the token with the backend
+    //                 const serverResponse = await axios.get(
+    //                     'https://server-f8g6.onrender.com/me',
+    //                     { headers: { 'Authorization': `Bearer ${token}` } }
+    //                 );
+    //                 setUser(serverResponse.data.user);
+    //             } catch (error) {
+    //                 console.error("Session verification failed", error);
+    //                 localStorage.removeItem('app_token'); // Clear invalid token
+    //             }
+    //         }
+    //     };
+    //     checkSession();
+    // }, []);
 
-    const handleLoginSuccess = async (credentialResponse) => {
-        console.log("Google Login Success:", credentialResponse);
-        const token = credentialResponse.credential;
+    // const handleLoginSuccess = async (credentialResponse) => {
+    //     console.log("Google Login Success:", credentialResponse);
+    //     const token = credentialResponse.credential;
 
-        try {
-            // Send the token to the backend for verification
-            const serverResponse = await axios.post(
-                'https://server-f8g6.onrender.com/google',
-                { token }
-            );
+    //     try {
+    //         // Send the token to the backend for verification
+    //         const serverResponse = await axios.post(
+    //             'https://server-f8g6.onrender.com/google',
+    //             { token }
+    //         );
 
-            console.log("Server Response:", serverResponse.data);
-            // Set the user state with the data from the backend
-            setUser(serverResponse.data.user);
+    //         console.log("Server Response:", serverResponse.data);
+    //         // Set the user state with the data from the backend
+    //         setUser(serverResponse.data.user);
 
-        } catch (error) {
-            console.error("Login Failed:", error);
-        }
-    };
+    //     } catch (error) {
+    //         console.error("Login Failed:", error);
+    //     }
+    // };
 
-    const handleLoginError = () => {
-        console.log('Login Failed');
-    };
+    // const handleLoginError = () => {
+    //     console.log('Login Failed');
+    // };
 
-    const handleLogout = () => {
-        // --- Clear user state and remove token from localStorage ---
-        setUser(null);
-        localStorage.removeItem('app_token');
-    };
+    // const handleLogout = () => {
+    //     // --- Clear user state and remove token from localStorage ---
+    //     setUser(null);
+    //     localStorage.removeItem('app_token');
+    // };
 
     const navigate = useNavigate();
     const handleChange = (event) => {
@@ -136,46 +136,16 @@ function Login() {
                                     <input className="form-control" type="email" name="user_email" placeholder="E-mail Address" required onChange={handleChange} />
                                     <input className="form-control" type="password" name="user_password" placeholder="Password" required onChange={handleChange} />
                                     <div className="form-button">
-                                        <button id="submit" type="submit" className="ibtn">Login</button> <a href="/#">Forget password?</a>
+                                        <button id="submit" type="submit" className="ibtn">Login</button> <a href="/#/ForgotPassword">Forget password?</a>
                                     </div>
                                 </form>
                                 <div className="other-links">
                                     {/* <div className="text">Or login with</div> */}
 
-                                    <a href="'"><i className="fab fa-facebook-f"></i>Facebook</a><a href="/"><i className="fab fa-google"></i>Google</a><a href="/"><i className="fab fa-linkedin-in"></i>Linkedin</a>
+                                    <a href="/"><i className="fab fa-facebook-f"></i>Facebook</a><a href="/"><i className="fab fa-google"></i>Google</a><a href="/"><i className="fab fa-linkedin-in"></i>Linkedin</a>
                                 </div>
-                                <main className="main-content">
-                                    {user ? (
-                                        // If user is logged in, show their info and a logout button
-                                        <div className="profile-card">
-                                            <h2>Welcome!</h2>
-                                            <img src={user.picture} alt={user.fullName} className="profile-picture" />
-                                            <h3>{user.fullName}</h3>
-                                            <p>{user.email}</p>
-                                            <button onClick={handleLogout} className="logout-button">
-                                                Logout
-                                            </button>
-                                        </div>
-                                    ) : (
-                                        // If user is not logged in, show the login button
-                                        <div className="login-card">
-                                            <h2>Please Log In</h2>
-                                            <p>Sign in with your Google account to continue.</p>
-                                            {/* <GoogleLogin
-                                                onSuccess={handleLoginSuccess}
-                                                onError={handleLoginError}
-                                                ux_mode="redirect" 
-                                            /> */}
-                                            <GoogleLogin
-                                                onSuccess={handleLoginSuccess}
-                                                onError={handleLoginError}
-                                                ux_mode="redirect"
-                                            />
-                                        </div>
-                                    )}
-                                </main>
                                 <div className="page-links">
-                                    <a href="/#">Register new account</a>
+                                    <a href="/#/Signup">Register new account</a>
                                 </div>
                             </div>
                         </div>
