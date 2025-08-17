@@ -74,7 +74,7 @@ const Material_details = (props) => {
 
 
     }, []);
-    // console.log(name);
+    console.log(values);
 
     return (
 
