@@ -87,24 +87,24 @@ function Nav() {
                                 <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                                     <nav>
 
-                                        <ul>
+                                        <ul>a
                                             <li className="hot-deals">
                                                 <div className="logo navbar-brand">
                                                     <a href='/'>MaterialSeller</a>
                                                 </div>
                                             </li>
                                             <li>
-                                                <span className='active' >Home </span>
+                                                <a href="/" className='active' >Home </a>
 
                                             </li>
                                             <li>
-                                                <span href='/#/About'>About</span>
+                                                <a href='/#/About'>About</a>
                                             </li>
                                             <li>
-                                                <span href='/#/Contact'>Contact</span>
+                                                <a href='/#/Contact'>Contact</a>
                                             </li>
                                             <li>
-                                                <span>Services <i className="fi-rs-angle-down"></i></span>
+                                                <span>Services</span>
                                                 <ul className="sub-menu">
                                                     <li><a href='/#/Products'>Buy Material</a></li>
                                                     <li><a href='/#/Seller_registration'>Register as seller</a></li>
@@ -112,7 +112,7 @@ function Nav() {
                                                 </ul>
                                             </li>
                                             <li>
-                                                <span href="/">Account <i className="fi-rs-angle-down"></i></span>
+                                                <span href="/">Account</span>
                                                 <ul className="sub-menu">
                                                     <li>  {
                                                         auth ?
