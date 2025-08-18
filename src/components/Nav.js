@@ -94,14 +94,14 @@ function Nav() {
                                                 </div>
                                             </li>
                                             <li>
-                                                <a className='active' href='/'>Home </a>
+                                                <span className='active' >Home </span>
 
                                             </li>
                                             <li>
-                                                <a href='/#/About'>About</a>
+                                                <span href='/#/About'>About</span>
                                             </li>
                                             <li>
-                                                <a href='/#/Contact'>Contact</a>
+                                                <span href='/#/Contact'>Contact</span>
                                             </li>
                                             <li>
                                                 <span>Services <i className="fi-rs-angle-down"></i></span>
@@ -117,8 +117,6 @@ function Nav() {
                                                     <li>  {
                                                         auth ?
                                                             <div>
-
-
                                                                 {/* <button type="button"  onClick={handleLogout}>Logout</button> */}
                                                                 Hello, {email}
                                                                 <li><a onClick={handleLogout}>Logout</a></li>
