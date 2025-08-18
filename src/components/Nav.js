@@ -87,7 +87,7 @@ function Nav() {
                                 <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                                     <nav>
 
-                                        <ul>a
+                                        <ul>
                                             <li className="hot-deals">
                                                 <div className="logo navbar-brand">
                                                     <a href='/'>MaterialSeller</a>
@@ -104,7 +104,7 @@ function Nav() {
                                                 <a href='/#/Contact'>Contact</a>
                                             </li>
                                             <li>
-                                                <span>Services</span>
+                                                <a >Services</a>
                                                 <ul className="sub-menu">
                                                     <li><a href='/#/Products'>Buy Material</a></li>
                                                     <li><a href='/#/Seller_registration'>Register as seller</a></li>
@@ -112,7 +112,7 @@ function Nav() {
                                                 </ul>
                                             </li>
                                             <li>
-                                                <span href="/">Account</span>
+                                                <a >Account</a>
                                                 <ul className="sub-menu">
                                                     <li>  {
                                                         auth ?
