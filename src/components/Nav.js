@@ -104,7 +104,7 @@ function Nav() {
                                                 <a href='/#/Contact'>Contact</a>
                                             </li>
                                             <li>
-                                                <a >Services</a>
+                                                <a><i className="fi-rs-angle-down"></i> Services</a>
                                                 <ul className="sub-menu">
                                                     <li><a href='/#/Products'>Buy Material</a></li>
                                                     <li><a href='/#/Seller_registration'>Register as seller</a></li>
@@ -112,7 +112,7 @@ function Nav() {
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a >Account</a>
+                                                <a><i className="fi-rs-angle-down"></i> Account</a>
                                                 <ul className="sub-menu">
                                                     <li>  {
                                                         auth ?
@@ -430,7 +430,7 @@ function Nav() {
                                         <br />
 
                                         <li>
-                                            <a href="/">Services <i className="fi-rs-angle-down"></i></a>
+                                            <a>Services <i className="fi-rs-angle-down"></i></a>
                                             <ul className="sub-menu" >
                                                 <li ><a href='/Products'>Buy Material</a></li>
                                                 <li><a href='/Seller_registration'>Register as seller</a></li>
@@ -442,7 +442,7 @@ function Nav() {
 
 
                                         <li>
-                                            <a href="/">Account <i className="fi-rs-angle-down"></i></a>
+                                            <a>Account <i className="fi-rs-angle-down"></i></a>
                                             <ul className="sub-menu">
                                                 <li>  {
                                                     auth ?
