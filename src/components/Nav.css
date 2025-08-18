@@ -1,60 +1,58 @@
 /* src/components/Nav.css */
 
-/* --- Base Styles & Variables --- */
+/* --- FORMAL & ATTRACTIVE STYLES --- */
+
+/* --- 1. Define the New Color Palette & Fonts --- */
 :root {
-    --primary-color: #088178;
-    --text-color: #1a1a1a;
-    --bg-color: #ffffff;
-    --border-color: #e2e8f0;
-    --font-sans: 'Poppins', sans-serif;
-    /* Example font */
+    --primary-color: #3B82F6;
+    /* A confident, professional blue */
+    --primary-color-dark: #2563EB;
+    --text-dark: #111827;
+    /* Near-black for high contrast */
+    --text-light: #4B5563;
+    /* A softer gray for secondary text */
+    --bg-color: #FFFFFF;
+    --border-color: #E5E7EB;
+    /* Lighter border for a softer look */
+    --font-sans: 'Inter', sans-serif;
+    /* Professional UI font */
 }
 
+/* --- 2. Base Header Styling --- */
 .navbar-header {
     background-color: var(--bg-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* A more subtle, modern shadow */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 2px 8px rgba(0, 0, 0, 0.04);
     position: sticky;
     top: 0;
     z-index: 1000;
     font-family: var(--font-sans);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar-container {
-    max-width: 1280px;
+    max-width: 1400px;
+    /* Slightly wider for a more spacious feel */
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 72px;
+    /* A bit taller for better spacing */
 }
 
 .navbar-logo {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: var(--text-dark);
     text-decoration: none;
+    letter-spacing: -0.5px;
 }
 
-/* --- Base Item Styles --- */
-.nav-item {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    border-radius: 6px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.nav-item:hover {
-    color: var(--primary-color);
-}
-
-/* --- Desktop Navigation --- */
+/* --- 3. Desktop Navigation & Animated Underline --- */
 .desktop-nav {
     display: none;
-    /* Hidden by default */
 }
 
 @media (min-width: 1024px) {
@@ -68,11 +66,39 @@
         padding: 0;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 1rem;
+    }
+
+    .desktop-nav .nav-item {
+        position: relative;
+        padding: 0.5rem 0.25rem;
+        color: var(--text-light);
+        font-weight: 600;
+        transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .desktop-nav .nav-item:hover {
+        color: var(--text-dark);
+    }
+
+    /* --- The animated underline effect --- */
+    .desktop-nav .nav-item::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .desktop-nav .nav-item:hover::after {
+        width: 100%;
     }
 }
 
-/* --- Desktop Dropdowns --- */
+/* --- 4. Refined Desktop Dropdowns --- */
 .dropdown-desktop {
     position: relative;
 }
@@ -83,16 +109,19 @@
     left: 0;
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    /* More rounded */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     list-style: none;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    min-width: 200px;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    /* More space */
+    min-width: 220px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    /* A smoother, "springier" animation */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dropdown-desktop:hover>.submenu-desktop {
@@ -104,27 +133,23 @@
 .submenu-item {
     display: block;
     padding: 0.75rem 1rem;
-    color: #333;
+    color: var(--text-light);
+    font-weight: 500;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 8px;
     white-space: nowrap;
+    transition: all 0.2s ease;
 }
 
 .submenu-item:hover {
-    background-color: #f3f4f6;
+    background-color: #F9FAFB;
+    /* Very light gray */
     color: var(--primary-color);
 }
 
-.inline-icon {
-    display: inline-block;
-    margin-left: 4px;
-    vertical-align: middle;
-}
-
-/* --- Desktop Account & Auth --- */
+/* --- 5. Formal Desktop Account & Auth Buttons --- */
 .desktop-account {
     display: none;
-    /* Hidden by default */
 }
 
 @media (min-width: 1024px) {
@@ -137,39 +162,56 @@
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text-light);
     }
 
     .account-submenu {
         right: 0;
         left: auto;
-        /* Align to the right */
     }
 
     .auth-buttons {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.75rem;
         align-items: center;
+    }
+
+    .auth-buttons .nav-item {
+        font-weight: 600;
+        padding: 0.5rem 1.25rem;
+        border: 1px solid transparent;
+    }
+
+    .auth-buttons .nav-item:hover {
+        color: var(--text-dark);
     }
 
     .signup-btn {
         background-color: var(--primary-color);
         color: white;
+        border-color: var(--primary-color);
+        transition: all 0.2s ease;
     }
 
     .signup-btn:hover {
-        background-color: #066a62;
+        background-color: var(--primary-color-dark);
         color: white;
+        /* "Lift" effect on hover */
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
     }
 }
 
-/* --- Mobile Hamburger & Menu --- */
+/* --- 6. Sleek Mobile Hamburger & Menu --- */
 .hamburger-btn {
     display: block;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    color: var(--text-light);
 }
 
 @media (min-width: 1024px) {
@@ -181,11 +223,14 @@
 .mobile-menu-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(17, 24, 39, 0.6);
+    /* Darker overlay */
+    backdrop-filter: blur(4px);
+    /* Frosted glass effect */
     z-index: 998;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-overlay.open {
@@ -197,14 +242,14 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 80%;
-    max-width: 320px;
+    width: 85%;
+    max-width: 360px;
     height: 100%;
     background-color: var(--bg-color);
-    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
     z-index: 999;
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    /* Smoother slide-in animation */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
 }
@@ -218,7 +263,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
-    height: 70px;
+    height: 72px;
     border-bottom: 1px solid var(--border-color);
     flex-shrink: 0;
 }
@@ -227,6 +272,11 @@
     background: none;
     border: none;
     cursor: pointer;
+    color: var(--text-light);
+}
+
+.mobile-menu-header .navbar-logo {
+    font-size: 1.5rem;
 }
 
 .mobile-menu-nav {
@@ -242,9 +292,10 @@
 
 .mobile-menu-nav .nav-item {
     font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
-/* --- Mobile Accordion Dropdown --- */
 .dropdown-btn {
     width: 100%;
     display: flex;
@@ -257,23 +308,31 @@
 
 .submenu-mobile {
     list-style: none;
-    padding-left: 1.5rem;
-    margin: 0.5rem 0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin-top: 0.5rem;
+    border-left: 2px solid var(--border-color);
 }
 
 .submenu-mobile .submenu-item {
-    padding: 0.5rem;
+    padding: 0.6rem;
     font-weight: 500;
-    color: #555;
+    color: var(--text-light);
 }
 
-/* --- Utilities --- */
+/* --- 7. Utility Styles --- */
 .divider {
     height: 1px;
     background-color: var(--border-color);
-    margin: 1rem 0;
+    margin: 1rem 0.5rem;
 }
 
 .clickable {
     cursor: pointer;
+}
+
+.inline-icon {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: -2px;
+    /* Fine-tune alignment */
 }
