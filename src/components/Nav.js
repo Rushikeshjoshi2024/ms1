@@ -104,7 +104,7 @@ function Nav() {
                                                 <a href='/#/Contact'>Contact</a>
                                             </li>
                                             <li>
-                                                <a href="/">Services <i className="fi-rs-angle-down"></i></a>
+                                                <span>Services <i className="fi-rs-angle-down"></i></span>
                                                 <ul className="sub-menu">
                                                     <li><a href='/#/Products'>Buy Material</a></li>
                                                     <li><a href='/#/Seller_registration'>Register as seller</a></li>
@@ -112,7 +112,7 @@ function Nav() {
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="/">Account <i className="fi-rs-angle-down"></i></a>
+                                                <span href="/">Account <i className="fi-rs-angle-down"></i></span>
                                                 <ul className="sub-menu">
                                                     <li>  {
                                                         auth ?
