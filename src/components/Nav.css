@@ -1,125 +1,129 @@
-/* src/components/Nav.css */
-
-/* --- FORMAL & ATTRACTIVE STYLES --- */
-
-/* --- 1. Define the New Color Palette & Fonts --- */
+/* --- 1. Global Styles & Variables --- */
 :root {
-    --primary-color: #3B82F6;
-    /* A confident, professional blue */
-    --primary-color-dark: #2563EB;
-    --text-dark: #111827;
-    /* Near-black for high contrast */
-    --text-light: #4B5563;
-    /* A softer gray for secondary text */
-    --bg-color: #FFFFFF;
-    --border-color: #E5E7EB;
-    /* Lighter border for a softer look */
-    --font-sans: 'Inter', sans-serif;
-    /* Professional UI font */
+    --primary-dark: #222831;
+    /* A formal, deep charcoal */
+    --secondary-dark: #393E46;
+    /* A slightly lighter grey for accents */
+    --accent-color: #00ADB5;
+    /* A professional teal for highlights */
+    --primary-light: #EEEEEE;
+    /* A soft off-white for text */
+    --nav-height: 70px;
+    --border-radius: 8px;
 }
 
-/* --- 2. Base Header Styling --- */
+/* Basic resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+
+/* --- 2. Main Header & Container --- */
 .navbar-header {
-    background-color: var(--bg-color);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 2px 8px rgba(0, 0, 0, 0.04);
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    height: var(--nav-height);
     position: sticky;
     top: 0;
     z-index: 1000;
-    font-family: var(--font-sans);
-    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
 }
 
 .navbar-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 72px;
 }
 
 .navbar-logo {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-dark);
-    text-decoration: none;
-    letter-spacing: -0.5px;
+    color: var(--accent-color);
 }
 
-/* --- 3. Desktop Navigation & Animated Underline --- */
-.desktop-nav {
-    display: none;
+
+/* --- 3. Navigation Links (General) --- */
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
 }
 
-@media (min-width: 1024px) {
-    .desktop-nav {
-        display: block;
-    }
-
-    .desktop-nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .desktop-nav .nav-item {
-        position: relative;
-        padding: 0.5rem 0.25rem;
-        color: var(--text-light);
-        font-weight: 600;
-        transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .desktop-nav .nav-item:hover {
-        color: var(--text-dark);
-    }
-
-    .desktop-nav .nav-item::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: var(--primary-color);
-        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .desktop-nav .nav-item:hover::after {
-        width: 100%;
-    }
+.nav-item:hover,
+.account-btn:hover {
+    background-color: var(--secondary-dark);
+    color: var(--primary-light);
 }
 
-/* --- 4. Refined Desktop Dropdowns --- */
+.inline-icon {
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+
+/* --- 4. Desktop Navigation --- */
+.desktop-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .dropdown-desktop {
     position: relative;
+    /* Anchor for the submenu */
+}
+
+.dropdown-desktop:hover .inline-icon {
+    transform: rotate(180deg);
 }
 
 .submenu-desktop {
     position: absolute;
-    top: 100%;
+    top: 110%;
+    /* Position slightly below the parent */
     left: 0;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    list-style: none;
-    padding: 0.75rem;
-    margin-top: 1rem;
-    /* === MODIFICATION START === */
-    width: max-content;
-    /* Sets width to fit the longest item */
-    max-width: 280px;
-    /* Prevents it from getting too wide */
-    /* === MODIFICATION END === */
+    background-color: var(--primary-dark);
+    border: 1px solid var(--secondary-dark);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .dropdown-desktop:hover>.submenu-desktop {
@@ -130,106 +134,64 @@
 
 .submenu-item {
     display: block;
-    padding: 0.75rem 1rem;
-    color: var(--text-light);
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 8px;
-    /* === MODIFICATION START === */
-    white-space: normal;
-    /* This ALLOWS text to wrap */
-    line-height: 1.4;
-    /* Improves readability for wrapped text */
-    /* === MODIFICATION END === */
-    transition: all 0.2s ease;
+    padding: 0.75rem 1.5rem;
+    font-weight: 400;
+    transition: background-color 0.2s ease;
 }
 
 .submenu-item:hover {
-    background-color: #F9FAFB;
-    color: var(--primary-color);
+    background-color: var(--accent-color);
+    color: var(--primary-dark);
 }
 
-/* --- 5. Formal Desktop Account & Auth Buttons --- */
+
+/* --- 5. Desktop Account Section --- */
 .desktop-account {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-@media (min-width: 1024px) {
-    .desktop-account {
-        display: flex;
-        align-items: center;
-    }
-
-    .account-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: var(--text-light);
-    }
-
-    .account-submenu {
-        right: 0;
-        left: auto;
-    }
-
-    .auth-buttons {
-        display: flex;
-        gap: 0.75rem;
-        align-items: center;
-    }
-
-    .auth-buttons .nav-item {
-        font-weight: 600;
-        padding: 0.5rem 1.25rem;
-        border: 1px solid transparent;
-    }
-
-    .auth-buttons .nav-item:hover {
-        color: var(--text-dark);
-    }
-
-    .signup-btn {
-        background-color: var(--primary-color);
-        color: white;
-        border-color: var(--primary-color);
-        transition: all 0.2s ease;
-    }
-
-    .signup-btn:hover {
-        background-color: var(--primary-color-dark);
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
-    }
+.account-btn {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-/* --- 6. Sleek Mobile Hamburger & Menu --- */
+.account-submenu {
+    right: 0;
+    /* Align to the right */
+    left: auto;
+}
+
+.auth-buttons .signup-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.auth-buttons .signup-btn:hover {
+    background-color: var(--primary-light);
+}
+
+
+/* --- 6. Mobile Navigation --- */
 .hamburger-btn {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
+    display: none;
+    /* Hidden by default */
     padding: 0.5rem;
-    color: var(--text-light);
-}
-
-@media (min-width: 1024px) {
-    .hamburger-btn {
-        display: none;
-    }
 }
 
 .mobile-menu-overlay {
     position: fixed;
-    inset: 0;
-    background-color: rgba(17, 24, 39, 0.6);
-    backdrop-filter: blur(4px);
-    z-index: 998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.4s ease, visibility 0.4s;
 }
 
 .mobile-menu-overlay.open {
@@ -241,15 +203,16 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 85%;
-    max-width: 360px;
-    height: 100%;
-    background-color: var(--bg-color);
-    z-index: 999;
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100vh;
+    width: min(80vw, 320px);
+    /* 80% of viewport width, but no more than 320px */
+    background: var(--primary-dark);
+    z-index: 1002;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .mobile-menu-panel.open {
@@ -260,76 +223,62 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.5rem;
-    height: 72px;
-    border-bottom: 1px solid var(--border-color);
-    flex-shrink: 0;
-}
-
-.mobile-menu-header button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-light);
-}
-
-.mobile-menu-header .navbar-logo {
-    font-size: 1.5rem;
-}
-
-.mobile-menu-nav {
-    padding: 1rem;
-    overflow-y: auto;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
 }
 
 .mobile-menu-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.mobile-menu-nav .nav-item {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.dropdown-btn {
-    width: 100%;
     display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu-nav li {
+    border-bottom: 1px solid var(--secondary-dark);
+}
+
+.mobile-menu-nav .nav-item,
+.mobile-menu-nav .dropdown-btn {
+    width: 100%;
+    padding: 1rem 0;
     justify-content: space-between;
-    align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
+    border-radius: 0;
 }
 
 .submenu-mobile {
-    list-style: none;
-    padding: 0.5rem 0 0.5rem 1.5rem;
-    margin-top: 0.5rem;
-    border-left: 2px solid var(--border-color);
+    padding-left: 1rem;
+    background-color: var(--secondary-dark);
+}
+
+.submenu-mobile li:last-child .submenu-item {
+    border-bottom: none;
 }
 
 .submenu-mobile .submenu-item {
-    padding: 0.6rem;
-    font-weight: 500;
-    color: var(--text-light);
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* --- 7. Utility Styles --- */
 .divider {
     height: 1px;
-    background-color: var(--border-color);
-    margin: 1rem 0.5rem;
+    background-color: var(--secondary-dark);
+    margin: 1rem 0;
 }
 
+/* General clickable class for actions */
 .clickable {
     cursor: pointer;
 }
 
-.inline-icon {
-    display: inline-block;
-    margin-left: 4px;
-    vertical-align: -2px;
+
+/* --- 7. Responsive Breakpoint --- */
+@media (max-width: 992px) {
+
+    .desktop-nav,
+    .desktop-account {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
 }
