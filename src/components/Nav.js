@@ -78,6 +78,7 @@ function Nav() {
         axios.defaults.withCredentials = true;
         axios.get('https://server-f8g6.onrender.com')
             .then(res => {
+                console.log(res);
                 if (res.data.valid) {
                     setAuth(true);
                     setEmail(res.data.user_email);
