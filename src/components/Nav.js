@@ -104,28 +104,28 @@ function Nav() {
     // --- NAVIGATION DATA (Single Source of Truth) ---
     const navLinks = [
         { title: 'Home', href: '/' },
-        { title: 'About', href: '/About' },
-        { title: 'Contact', href: '/Contact' },
+        { title: 'About', href: '/#/About' },
+        { title: 'Contact', href: '/#/Contact' },
         {
             title: 'Services',
             href: '#', // Parent link is not clickable
             submenu: [
-                { title: 'Buy Material', href: '/Products' },
-                { title: 'Register as Seller', href: '/Seller_registration' },
+                { title: 'Buy Material', href: '/#/Products' },
+                { title: 'Register as Seller', href: '/#/Seller_registration' },
             ],
         },
     ];
 
     const accountLinks = auth
         ? [
-            { title: 'My Account', href: '/Seller_account' },
-            ...(isSeller ? [{ title: 'Material Register', href: '/Material_reg' }] : []),
+            { title: 'My Account', href: '/#/Seller_account' },
+            ...(isSeller ? [{ title: 'Material Register', href: '/#/Material_reg' }] : []),
             { title: 'Logout', action: handleLogout },
         ]
         : [
-            { title: 'Login as User', href: '/Login' },
-            { title: 'Login as Seller', href: '/Seller_login' },
-            { title: 'Signup', href: '/Signup' },
+            { title: 'Login as User', href: '/#/Login' },
+            { title: 'Login as Seller', href: '/#/Seller_login' },
+            { title: 'Signup', href: '/#/Signup' },
         ];
 
 
@@ -165,8 +165,8 @@ function Nav() {
                         </div>
                     ) : (
                         <div className="auth-buttons">
-                            <a href="/Login" className="nav-item">Login</a>
-                            <a href="/Signup" className="nav-item signup-btn">Signup</a>
+                            <a href="/#/Login" className="nav-item">Login</a>
+                            <a href="/#/Signup" className="nav-item signup-btn">Signup</a>
                         </div>
                     )}
                 </div>
