@@ -78,7 +78,6 @@ function Nav() {
         axios.defaults.withCredentials = true;
         axios.get('https://server-f8g6.onrender.com')
             .then(res => {
-                console.log(res);
                 if (res.data.valid) {
                     setAuth(true);
                     setEmail(res.data.user_email);
@@ -150,7 +149,7 @@ function Nav() {
                     {auth ? (
                         <div className="dropdown-desktop">
                             <button className="nav-item account-btn">
-                                Hello, {email.split('@')[0]} <FiChevronDown className="inline-icon" />
+                                Hello, {email} <FiChevronDown className="inline-icon" />
                             </button>
                             <ul className="submenu-desktop account-submenu">
                                 {accountLinks.map((link) => (
