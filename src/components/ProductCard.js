@@ -11,7 +11,15 @@ function ProductCard({ product }) {
         <div className="product-card">
             <div className="product-image-container">
                 <Link to={`/Material_details/${product.id}`}>
-                    <img src={imageUrl} alt={product.material_name} className="product-image" />
+                    <img src={imageUrl} alt={product.material_name} className="w-100"
+                        style={{
+                            height: '14rem',
+                            objectFit: 'contain',
+                            padding: '0.5rem',
+                            backgroundColor: '#f9f9f9', // optional: adds contrast
+                            borderTopLeftRadius: '0.5rem',
+                            borderTopRightRadius: '0.5rem',
+                        }} />
                 </Link>
                 <div className="product-badge hot">15% Off</div>
             </div>
