@@ -353,7 +353,7 @@
 
 /* Banner Styling */
 .promo-banner {
-    background-image: url('assets/imgs/banner/banner-1.jpg');
+    /* background-image: url('assets/imgs/banner/banner-1.jpg'); */
     /* Replace with your image */
     background-size: cover;
     background-position: center;
