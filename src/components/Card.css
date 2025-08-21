@@ -135,6 +135,7 @@
 }
 
 
+
 /* --- Section and Tab Styling --- */
 .best-of-section {
     padding: 40px 0;
@@ -353,7 +354,7 @@
 
 /* Banner Styling */
 .promo-banner {
-    background-image: url('../../public/assets/imgs/banner/pngegg1.png');
+    background-image: url('../../public/assets/imgs/banner/banner-4.png');
     /* Replace with your image */
     background-size: cover;
     background-position: center;
@@ -379,4 +380,38 @@
     align-self: flex-start;
     background-color: #3BB77E;
     color: white;
+}
+
+
+/* --- NEW: Mobile-Friendly Tab Adjustments --- */
+@media (max-width: 768px) {
+    .best-of-tabs {
+        /* Enable horizontal scrolling */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        /* Add some padding to ensure content doesn't touch the edge */
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+
+        /* Hide the scrollbar for a cleaner look */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    .best-of-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .best-of-tabs .nav-link {
+        /* Make buttons smaller */
+        padding: 8px 16px;
+        font-size: 14px;
+
+        /* Prevent the text from shrinking */
+        flex-shrink: 0;
+    }
 }
