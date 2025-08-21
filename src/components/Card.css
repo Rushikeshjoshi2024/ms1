@@ -353,7 +353,7 @@
 
 /* Banner Styling */
 .promo-banner {
-    background-image: url('assets/imgs/banner/pngegg1.png');
+    background-image: url('../../public/assets/imgs/banner/pngegg1.png');
     /* Replace with your image */
     background-size: cover;
     background-position: center;
