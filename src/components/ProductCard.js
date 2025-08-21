@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 function ProductCard({ product }) {
     // Fallback image if product.material_image is not available
     const imageUrl = product.material_image
@@ -32,3 +35,5 @@ function ProductCard({ product }) {
         </div>
     );
 }
+
+export default ProductCard;
