@@ -91,4 +91,4 @@ const Product_card = ({ data, activeSlide: initialActiveSlide = 0 }) => {
     );
 };
 
-// export default ModernCarousel;
+export default Product_card;
