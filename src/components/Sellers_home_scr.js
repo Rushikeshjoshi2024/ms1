@@ -1,11 +1,13 @@
+// SellersHomeScreen.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './component.css';
 
+// ... (StarRating and SellerCard helper components do not need any changes)
 // --- Helper Component: Star Rating ---
 const StarRating = ({ rating }) => {
-    // ... (This component is already mobile-friendly and does not need changes)
     const totalStars = 5;
     const filledStars = Math.round(rating);
     return (
@@ -17,10 +19,8 @@ const StarRating = ({ rating }) => {
         </div>
     );
 };
-
 // --- Helper Component: Seller Card ---
 const SellerCard = ({ seller }) => {
-    // ... (This component's structure is fine, responsiveness is handled by CSS)
     const {
         seller_id, shop_logo, shop_name = "Unnamed Store", reg_date = new Date().toISOString(),
         seller_address = "No address provided", count = 0
@@ -55,13 +55,12 @@ const SellerCard = ({ seller }) => {
     );
 };
 
-// --- Main Exported Component: SellersHomeScreen ---
+
 function SellersHomeScreen() {
-    // ... (All the data fetching logic remains the same)
+    // ... (Data fetching logic remains the same)
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     useEffect(() => {
         axios.defaults.withCredentials = true;
         const fetchSellers = async () => {
@@ -77,6 +76,7 @@ function SellersHomeScreen() {
         fetchSellers();
     }, []);
 
+
     if (loading) {
         return <div className="loading-container"><div className="spinner"></div><p>Loading Sellers...</p></div>;
     }
@@ -87,8 +87,10 @@ function SellersHomeScreen() {
 
     return (
         <div className="container-fluid-lg">
-            <div className="section-title style-2 wow animate__animated animate__fadeIn">
-                <h3 className="mb-4">Our Sellers</h3>
+            {/* CHANGE IS HERE: Added mb-4 to this div */}
+            <div className="section-title style-2 wow animate__animated animate__fadeIn mb-4">
+                {/* CHANGE IS HERE: Removed mb-4 from h3 */}
+                <h3>Our Sellers</h3>
                 <ul className="nav nav-tabs links" id="myTab" role="tablist">
                     <li className="nav-item" role="presentation">
                         <Link to="/Sellers" className="btn p-0 border-0 bg-transparent">
@@ -100,7 +102,6 @@ function SellersHomeScreen() {
 
             <div className="row vendor-grid">
                 {data.map((seller) => (
-                    // RESPONSIVE CHANGE: Added `col-12` for mobile and `col-xl-3` for extra-large screens.
                     <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4" key={seller.seller_id}>
                         <SellerCard seller={seller} />
                     </div>
