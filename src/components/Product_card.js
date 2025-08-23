@@ -1,131 +1,94 @@
-
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faChevronRight,
-    faChevronLeft
-} from "@fortawesome/free-solid-svg-icons";
-import '../components/Card.css';
+import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import './component.css';
 
-export default (props) => {
-    const [activeSlide, setactiveSlide] = useState(props.activeSlide);
-
-    const next = () => {
-        const nextSlide = activeSlide < props.data.length - 1 ? activeSlide + 1 : 0;
-        setactiveSlide(nextSlide);
-    };
-
-    const prev = () => {
-        const prevSlide = activeSlide > 0 ? activeSlide - 1 : props.data.length - 1;
-        setactiveSlide(prevSlide);
-    };
-    const getStyles = (index) => {
-        if (activeSlide === index)
-            return {
-                opacity: 1,
-                transform: "translateX(0px) translateZ(0px) rotateY(0deg)",
-                zIndex: 10
-            };
-        else if (activeSlide - 1 === index)
-            return {
-                opacity: 1,
-                transform: "translateX(-240px) translateZ(-400px) rotateY(35deg)",
-                zIndex: 9
-            };
-        else if (activeSlide + 1 === index)
-            return {
-                opacity: 1,
-                transform: "translateX(240px) translateZ(-400px) rotateY(-35deg)",
-                zIndex: 9
-            };
-        else if (activeSlide - 2 === index)
-            return {
-                opacity: 1,
-                transform: "translateX(-480px) translateZ(-500px) rotateY(35deg)",
-                zIndex: 8
-            };
-        else if (activeSlide + 2 === index)
-            return {
-                opacity: 1,
-                transform: "translateX(480px) translateZ(-500px) rotateY(-35deg)",
-                zIndex: 8
-            };
-        else if (index < activeSlide - 2)
-            return {
-                opacity: 0,
-                transform: "translateX(-480px) translateZ(-500px) rotateY(35deg)",
-                zIndex: 7
-            };
-        else if (index > activeSlide + 2)
-            return {
-                opacity: 0,
-                transform: "translateX(480px) translateZ(-500px) rotateY(-35deg)",
-                zIndex: 7
-            };
-    };
-    useEffect(() => {
-        // Auto change slide every 5000 milliseconds (5 seconds)
-        const intervalId = setInterval(() => {
-            next();
-        }, 5000);
-
-        // Cleanup the interval on component unmount
-        return () => clearInterval(intervalId);
-    }, [activeSlide]);
+// A sub-component for the content within each slide
+const SlideContent = ({ imageUrl, title, desc }) => {
     return (
-        <>
-            {/* carousel */}
-            <div className="slideC">
-                {/* <h2>hello</h2> */}
-                {props.data.map((item, i) => (
-                    <React.Fragment key={item.id}>
-                        <div
-                            className="slide"
-                            style={{
-                                backgroundImage: `url(${item.imageUrl})`, // Use the image URL here
-                                boxShadow: `0 5px 20px ${item.bgColor}30`,
-                                ...getStyles(i)
-                            }}
-                        >
-                            <Product_card {...item} />
-                        </div>
-                        <div
-                            className="reflection"
-                            style={{
-                                background: `linear-gradient(to bottom, ${item.bgColor}40, transparent)`,
-                                ...getStyles(i)
-                            }}
-                        />
-                    </React.Fragment>
-                ))}
+        <div className="slide-content">
+            <div className="slide-image-container">
+                <img src={imageUrl} alt={title} className="slide-image" />
             </div>
-            {/* carousel */}
-
-            {/* <div className="btns">
-                <FontAwesomeIcon
-                    className="btn"
-                    onClick={prev}
-                    icon={faChevronLeft}
-                    color="#fff"
-                    size="2x"
-                />
-                <FontAwesomeIcon
-                    className="btn"
-                    onClick={next}
-                    icon={faChevronRight}
-                    color="#fff"
-                    size="2x"
-                />
-            </div> */}
-        </>
-    );
-};
-
-const Product_card = (props) => {
-    return (
-        <div className="sliderContent">
-            <h2 style={{ color: 'black' }}>{props.title}</h2>
-            <p style={{ color: 'black', fontSize: '1.3rem' }}>{props.desc}</p>
+            <div className="slide-text">
+                <h2>{title}</h2>
+                <p>{desc}</p>
+            </div>
         </div>
     );
 };
+
+const Product_card = ({ data, activeSlide: initialActiveSlide = 0 }) => {
+    const [activeSlide, setActiveSlide] = useState(initialActiveSlide);
+    const [isPaused, setPaused] = useState(false);
+    const autoplayInterval = 5000; // 5 seconds
+    const intervalRef = useRef(null);
+
+    const next = () => {
+        setActiveSlide((prev) => (prev < data.length - 1 ? prev + 1 : 0));
+    };
+
+    const prev = () => {
+        setActiveSlide((prev) => (prev > 0 ? prev - 1 : data.length - 1));
+    };
+
+    const goToSlide = (index) => {
+        setActiveSlide(index);
+    };
+
+    // Set up the interval for auto-play
+    useEffect(() => {
+        if (!isPaused) {
+            intervalRef.current = setInterval(next, autoplayInterval);
+        }
+        // Cleanup function to clear interval
+        return () => {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+            }
+        };
+    }, [activeSlide, isPaused, data.length]);
+
+    return (
+        <div
+            className="carousel-wrapper"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+        >
+            <div className="carousel-viewport">
+                <div
+                    className="carousel-track"
+                    style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                >
+                    {data.map((item) => (
+                        <div className="carousel-slide" key={item.id}>
+                            <SlideContent {...item} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button className="carousel-btn prev-btn" onClick={prev} aria-label="Previous Slide">
+                <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <button className="carousel-btn next-btn" onClick={next} aria-label="Next Slide">
+                <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+
+            {/* Navigation Dots */}
+            <div className="carousel-dots">
+                {data.map((_, index) => (
+                    <button
+                        key={index}
+                        className={`dot ${activeSlide === index ? "active" : ""}`}
+                        onClick={() => goToSlide(index)}
+                        aria-label={`Go to slide ${index + 1}`}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
+
+// export default ModernCarousel;
