@@ -1320,3 +1320,132 @@
         bottom: 15px;
     }
 }
+
+
+
+.services-section {
+    padding: 5rem 1rem;
+    background-color: #fff;
+    font-family: sans-serif;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* Adds a subtle underline to the heading */
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.service-icon-wrapper {
+    flex-shrink: 0;
+    background-color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.service-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.service-content p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+
+    /* For Tablets */
+    .services-grid {
+        grid-template-columns: 1fr;
+        /* Stack into a single column */
+    }
+
+    .services-section {
+        padding: 4rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* For Mobile Phones */
+    .section-heading {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+        flex-direction: column;
+        /* Stack icon on top of content */
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-icon {
+        font-size: 2rem;
+    }
+}
