@@ -1,278 +1,137 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
-import '../pages/Pages.css';
 import { Link } from 'react-router-dom';
+import './component.css'; // <-- Import the single, consolidated CSS file
 
-
-
-
-function Sellers_home_scr() {
-    const [data, setData] = useState([]);
-    const [values, setValues] = useState({
-        val: 8
-
-    });
-    axios.defaults.withCredentials = true;
-    useEffect(() => {
-        const handleSubmit = async () => {
-            try {
-                const response = await axios.post('https://server-f8g6.onrender.com/all_sellers_home', values);
-                if (response.data.success) {
-                    // alert(response.seller_email);
-                    // console.log(response.data);
-                    setData(response.data.data); // Assuming response.data.data contains the array of seller details
-
-                    // console.log(response.data.data[0].shop_name);
-                } else {
-                    alert("Invalid data");
-                }
-            } catch (err) {
-                alert("An error occurred: " + err);
-            }
-        };
-
-        handleSubmit();
-    }, []);
-    // const handleSearchChange = (event) => {
-    //     setSearchQuery(event.target.value);
-    // };
-
-    // Step 3: Filter the data based on the search query
-    // const filteredData = data.filter(item =>
-    //     item.shop_name && item.shop_name.toLowerCase().includes(searchQuery.toLowerCase()) || item.seller_address && item.seller_address.toLowerCase().includes(searchQuery.toLowerCase())
-    // );
-
+// --- Helper Component: Star Rating ---
+const StarRating = ({ rating }) => {
+    const totalStars = 5;
+    const filledStars = Math.round(rating);
 
     return (
-        <div>
-            <div className="container-fluid-lg">
-                <div className="section-title style-2 wow animate__animated animate__fadeIn">
-                    <h3 className="mb-4">Our Sellers</h3>
-                    <ul className="nav nav-tabs links" id="myTab" role="tablist">
-                        <li className="nav-item" role="presentation">
-                            <Link to="/Sellers" className="btn p-0 border-0 bg-transparent">
-                                <i className="fas fa-angle-right" style={{ color: 'black', fontSize: '1.5rem' }}></i>
-                            </Link>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div className="row vendor-grid">
-                    {data.map((item) => (
-                        <div className="col-lg-3 col-md-6 col-sm-6 mb-4" key={item.id}>
-                            <div
-                                className="product-card border rounded h-100 d-flex flex-column shadow-sm"
-                                style={{ transition: 'transform 0.3s ease' }}
-                            >
-                                {/* Seller Logo */}
-                                <Link to={`/Seller_details/${item.seller_id}`}>
-                                    <img
-                                        src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`}
-                                        alt={item.shop_name}
-                                        className="w-100"
-                                        style={{
-                                            height: '14rem',
-                                            objectFit: 'contain',
-                                            padding: '0.5rem',
-                                            backgroundColor: '#f9f9f9',
-                                            borderTopLeftRadius: '0.5rem',
-                                            borderTopRightRadius: '0.5rem',
-                                        }}
-                                    />
-                                </Link>
-
-                                {/* Card Body with Padding */}
-                                <div className="card-body p-3 d-flex flex-column justify-content-between flex-grow-1">
-                                    <div>
-                                        <h5 className="card-title mb-1">
-                                            <Link to={`/Seller_details/${item.seller_id}`} className="text-decoration-none text-dark">
-                                                {item.shop_name}
-                                            </Link>
-                                        </h5>
-                                        <small className="text-muted d-block mb-2">
-                                            Since <strong>{item.reg_date.slice(0, 4)}</strong>
-                                        </small>
-
-                                        <div className="d-flex align-items-center mb-2">
-                                            <div
-                                                className="bg-warning rounded-pill me-2"
-                                                style={{ width: '60px', height: '8px' }}
-                                            ></div>
-                                            <span className="text-muted small">(4.0)</span>
-                                        </div>
-
-                                        <p className="text-muted small mb-2 d-flex align-items-center">
-                                            <img
-                                                src="assets/imgs/theme/icons/icon-location.svg"
-                                                alt="location"
-                                                style={{ width: '1rem', marginRight: '0.5rem' }}
-                                            />
-                                            {item.seller_address}
-                                        </p>
-
-                                        <p className="text-muted small mb-2">{item.count} products</p>
-                                    </div>
-
-                                    <div className="mt-auto">
-                                        <Link
-                                            to={`/Sellers_material/${item.seller_id}`}
-                                            className="btn btn-outline-primary btn-sm w-100 mt-2"
-                                        >
-                                            Visit Store <i className="fi-rs-arrow-small-right"></i>
-                                        </Link>
-
-                                        <div className="d-flex justify-content-between align-items-center mt-3">
-                                            {[2, 3, 5].map((num) => (
-                                                <img
-                                                    key={num}
-                                                    src={`assets/imgs/category/cat-${num}.png`}
-                                                    className="img-fluid rounded"
-                                                    alt={`Category ${num}`}
-                                                    style={{ width: '2.5rem', height: '2.5rem', objectFit: 'cover' }}
-                                                />
-                                            ))}
-                                            <span className="text-muted small align-self-center">+15</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-            </div>
-            {/* <?/div> */}
-
-
-            {/* <div className="section-title wow animate__animated animate__fadeIn">
-                <section className="seller-grid-section  pb-5">
-                    <div className="container-fluid-lg">
-                        <div className="section-title style-2 wow animate__animated animate__fadeIn">
-                            <h3>Our Sellers</h3>
-                            <ul className="nav nav-tabs links" id="myTab" role="tablist">
-                                <li className="nav-item" role="presentation">
-                                    <Link className='btn btn-xs'
-                                        to={{
-                                            pathname: `/Sellers`,
-                                            // your data array of objects
-                                        }}
-                                    >
-                                          <button className="nav-link" type="button">
-                                        All
-                                    </button>
-                                    
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                      
-                        <div className="row g-4">
-                            {data.map(item => (
-                                <div className="col-xxl-3 col-md-4" key={item.id}>
-                                    <div className="seller-grid-box seller-grid-box-1">
-                                        <div className="grid-image">
-                                            <div className="image">
-                                                <Link
-                                                    to={{
-                                                        pathname: `/Seller_details/${item.seller_id}`,
-                                                        // your data array of objects
-                                                    }}
-                                                >
-                                                    <img src={`https://server-f8g6.onrender.com/uploads/shop_logo/${item.shop_logo}`} className="img-fluid" alt="" /></Link>
-                                            </div>
-
-                                            <div className="contain-name">
-                                                <div>
-                                                    <div className="since-number">
-                                                        <h6>Since {item.reg_date.slice(0, 4)}</h6>
-                                                        <div className="product-rating">
-                                                            <ul className="rating">
-                                                                <li>
-                                                                    <i data-feather="star" className="fill"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i data-feather="star" className="fill"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i data-feather="star" className="fill"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i data-feather="star" className="fill"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i data-feather="star"></i>
-                                                                </li>
-                                                            </ul>
-
-                                                        </div>
-                                                    </div>
-                                                    <h3>
-                                                        <Link
-                                                            to={{
-                                                                pathname: `/Seller_details/${item.seller_id}`,
-                                                                // your data array of objects
-                                                            }}
-                                                        >{item.shop_name}
-                                                        </Link></h3>
-                                                </div>
-                                                <label className="product-label">{item.count}  Products</label>
-                                            </div>
-                                        </div>
-
-                                        <div className="grid-contain">
-                                            <div className="seller-contact-details">
-                                                <div className="seller-contact">
-                                                   
-
-                                                    <div className="contact-detail">
-                                                        <h5>City: <span> {item.district}</span></h5>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div className="seller-category">
-
-                                                <Link
-                                                    to={{
-                                                        pathname: `/Sellers_material/${item.seller_id}`,
-                                                        // your data array of objects
-                                                    }}
-                                                >  <button onclick="location.href = 'shop-left-sidebar.html';"
-                                                    className="btn btn-sm theme-bg-color text-white fw-bold">Visit Store  <i
-                                                        className="fi-rs-arrow-small-right"></i></button></Link>
-                                                <ul className="product-image">
-                                                    <li>
-                                                        <img src="assets/imgs/category/cat-2.png" className="img-fluid" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="assets/imgs/category/cat-3.png" className="img-fluid" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="assets/imgs/category/cat-4.png" className="img-fluid" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="assets/imgs/category/cat-5.png" className="img-fluid" alt="" />
-                                                    </li>
-                                                    <li>+15</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            ))}
-
-                        </div>
-
-
-                    </div>
-                </section >
-            </div > */}
-        </div >
+        <div className="star-rating">
+            {[...Array(totalStars)].map((_, index) => (
+                <span key={index} className={index < filledStars ? 'star-filled' : 'star-empty'}>
+                    ★
+                </span>
+            ))}
+            <span className="rating-text">({rating.toFixed(1)})</span>
+        </div>
     );
 };
 
-export default Sellers_home_scr;
+
+// --- Helper Component: Seller Card ---
+// This component is now defined in the same file and is used only by SellersHomeScreen.
+const SellerCard = ({ seller }) => {
+    const {
+        seller_id,
+        shop_logo,
+        shop_name = "Unnamed Store",
+        reg_date = new Date().toISOString(),
+        seller_address = "No address provided",
+        count = 0
+    } = seller;
+
+    const registrationYear = reg_date.slice(0, 4);
+    const logoUrl = `https://server-f8g6.onrender.com/uploads/shop_logo/${shop_logo}`;
+
+    return (
+        <div className="seller-card">
+            <Link to={`/Seller_details/${seller_id}`} className="seller-logo-link">
+                <div className="seller-logo-container">
+                    <img
+                        src={logoUrl}
+                        alt={`${shop_name} logo`}
+                        className="seller-logo"
+                        onError={(e) => { e.target.onerror = null; e.target.src = 'path/to/default/image.png' }} // Fallback image
+                    />
+                </div>
+            </Link>
+
+            <div className="seller-card-body">
+                <div className="seller-info">
+                    <h5 className="seller-title">
+                        <Link to={`/Seller_details/${seller_id}`}>{shop_name}</Link>
+                    </h5>
+                    <p className="seller-meta-info text-muted">
+                        Active Since <strong>{registrationYear}</strong>
+                    </p>
+                    <StarRating rating={4.0} /> {/* Static rating for now */}
+                    <p className="seller-address">
+                        <i className="fas fa-map-marker-alt"></i>
+                        {seller_address}
+                    </p>
+                </div>
+                <div className="seller-card-footer">
+                    <p className="product-count">{count} products</p>
+                    <Link to={`/Sellers_material/${seller_id}`} className="visit-store-btn">
+                        Visit Store <i className="fas fa-arrow-right"></i>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+
+// --- Main Exported Component: SellersHomeScreen ---
+function SellersHomeScreen() {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        axios.defaults.withCredentials = true;
+        const fetchSellers = async () => {
+            try {
+                const response = await axios.post('https://server-f8g6.onrender.com/all_sellers_home', { val: 8 });
+                if (response.data.success) {
+                    setData(response.data.data);
+                } else {
+                    setError("Failed to fetch seller data.");
+                }
+            } catch (err) {
+                console.error("An error occurred:", err);
+                setError("An error occurred while connecting to the server.");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchSellers();
+    }, []);
+
+    if (loading) {
+        return <div className="loading-container"><div className="spinner"></div><p>Loading Sellers...</p></div>;
+    }
+
+    if (error) {
+        return <div className="error-container"><p>{error}</p></div>;
+    }
+
+    return (
+        <div className="container-fluid-lg">
+            <div className="section-title style-2 wow animate__animated animate__fadeIn">
+                <h3 className="mb-4">Our Sellers</h3>
+                <ul className="nav nav-tabs links" id="myTab" role="tablist">
+                    <li className="nav-item" role="presentation">
+                        <Link to="/Sellers" className="btn p-0 border-0 bg-transparent">
+                            <i className="fas fa-angle-right" style={{ color: 'black', fontSize: '1.5rem' }}></i>
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+
+            <div className="row vendor-grid">
+                {data.map((seller) => (
+                    <div className="col-lg-3 col-md-6 col-sm-6 mb-4" key={seller.seller_id}>
+                        <SellerCard seller={seller} />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default SellersHomeScreen;
