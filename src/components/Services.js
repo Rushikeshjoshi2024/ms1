@@ -1,23 +1,11 @@
 import React from 'react';
 import { VscVerifiedFilled } from "react-icons/vsc";
-import { FcHome, FcMoneyTransfer } from "react-icons/fc";
+import { FcHome } from "react-icons/fc";
 import { MdAutoGraph } from "react-icons/md";
+import { FcMoneyTransfer } from "react-icons/fc";
 import './component.css';
 
-// A reusable card component for each service
-const ServiceCard = ({ icon, title, description }) => (
-  <div className="service-card">
-    <div className="service-icon-wrapper">
-      {icon}
-    </div>
-    <div className="service-content">
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
-  </div>
-);
-
-const ServicesSection = () => {
+const Services = () => {
   const servicesData = [
     {
       id: 1,
@@ -28,8 +16,8 @@ const ServicesSection = () => {
     {
       id: 2,
       icon: <MdAutoGraph className="service-icon" />,
-      title: "Wide Variety",
-      description: "Explore a vast selection of products and brands to meet your specific needs."
+      title: "Wide Variety of Products",
+      description: "Explore a vast selection of products from trusted brands to meet your specific needs."
     },
     {
       id: 3,
@@ -41,16 +29,29 @@ const ServicesSection = () => {
 
   return (
     <section className="services-section">
+      {/* This div creates the animated aurora background effect */}
+      <div className="aurora-background"></div>
+
       <div className="services-container">
-        <h2 className="section-heading">Our Services</h2>
+        <div className="section-header">
+          <h2 className="section-heading">Our Services</h2>
+          <p className="section-subheading">
+            We provide a complete ecosystem for all your construction material needs.
+          </p>
+        </div>
+
         <div className="services-grid">
           {servicesData.map(service => (
-            <ServiceCard
-              key={service.id}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
+            <div className="service-card" key={service.id}>
+              <div className="card-glow"></div>
+              <div className="service-icon-wrapper">
+                {service.icon}
+              </div>
+              <div className="service-content">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -58,4 +59,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+export default Services

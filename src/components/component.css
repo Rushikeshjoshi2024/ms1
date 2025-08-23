@@ -1142,6 +1142,8 @@
     }
 }
 
+
+/* carousal section */
 :root {
     --carousel-primary: #007bff;
     --carousel-light: #f8f9fa;
@@ -1321,131 +1323,179 @@
     }
 }
 
-
+/* :root { Our services section
+    --primary-glow: #0077ff;
+    --secondary-glow: #8e44ad;
+    --bg-dark: #0a0a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a9a9c2;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+} */
 
 .services-section {
-    padding: 5rem 1rem;
-    background-color: #fff;
-    font-family: sans-serif;
+    position: relative;
+    padding: 6rem 1rem;
+    background-color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    /* A clean, modern font */
+    overflow: hidden;
+    /* Important for containing the background effect */
 }
 
+/* --- Animated Aurora Background --- */
+.aurora-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, var(--primary-glow) 0%, var(--secondary-glow) 50%, transparent 70%);
+    filter: blur(100px);
+    transform: translate(-50%, -50%);
+    animation: moveAurora 20s infinite linear;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+@keyframes moveAurora {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* --- Content Containers --- */
 .services-container {
+    position: relative;
+    /* Sits on top of the background */
+    z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.section-heading {
+.section-header {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 3rem;
-    position: relative;
+    margin-bottom: 4rem;
 }
 
-/* Adds a subtle underline to the heading */
-.section-heading::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
+.section-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
 }
 
+.section-subheading {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0.5rem auto 0;
+}
+
+/* --- Service Grid --- */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
+/* --- Glassmorphism Card --- */
 .service-card {
-    background-color: var(--secondary-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* For Safari */
+    transition: transform 0.3s ease, background 0.3s ease;
+    overflow: hidden;
+    /* To contain the glow effect */
+}
+
+/* --- Interactive Hover Glow --- */
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, var(--primary-glow), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: var(--card-shadow-hover);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.service-card:hover .card-glow {
+    opacity: 0.2;
+}
+
+/* --- Card Content --- */
+.service-icon-wrapper,
+.service-content {
+    position: relative;
+    /* Ensures content is above the glow */
+    z-index: 1;
 }
 
 .service-icon-wrapper {
-    flex-shrink: 0;
-    background-color: #fff;
+    margin: 0 auto 1.5rem;
     width: 70px;
     height: 70px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--border-color);
 }
 
 .service-icon {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--text-primary);
 }
 
 .service-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    color: var(--text-dark);
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem;
 }
 
 .service-content p {
     font-size: 1rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
     line-height: 1.6;
     margin: 0;
 }
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-
-    /* For Tablets */
     .services-grid {
         grid-template-columns: 1fr;
-        /* Stack into a single column */
-    }
-
-    .services-section {
-        padding: 4rem 1rem;
     }
 }
 
 @media (max-width: 576px) {
+    .services-section {
+        padding: 4rem 1rem;
+    }
 
-    /* For Mobile Phones */
     .section-heading {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
-    .service-card {
-        padding: 1.5rem;
-        flex-direction: column;
-        /* Stack icon on top of content */
-        align-items: center;
-        text-align: center;
-    }
-
-    .service-icon-wrapper {
-        width: 60px;
-        height: 60px;
-    }
-
-    .service-icon {
-        font-size: 2rem;
+    .section-subheading {
+        font-size: 1rem;
     }
 }
