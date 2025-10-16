@@ -135,10 +135,11 @@ function Nav() {
     return (
         <header className="navbar-header">
             <div className="navbar-container">
-                <a href='/' className="navbar-logo">MaterialSeller</a>
+                <a href='/' className="navbar-logo"><img src='nav-logo.png' style={{ width: '40px' }} /></a>
+
 
                 {/* --- Desktop Navigation --- */}
-                <nav className="desktop-nav">
+                <nav className="desktop-nav" style={{ marginTop: '15px' }}>
                     <ul>
                         {navLinks.map((item) => (
                             <NavLink key={item.title} item={item} isMobile={false} />
