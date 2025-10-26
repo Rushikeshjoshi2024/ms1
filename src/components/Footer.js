@@ -91,7 +91,7 @@ function Footer() {
 
                                 </ul>
                             </div>
-                            <div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
+                            <div class="footer-link-widget col wow animate__animated animate__fadeInUp d-none d-md-block" data-wow-delay=".4s">
                                 <h4 class="widget-title">Popular</h4>
                                 <ul class="footer-list mb-sm-5 mb-md-0">
                                     <li><a href="/">Cement</a></li>

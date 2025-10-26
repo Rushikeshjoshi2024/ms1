@@ -117,27 +117,17 @@ function Sellers() {
                                 </div>
                             </div>
                         </div>
-                        {/* {filteredData.map(item => (
-                            <li key={item.id}>{item.shop_name}</li>
-                        ))} */}
-
-                        <div className="row vendor-grid" >
+                        {/* <div className="row vendor-grid" >
                             {filteredData.map(item => (
-
                                 <div className="col-lg-3 col-md-6 col-12 col-sm-6" >
-
-
-
                                     <div className="vendor-wrap mb-40" key={item.id} >
                                         <div className="vendor-img-action-wrap">
                                             <div className="vendor-img">
                                                 <Link
                                                     to={{
                                                         pathname: `/Seller_details/${item.seller_id}`,
-                                                        // your data array of objects
                                                     }}
                                                 >
-
                                                     <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/shop_cover_img/${item.shop_image}`} alt="" style={{ borderRadius: '1rem', minWidth: '16rem', height: '9rem' }} />
                                                 </Link>
                                             </div>
@@ -148,14 +138,10 @@ function Sellers() {
                                         <div className="vendor-content-wrap">
                                             <div className="d-flex justify-content-between align-items-end mb-30">
                                                 <div>
-                                                    {/* <div className="product-category">
-                                                        <span className="text-muted">Since {item.reg_date.slice(0, 4)}</span>
-                                                    </div> */}
                                                     <h4 className="mb-5">
                                                         <Link
                                                             to={{
                                                                 pathname: `/Seller_details/${item.seller_id}`,
-                                                                // your data array of objects
                                                             }}
                                                         >
                                                             {item.shop_name}</Link></h4>
@@ -177,11 +163,9 @@ function Sellers() {
                                                 </ul>
 
                                             </div>
-                                            {/* <a className='btn btn-xs' href='vendor-details-1.html'> */}
                                             <Link className='btn btn-xs'
                                                 to={{
                                                     pathname: `/Sellers_material/${item.seller_id}`,
-                                                    // your data array of objects
                                                 }}
                                             >
                                                 Visit Store <i className="fi-rs-arrow-small-right"></i></Link>
@@ -191,83 +175,120 @@ function Sellers() {
                                 </div >
                             ))}
 
-                        </div>
-
-
-
-
-                        {/* <div className="row vendor-grid">
-                            {data.map((seller, index) => (
-                                <div className="col-lg-3 col-md-6 col-12 col-sm-6">
-
-
-                                    <div className="vendor-wrap mb-40" key={index} >
-                                        <div className="vendor-img-action-wrap">
-                                            <div className="vendor-img">
-                                                <a href='vendor-details-1.html'>
-                                                    <img className="default-img" src="assets/imgs/vendor/vendor-1.png" alt="" />
-                                                </a>
-                                            </div>
-                                            <div className="product-badges product-badges-position product-badges-mrg">
-                                                <span className="hot">New</span>
-                                            </div>
+                        </div> */}
+                        <div className="row vendor-grid">
+                            {filteredData.map((item) => (
+                                <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-4" key={item.id}>
+                                    <div
+                                        className="vendor-card shadow-sm border-0 rounded-4 h-100 d-flex flex-column justify-content-between"
+                                        style={{
+                                            background: "#fff",
+                                            transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.transform = "translateY(-5px)";
+                                            e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.1)";
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.transform = "translateY(0)";
+                                            e.currentTarget.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
+                                        }}
+                                    >
+                                        {/* Image Section */}
+                                        <div className="vendor-img-wrap position-relative overflow-hidden rounded-top-4" style={{ height: "180px" }}>
+                                            <Link
+                                                to={{
+                                                    pathname: `/Seller_details/${item.seller_id}`,
+                                                }}
+                                            >
+                                                <img
+                                                    className="w-100 h-100"
+                                                    src={`https://server-f8g6.onrender.com/uploads/shop_cover_img/${item.shop_image}`}
+                                                    alt={item.shop_name}
+                                                    style={{
+                                                        objectFit: "cover",
+                                                        borderRadius: "1rem 1rem 0 0",
+                                                        transition: "transform 0.4s ease",
+                                                    }}
+                                                    onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+                                                    onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                                                />
+                                            </Link>
+                                            <span
+                                                className="badge bg-success position-absolute top-2 start-2"
+                                                style={{
+                                                    fontSize: "0.8rem",
+                                                    padding: "0.4rem 0.6rem",
+                                                    borderRadius: "0.5rem",
+                                                }}
+                                            >
+                                                Since {item.reg_date.slice(0, 4)}
+                                            </span>
                                         </div>
-                                        <div className="vendor-content-wrap">
-                                            <div className="d-flex justify-content-between align-items-end mb-30">
-                                                <div>
-                                                    <div className="product-category">
-                                                        <span className="text-muted">Since 2024</span>
-                                                    </div>
-                                                    <h4 className="mb-5"><a href='vendor-details-1.html'>{seller.shop_name}</a></h4>
-                                                    <div className="product-rate-cover">
-                                                        <div className="product-rate d-inline-block">
-                                                            <div className="product-rating" style={{ width: '90%' }}></div>
-                                                        </div>
-                                                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                                                    </div>
-                                                </div>
-                                                <div className="mb-10">
-                                                    <span className="font-small total-product">380 products</span>
-                                                </div>
-                                            </div>
-                                            <div className="vendor-info mb-30">
-                                                <ul className="contact-infor text-muted">
-                                                    <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>{seller.seller_address}</span></li>
-                                                    <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) {seller.seller_mobile_no}</span></li>
-                                                </ul>
 
+                                        {/* Content Section */}
+                                        <div className="p-3 d-flex flex-column justify-content-between flex-grow-1">
+                                            <div className="d-flex justify-content-between align-items-start mb-2">
+                                                <div>
+                                                    <h5 className="mb-1 fw-bold">
+                                                        <Link
+                                                            to={{
+                                                                pathname: `/Seller_details/${item.seller_id}`,
+                                                            }}
+                                                            style={{ color: "#333", textDecoration: "none" }}
+                                                        >
+                                                            {item.shop_name}
+                                                        </Link>
+                                                    </h5>
+                                                    <div className="product-rate-cover d-flex align-items-center">
+                                                        <div className="product-rate d-inline-block me-1">
+                                                            <div className="product-rating" style={{ width: "90%" }}></div>
+                                                        </div>
+                                                        <span className="text-muted small">(4.0)</span>
+                                                    </div>
+                                                </div>
+                                                <span className="font-small text-muted">{item.count} products</span>
                                             </div>
-                                            <a className='btn btn-xs' href='vendor-details-1.html'>Visit Store <i className="fi-rs-arrow-small-right"></i></a>
+
+                                            <ul className="list-unstyled text-muted small mb-3">
+                                                <li className="mb-1 d-flex align-items-start">
+                                                    <img
+                                                        src="assets/imgs/theme/icons/icon-location.svg"
+                                                        alt=""
+                                                        width="16"
+                                                        className="me-2 mt-1"
+                                                    />
+                                                    <span>{item.seller_address}</span>
+                                                </li>
+                                                <li className="d-flex align-items-start">
+                                                    <img
+                                                        src="assets/imgs/theme/icons/icon-contact.svg"
+                                                        alt=""
+                                                        width="16"
+                                                        className="me-2 mt-1"
+                                                    />
+                                                    <span>(+91) {item.seller_mobile_no}</span>
+                                                </li>
+                                            </ul>
+
+                                            <div className="mt-auto">
+                                                <Link
+                                                    className="btn btn-sm btn-outline-success w-100 rounded-pill fw-semibold"
+                                                    to={{
+                                                        pathname: `/Sellers_material/${item.seller_id}`,
+                                                    }}
+                                                >
+                                                    Visit Store <i className="fi-rs-arrow-small-right ms-1"></i>
+                                                </Link>
+                                            </div>
                                         </div>
                                     </div>
-
-                                </div >
+                                </div>
                             ))}
+                        </div>
 
-
-
-                        </div> */}
-
-                        {/* <div className="pagination-area mt-20 mb-20">
-                            <nav aria-label="Page navigation example">
-                                <ul className="pagination justify-content-start">
-                                    <li className="page-item">
-                                        <a className="page-link" href="/"><i className="fi-rs-arrow-small-left"></i></a>
-                                    </li>
-                                    <li className="page-item"><a className="page-link" href="/">1</a></li>
-                                    <li className="page-item active"><a className="page-link" href="/">2</a></li>
-                                    <li className="page-item"><a className="page-link" href="/">3</a></li>
-                                    <li className="page-item"><a className="page-link dot" href="/">...</a></li>
-                                    <li className="page-item"><a className="page-link" href="/">6</a></li>
-                                    <li className="page-item">
-                                        <a className="page-link" href="/"><i className="fi-rs-arrow-small-right"></i></a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div> */}
                     </div>
                 </div>
-                {/* </div> */}
             </main >
             <Footer />
         </div >

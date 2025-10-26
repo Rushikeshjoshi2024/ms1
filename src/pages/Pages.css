@@ -38,3 +38,39 @@
 
 
 }
+
+.text-brand {
+    color: #3bb77e !important;
+}
+
+.bg-brand {
+    background-color: #3bb77e !important;
+    color: #fff;
+}
+
+.btn-outline-brand {
+    border: 1px solid #3bb77e;
+    color: #3bb77e;
+    transition: 0.3s;
+}
+
+.btn-outline-brand:hover {
+    background-color: #3bb77e;
+    color: #fff;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.social-icon img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.2);
+}

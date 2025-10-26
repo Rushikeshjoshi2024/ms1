@@ -108,7 +108,7 @@ function Best_of() {
                     {/* Promo Banner on the left */}
                     <div className="col-lg-3 d-none d-lg-block">
                         <div className="promo-banner">
-                            <h4 className="mb-4">Direction towards your dream home.</h4>
+                            <h4 style={{ marginTop: '4.8rem' }}>Direction towards your dream home.</h4>
                             <Link to="/Products" className='btn btn-xs'>
                                 Explore Now <i className="fi-rs-arrow-small-right"></i>
                             </Link>

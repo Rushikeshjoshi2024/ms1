@@ -59,7 +59,7 @@ const Product_list = () => {
                                         <form action="#">
                                             <input type="text" value={searchQuery}
                                                 onChange={handleSearchChange}
-                                                placeholder="Search material by name or brand." />
+                                                placeholder="Search by name or brand." />
                                             <button disabled><i className="fi-rs-search"></i></button>
                                         </form>
                                     </div>
@@ -67,7 +67,7 @@ const Product_list = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="row flex-row-reverse">
+                    {/* <div className="row flex-row-reverse">
                         <div className="col-lg-12">
                             <div className="shop-product-fillter">
                                 <div className="totall-product">
@@ -124,11 +124,9 @@ const Product_list = () => {
                                                     <Link
                                                         to={{
                                                             pathname: `/Material_details/${item.id}`,
-                                                            // your data array of objects
                                                         }}
                                                     >
                                                         <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`} alt="" />
-                                                        {/* <img className="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="" /> */}
                                                     </Link>
                                                 </div>
                                             </div>
@@ -142,7 +140,6 @@ const Product_list = () => {
                                             <h2> <Link
                                                 to={{
                                                     pathname: `/Material_details/${item.id}`,
-                                                    // your data array of objects
                                                 }}
                                             >{item.material_name}</Link></h2>
                                             <div className="product-rate-cover">
@@ -155,40 +152,112 @@ const Product_list = () => {
                                             <p className="mt-15 mb-15">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam beatae consectetur, atque inventore aliquam adipisci perspiciatis nostrum qui consequatur praesentium?</p>
                                             <div className="product-price">
                                                 <span>{item.material_price}/Unit </span>
-                                                {/* <span className="old-price">$245.</span> */}
                                             </div>
                                             <div className="mt-30 d-flex align-items-center">
                                                 <a aria-label='Buy now' className='btn' href='/#'><i className="fi-rs-shopping-cart mr-5"></i>Add to Cart</a>
-                                                {/* <a href="/" className="add-wishlish ml-30 text-body font-sm font-heading font-weight-bold"><i className="fi-rs-shuffle mr-5"></i>Add Compare</a> */}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             ))}
-
-
-
-
-                            {/* <div className="pagination-area mt-20 mb-20">
-                                <nav aria-label="Page navigation example">
-                                    <ul className="pagination justify-content-start">
-                                        <li className="page-item">
-                                            <a className="page-link" href="/"><i className="fi-rs-arrow-small-left"></i></a>
-                                        </li>
-                                        <li className="page-item"><a className="page-link" href="/">1</a></li>
-                                        <li className="page-item active"><a className="page-link" href="/">2</a></li>
-                                        <li className="page-item"><a className="page-link" href="/">3</a></li>
-                                        <li className="page-item"><a className="page-link dot" href="/">...</a></li>
-                                        <li className="page-item"><a className="page-link" href="/">6</a></li>
-                                        <li className="page-item">
-                                            <a className="page-link" href="/"><i className="fi-rs-arrow-small-right"></i></a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div> */}
                         </div>
+                    </div> */}
 
+                    <div className="row">
+                        <div className="shop-product-fillter">
+                            <div className="totall-product">
+                                <p>We found <strong className="text-brand">{filteredData.length}</strong> items for you!</p>
+                            </div>
+                            <div className="sort-by-product-area">
+                                <div className="sort-by-cover mr-10">
+                                    <div className="sort-by-product-wrap">
+                                        <div className="sort-by">
+                                            <span><i className="fi-rs-apps"></i>Show:</span>
+                                        </div>
+                                        <div className="sort-by-dropdown-wrap">
+                                            <span> 50 <i className="fi-rs-angle-small-down"></i></span>
+                                        </div>
+                                    </div>
+                                    <div className="sort-by-dropdown">
+                                        <ul>
+                                            <li><a className="active" href="/">50</a></li>
+                                            <li><a href="/">100</a></li>
+                                            <li><a href="/">150</a></li>
+                                            <li><a href="/">200</a></li>
+                                            <li><a href="/">All</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="sort-by-cover">
+                                    <div className="sort-by-product-wrap">
+                                        <div className="sort-by">
+                                            <span><i className="fi-rs-apps-sort"></i>Sort by:</span>
+                                        </div>
+                                        <div className="sort-by-dropdown-wrap">
+                                            <span> Featured <i className="fi-rs-angle-small-down"></i></span>
+                                        </div>
+                                    </div>
+                                    <div className="sort-by-dropdown">
+                                        <ul>
+                                            <li><a className="active" href="/">Featured</a></li>
+                                            <li><a href="/">Price: Low to High</a></li>
+                                            <li><a href="/">Price: High to Low</a></li>
+                                            <li><a href="/">Release Date</a></li>
+                                            <li><a href="/">Avg. Rating</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {filteredData.map(item => (
+                            <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={item.id}>
+                                <div className="product-cart-wrap card h-100 shadow-sm border-0 rounded-3">
+                                    <div className="product-img-action-wrap position-relative bg-light d-flex justify-content-center align-items-center" style={{ height: "220px", borderRadius: "10px" }}>
+                                        <Link to={`/Material_details/${item.id}`}>
+                                            <img
+                                                src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`}
+                                                alt={item.material_name}
+                                                className="card-img-top"
+                                                style={{
+                                                    maxHeight: "200px",
+                                                    width: "auto",
+                                                    objectFit: "contain",
+                                                }}
+                                            />
+                                        </Link>
+                                        <span className="badge bg-danger position-absolute top-0 start-0 m-2">NEW</span>
+                                    </div>
+
+                                    <div className="card-body">
+                                        <h5 className="card-title mb-2">
+                                            <Link to={`/Material_details/${item.id}`} className="text-dark text-decoration-none">
+                                                {item.material_name}
+                                            </Link>
+                                        </h5>
+
+                                        <div className="d-flex justify-content-between align-items-center mb-2">
+                                            <div className="text-warning small">
+                                                <i className="fi fi-rs-star"></i> 4.0
+                                            </div>
+                                            <span className="text-muted small">{item.material_brand}</span>
+                                        </div>
+
+                                        <p className="text-muted small mb-3">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        </p>
+
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <span className="fw-bold text-brand">{item.material_price}/Unit</span>
+                                            <a className="btn btn-sm btn-outline-primary d-flex align-items-center gap-1" href="/#">
+                                                <i className="fi-rs-shopping-cart"></i> Add
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
+
                 </div>
             </main >
             <Footer />

@@ -24,7 +24,7 @@ function ProductCard({ product }) {
                 <div className="product-badge hot">15% Off</div>
             </div>
             <div className="product-content">
-                <span className="product-category">#{product.category}</span>
+                <span className="product-brand">#{product.category}</span>
                 <h3 className="product-title">
                     <Link to={`/Material_details/${product.id}`}>{product.material_name}</Link>
                 </h3>

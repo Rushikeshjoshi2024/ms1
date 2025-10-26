@@ -91,222 +91,217 @@ function Seller_details(props) {
                 alert("An error occurred: " + err);
             }
         };
-
         handleSubmit();
-        // values.reg_date.slice(0, 3);
-
     }, []);
 
     return (
         <div>
             <Nav />
             <main className="main pages">
-
                 <div className="page-content pt-50">
                     <div className="container">
-                        <div className="row">
-                            <div className="container mb-30">
-                                <div className="archive-header mb-80" >
-                                    <div className="archive-header-3-inner" >
 
-                                        {/* <div className="vendor-content"> */}
-                                        <div className="product-category" style={{ borderRadius: '2rem' }}>
-                                            <span className="text-muted">Since {values.reg_date.slice(0, 4)}</span>
-                                            {/* </div> */}
-                                            <h3 className="mb-3">{values.shop_name}</h3>
-                                            <div className="product-rate-cover mb-15" >
-                                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                                    <img className="mr-5" src={`https://server-f8g6.onrender.com/uploads/shop_cover_img/${values.shop_image}`} alt="" style={{
-                                                        borderRadius: '1rem', maxWidth: '100%', maxHeight: '40rem'
-                                                    }} /><br />
-                                                </div>
+                        {/* --- Seller Info Section --- */}
+                        <div className="seller-header card border-0 shadow-sm rounded-4 p-4 mb-5">
+                            <div className="row align-items-center">
+                                {/* Shop Image */}
+                                <div className="col-lg-4 text-center mb-4 mb-lg-0">
+                                    <img
+                                        src={`https://server-f8g6.onrender.com/uploads/shop_cover_img/${values.shop_image}`}
+                                        alt={values.shop_name}
+                                        className="rounded-4 shadow-sm"
+                                        style={{ width: '100%', height: '220px', objectFit: 'cover' }}
+                                    />
+                                </div>
 
-                                                <div className="product-rate d-inline-block">
-                                                    <div className="product-rating" style={{ width: "90%" }}></div>
-                                                </div>
-
-                                                <span className="font-small ml-5 text-muted"> (4.0)</span>
-
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-lg-4">
-                                                    <div className="vendor-info mb-15">
-                                                        <ul className="font-sm">
-                                                            <li><img className="mr-5" src={`https://server-f8g6.onrender.com/uploads/shop_logo/${values.shop_logo}`} alt="" style={{ borderRadius: '50%', width: '7rem', height: '7rem' }} /><br /><strong>Shop name: </strong> <span>{values.shop_name}</span></li><br />
-                                                            <li><strong>Seller name</strong><span> {values.owner_name}</span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-4">
-                                                    <div className="vendor-info mb-15">
-                                                        <ul className="font-sm">
-                                                            <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7536.859438255663!2d77.31271544113429!3d19.17642461174024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd1d6fbe138ad81%3A0x9e88bbe86ec52250!2sMGM&#39;s%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1698564713615!5m2!1sen!2sin" width="100" height="100" style={{ border: 0, borderRadius: '50%' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map"></iframe><br /><strong>Address: </strong> <span>{values.seller_address}</span></li>
-                                                            <li><strong>Call Us:</strong><span>(+91) {values.seller_mobile_no}</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    {/* <div className="vendor-des mb-15">
-                                                        <p className="font-sm">Got a smooth, buttery spread in your fridge? Chances are good that it's Good Chef. This brand made Lionto's list of the most popular grocery brands across the country.</p>
-                                                    </div> */}
-                                                </div>
-
-                                                <div className="col-lg-4">
-                                                    <div className="follow-social">
-                                                        <h6 className="mb-15 ">Follow Us</h6>
-                                                        <ul className="social-network">
-                                                            {/* <li className="hover-up">
-                                                                <a href="/">
-                                                                    <img src="../assets/imgs/theme/icons/social-tw.svg" alt="" />
-                                                                </a>
-                                                            </li> */}
-                                                            <li className="hover-up">
-                                                                <a href="/">
-                                                                    <img src="../assets/imgs/theme/icons/social-fb.svg" alt="" />
-                                                                </a>
-                                                            </li>
-                                                            <li className="hover-up">
-                                                                <a href="/">
-                                                                    <img src="../assets/imgs/theme/icons/social-insta.svg" alt="" />
-                                                                </a>
-                                                            </li>
-                                                            <li className="hover-up">
-                                                                <a href="/">
-                                                                    <img src="../assets/imgs/theme/icons/social-whatsapp.svg" alt="" />
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                {/* Seller Details */}
+                                <div className="col-lg-5">
+                                    <h2 className="fw-bold mb-2 text-brand">{values.shop_name}</h2>
+                                    <p className="text-muted mb-1">Since {values.reg_date.slice(0, 4)}</p>
+                                    <p className="text-muted mb-2">
+                                        <strong>Owner:</strong> {values.owner_name}
+                                    </p>
+                                    <p className="text-muted mb-2">
+                                        <strong>Address:</strong> {values.seller_address}
+                                    </p>
+                                    <p className="text-muted mb-3">
+                                        <strong>Contact:</strong> (+91) {values.seller_mobile_no}
+                                    </p>
+                                    <div className="d-flex gap-3">
+                                        <a href="/" className="btn btn-sm btn-outline-success rounded-pill px-4">
+                                            Follow
+                                        </a>
+                                        <a href="/" className="btn btn-sm btn-success rounded-pill px-4">
+                                            Visit Store
+                                        </a>
                                     </div>
                                 </div>
-                                {/* 
-                                <div style={{ paddingTop: "5rem" }}>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7536.859438255663!2d77.31271544113429!3d19.17642461174024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd1d6fbe138ad81%3A0x9e88bbe86ec52250!2sMGM&#39;s%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1698564713615!5m2!1sen!2sin" width="100%" height="400" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map"></iframe>
-                                </div> */}
-                            </div>
-                            <div className="col-lg-5 mx-auto text-center">
-                                <h1 className="title heading-1 style-3 mb-40">From Foundation to Finish, We've Got You Covered! <span className="text-brand">Visit</span> today</h1>
-                                <p className="font-xl mb-80">Explore our extensive range of high-quality materials designed to support every stage of your construction journey.</p>
-                            </div>
-                            <div className="col-xl-10 col-lg-12 m-auto">
-                                <section className="text-center mb-50">
-                                    <div className="row">
-                                        <div className="col-lg-4 col-md-6 mb-24">
-                                            <div className="featured-card">
-                                                <img src="assets/imgs/theme/icons/icon-1.svg" alt="" />
-                                                <h4>Best Prices & Offers</h4>
-                                                <p>Unlock unbeatable value and incred-ible savings without compromising on quality!</p>
-                                                <a href="/">Explore materials</a>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 mb-24">
-                                            <div className="featured-card">
-                                                <img src="assets/imgs/theme/icons/icon-2.svg" alt="" />
-                                                <h4>Wide varieties</h4>
-                                                <p>From essentials to specialty materials, we have everything you need under one roof!</p>
-                                                <a href="/">Explore materials</a>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 mb-24">
-                                            <div className="featured-card">
-                                                <img src="assets/imgs/theme/icons/icon-3.svg" alt="" />
-                                                <h4>Best quality</h4>
-                                                <p>Experience the difference with materials crafted for durability and performance!</p>
-                                                <a href="/">Explore materials</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                            <div className="col-xl-8 col-lg-12 mx-auto">
 
+                                {/* Shop Logo + Social */}
+                                <div className="col-lg-3 text-center">
+                                    <img
+                                        src={`https://server-f8g6.onrender.com/uploads/shop_logo/${values.shop_logo}`}
+                                        alt="Shop Logo"
+                                        className="rounded-circle shadow mb-3"
+                                        style={{ width: '110px', height: '110px', objectFit: 'cover' }}
+                                    />
+                                    <div className="d-flex justify-content-center gap-3">
+                                        <a href="/"><img src="../assets/imgs/theme/icons/social-fb.svg" alt="fb" width="22" /></a>
+                                        <a href="/"><img src="../assets/imgs/theme/icons/social-insta.svg" alt="insta" width="22" /></a>
+                                        <a href="/"><img src="../assets/imgs/theme/icons/social-whatsapp.svg" alt="whatsapp" width="22" /></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <section classNameName="product-tabs section-padding position-relative">
-                            <div classNameName="container">
-                                <div className="col-lg-5 mx-auto text-center">
-                                    <h1 className="title heading-1 style-3 mb-40">Explore Material By <br /><span className="text-brand">{values.shop_name}</span></h1>
+                        {/* --- Info Banner --- */}
+                        <div className="text-center mb-5">
+                            <h2 className="fw-bold mb-3">
+                                From <span className="text-brand">Foundation</span> to <span className="text-brand">Finish</span>, We've Got You Covered!
+                            </h2>
+                            <p className="text-muted mx-auto" style={{ maxWidth: '700px' }}>
+                                Explore our extensive range of high-quality materials designed to support every stage of your construction journey.
+                            </p>
+                        </div>
+
+                        {/* --- Features Section --- */}
+                        <section className="row text-center mb-5">
+                            {[
+                                {
+                                    icon: "icon-1.svg",
+                                    title: "Best Prices & Offers",
+                                    desc: "Unlock unbeatable value and incredible savings without compromising on quality!",
+                                },
+                                {
+                                    icon: "icon-2.svg",
+                                    title: "Wide Varieties",
+                                    desc: "From essentials to specialty materials, we have everything under one roof!",
+                                },
+                                {
+                                    icon: "icon-3.svg",
+                                    title: "Top Quality",
+                                    desc: "Experience the difference with materials crafted for durability and performance!",
+                                },
+                            ].map((feature, index) => (
+                                <div key={index} className="col-md-4 mb-4">
+                                    <div className="card border-0 shadow-sm p-4 h-100 rounded-4 hover-up">
+                                        <img src={`assets/imgs/theme/icons/${feature.icon}`} alt="" className="mb-3" width="45" />
+                                        <h5 className="fw-semibold mb-2">{feature.title}</h5>
+                                        <p className="text-muted small">{feature.desc}</p>
+                                    </div>
                                 </div>
+                            ))}
+                        </section>
 
-                                {/* <!--End nav-tabs--> */}
-                                <div classNameName="tab-content" id="myTabContent">
-                                    <div classNameName="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
-                                        <div classNameName="row product-grid-4" >
+                        {/* --- Materials Grid --- */}
+                        <section className="product-tabs mb-5">
+                            <div className="text-center mb-4">
+                                <h2 className="fw-bold">
+                                    Explore Materials by <span className="text-brand">{values.shop_name}</span>
+                                </h2>
+                            </div>
 
-                                            {data.map(item => (
-                                                <div classNameName="col-lg-1-5 col-md-3 col-12 col-sm-6" key={item.id}>
-                                                    <div classNameName="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                                                        <div classNameName="product-img-action-wrap">
-                                                            <div classNameName="product-img product-img-zoom">
-                                                                <Link
-                                                                    to={{
-                                                                        pathname: `/Material_details/${item.id}`,
-                                                                        // your data array of objects
-                                                                    }}
-                                                                >
-                                                                    <img classNameName="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`} alt="" />
-                                                                    {/* <img classNameName="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" /> */}
-                                                                </Link>
-                                                            </div>
-                                                            {/* <div classNameName="product-action-1">
-                                            <a aria-label='Add To Wishlist' classNameName='action-btn' href='shop-wishlist.html'><i classNameName="fi-rs-heart"></i></a>
-                                            <a aria-label='Compare' classNameName='action-btn' href='shop-compare.html'><i classNameName="fi-rs-shuffle"></i></a>
-                                            <a aria-label="Quick view" classNameName="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i classNameName="fi-rs-eye"></i></a>
-                                        </div> */}
-                                                            <div classNameName="product-badges product-badges-position product-badges-mrg">
-                                                                <span classNameName="hot">New</span>
-                                                            </div>
-                                                        </div>
-                                                        <div classNameName="product-content-wrap">
-                                                            <div classNameName="product-category">
-                                                                <Link
-                                                                    to={{
-                                                                        pathname: `/Material_details/${item.id}`,
-                                                                        // your data array of objects
-                                                                    }}
-                                                                >{item.category}</Link>
-                                                            </div>
-                                                            <h2> <Link
-                                                                to={{
-                                                                    pathname: `/Material_details/${item.id}`,
-                                                                }}
-                                                            >{item.material_brand}</Link></h2>
-                                                            <div classNameName="product-rate-cover">
-                                                                <div classNameName="product-rate d-inline-block">
-                                                                    <div classNameName="product-rating" style={{ width: '90%' }}></div>
-                                                                </div>
-                                                                <span classNameName="font-small ml-5 text-muted"> (4.0)</span>
-                                                            </div>
-                                                            <div>
-                                                                <span classNameName="font-small text-muted">By <a href='#'>{item.shop_name}</a></span>
-                                                            </div>
-                                                            <div classNameName="product-card-bottom">
-                                                                <div classNameName="product-price">
-                                                                    <span>{item.material_price}/Unit</span>
-                                                                    {/* <span classNameName="old-price">2500</span> */}
-                                                                </div>
-                                                                <div classNameName="add-cart">
-                                                                    <a classNameName='add' href='/'><i classNameName="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                                </div>
-                                                            </div>
+                            {/* <div className="row">
+                                {data.length === 0 && (
+                                    <p className="text-center text-muted">No materials available at the moment.</p>
+                                )}
+                                {data.map((item) => (
+                                    <div className="col-xl-3 col-md-4 col-sm-6 mb-4" key={item.id}>
+                                        <div
+                                            className="card border-0 shadow-sm rounded-4 h-100 d-flex flex-column justify-content-between hover-up"
+                                            style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease" }}
+                                        >
+                                            <Link to={`/Material_details/${item.id}`}>
+                                                <img
+                                                    src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`}
+                                                    alt={item.material_brand}
+                                                    className="card-img-top rounded-top-4"
+                                                    style={{ height: "180px", objectFit: "cover" }}
+                                                />
+                                            </Link>
+                                            <div className="card-body d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <h6 className="text-muted mb-1">{item.category}</h6>
+                                                    <h5 className="fw-bold mb-2">{item.material_brand}</h5>
+                                                    <p className="text-success fw-semibold mb-0">
+                                                        ₹{item.material_price} <small className="text-muted">/ Unit</small>
+                                                    </p>
+                                                </div>
+                                                <Link
+                                                    className="btn btn-sm btn-outline-success rounded-pill mt-3"
+                                                    to={`/Material_details/${item.id}`}
+                                                >
+                                                    View Details
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div> */}
+                            <div className="row g-4">
+                                {data.length === 0 && (
+                                    <p className="text-center text-muted py-5">
+                                        No materials available at the moment.
+                                    </p>
+                                )}
+
+                                {data.map((item) => (
+                                    <div className="col-xl-3 col-md-4 col-sm-6" key={item.id}>
+                                        <div className="card material-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                                            <Link to={`/Material_details/${item.id}`} className="position-relative d-flex justify-content-center align-items-center bg-light" style={{ height: "200px" }}>
+                                                <img
+                                                    src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`}
+                                                    alt={item.material_brand}
+                                                    className="p-2"
+                                                    style={{
+                                                        maxHeight: "100%",
+                                                        maxWidth: "100%",
+                                                        objectFit: "contain",
+                                                        transition: "transform 0.3s ease",
+                                                    }}
+                                                />
+                                                <span className="badge bg-success position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 fs-6 shadow-sm">
+                                                    {item.category}
+                                                </span>
+                                            </Link>
+
+                                            <div className="card-body d-flex flex-column justify-content-between p-3">
+                                                <div>
+                                                    <h5 className="fw-bold mb-1 text-dark text-truncate">
+                                                        {item.material_brand}
+                                                    </h5>
+                                                    <p className="mb-2 text-muted small text-truncate">
+                                                        {item.shop_name || "Verified Seller"}
+                                                    </p>
+                                                    <div className="d-flex align-items-baseline justify-content-between">
+                                                        <p className="fw-semibold text-success mb-0 fs-6">
+                                                            ₹{item.material_price}
+                                                            <small className="text-muted"> / Unit</small>
+                                                        </p>
+                                                        <div className="d-flex align-items-center small text-warning">
+                                                            <i className="fi-rs-star me-1"></i>4.0
                                                         </div>
                                                     </div>
                                                 </div>
-                                            ))}
 
-
-
+                                                <Link
+                                                    to={`/Material_details/${item.id}`}
+                                                    className="btn btn-outline-success rounded-pill mt-3 fw-semibold px-3 py-2 hover-btn"
+                                                >
+                                                    View Details
+                                                </Link>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                ))}
                             </div>
+
                         </section>
 
                     </div>
                 </div>
-            </main >
+            </main>
+
             <Footer />
         </div >
     )
