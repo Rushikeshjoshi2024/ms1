@@ -91,7 +91,7 @@ function Footer() {
 
                                 </ul>
                             </div>
-                            <div class="footer-link-widget col wow animate__animated animate__fadeInUp d-none d-md-block" data-wow-delay=".4s">
+                            <div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
                                 <h4 class="widget-title">Popular</h4>
                                 <ul class="footer-list mb-sm-5 mb-md-0">
                                     <li><a href="/">Cement</a></li>
@@ -110,7 +110,7 @@ function Footer() {
                             <div class="footer-bottom"></div>
                         </div>
                         <div class="col-xl-4 col-lg-6 col-md-6">
-                            <p class="font-sm mb-0">&copy; 2024, <strong class="text-brand">MaterialSeller</strong>
+                            <p class="font-sm mb-0">&copy; 2025, <strong class="text-brand">MaterialSeller</strong>
                                 <br />All rights reserved</p>
                         </div>
                         <div class="col-xl-8 col-lg-6 col-md-6 text-end d-none d-md-block">

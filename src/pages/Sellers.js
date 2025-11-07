@@ -275,7 +275,7 @@ function Sellers() {
                                                 <Link
                                                     className="btn btn-sm btn-outline-success w-100 rounded-pill fw-semibold"
                                                     to={{
-                                                        pathname: `/Sellers_material/${item.seller_id}`,
+                                                        pathname: `/Seller_details/${item.seller_id}`,
                                                     }}
                                                 >
                                                     Visit Store <i className="fi-rs-arrow-small-right ms-1"></i>
