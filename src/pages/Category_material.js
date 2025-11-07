@@ -1,6 +1,6 @@
 import Nav from "../components/Nav";
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Footer from "../components/Footer";
 import MaterialCard from "../../src/components/MatCard";
@@ -33,11 +33,6 @@ const Category_material = (props) => {
 
         handleSubmit();
     }, []);
-    // const handleSearchChange = (event) => {
-    //     setSearchQuery(event.target.value);
-    // };
-
-    // Step 3: Filter the data based on the search query
     const filteredData = data.filter(item =>
         item.category.toLowerCase().includes(category.toLowerCase())
     );

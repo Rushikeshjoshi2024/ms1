@@ -43,8 +43,19 @@ const MatCard = ({ item }) => {
 
                     {/* Rating + Brand */}
                     <div className="d-flex justify-content-between align-items-center mb-2">
-                        <div className="text-warning small">
+                        {/* <div className="text-warning small">
                             <i className="fi fi-rs-star"></i> 4.0
+                        </div> */}
+                        <div className="product-rate me-2">
+
+                            <div
+                                className="product-rating"
+                                style={{
+                                    width: "55%",
+                                    height: "12px",
+                                    borderRadius: "5px",
+                                }}
+                            ></div>
                         </div>
                         <span className="text-muted small">{item.material_brand}</span>
                     </div>
