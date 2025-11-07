@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
+import MaterialCard from "../../src/components/MatCard";
+
 import { useParams } from 'react-router-dom';
 
 function Sellers_materaial(props) {
@@ -28,8 +30,6 @@ function Sellers_materaial(props) {
                     // alert(response.seller_email);
                     setShopName(response.data.data[0].shop_name);
                     setData(response.data.data); // Assuming response.data.data contains the array of seller details
-
-                    // console.log(response.data.data[0].shop_name);
                 } else {
                     alert("Invalid data");
                 }
@@ -63,7 +63,6 @@ function Sellers_materaial(props) {
 
     return (
         <div >
-
             <Nav />
             <main className="main">
                 <div className="page-header mt-30 mb-50">
@@ -77,25 +76,6 @@ function Sellers_materaial(props) {
                                         <h6>the small intro about the shop</h6>
                                     </div>
                                 </div>
-                                {/* <div className="col-xl-9 text-end d-none d-xl-block">
-                                    <ul className="tags-list">
-                                        <li className="hover-up">
-                                            <a href='blog-category-grid.html'><i className="fi-rs-cross mr-10"></i>Cabbage</a>
-                                        </li>
-                                        <li className="hover-up active">
-                                            <a href='blog-category-grid.html'><i className="fi-rs-cross mr-10"></i>Broccoli</a>
-                                        </li>
-                                        <li className="hover-up">
-                                            <a href='blog-category-grid.html'><i className="fi-rs-cross mr-10"></i>Artichoke</a>
-                                        </li>
-                                        <li className="hover-up">
-                                            <a href='blog-category-grid.html'><i className="fi-rs-cross mr-10"></i>Celery</a>
-                                        </li>
-                                        <li className="hover-up mr-0">
-                                            <a href='blog-category-grid.html'><i className="fi-rs-cross mr-10"></i>Spinach</a>
-                                        </li>
-                                    </ul>
-                                </div> */}
                             </div>
 
                         </div>
@@ -149,69 +129,12 @@ function Sellers_materaial(props) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row product-grid">
-                                {data.map(item => (
-                                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6" key={item.id}>
-                                        <div className="product-cart-wrap mb-30">
-                                            <div className="product-img-action-wrap">
-                                                <div className="product-img product-img-zoom">
-                                                    <Link
-                                                        to={{
-                                                            pathname: `/Material_details/${item.id}`,
-                                                            // your data array of objects
-                                                        }}
-                                                    >
-                                                        <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/${item.material_image}`} alt="" />
-                                                    </Link>
-                                                </div>
-
-                                                <div className="product-badges product-badges-position product-badges-mrg">
-                                                    <span className="hot">New</span>
-                                                </div>
-                                            </div>
-                                            <div className="product-content-wrap">
-                                                <div className="product-category">
-                                                    <Link
-                                                        to={{
-                                                            pathname: `/Material_details/${item.id}`,
-                                                            // your data array of objects
-                                                        }}
-                                                    >{item.category}</Link>
-                                                </div>
-                                                <h2><Link
-                                                    to={{
-                                                        pathname: `/Material_details/${item.id}`,
-                                                        // your data array of objects
-                                                    }}
-                                                >{item.material_name}</Link></h2>
-                                                <div>
-                                                    <span className="font-small text-muted">By
-                                                        {" " + item.material_brand}</span>
-                                                </div>
-                                                <div className="product-rate-cover">
-                                                    <div className="product-rate d-inline-block">
-                                                        <div className="product-rating" style={{ width: '90%' }}></div>
-                                                    </div>
-                                                    <span className="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div className="product-card-bottom">
-                                                    <div className="product-price">
-                                                        <span>Rs. {item.material_price}</span>
-                                                    </div>
-                                                    <div className="add-cart">
-                                                        <Link classNameName='add'
-                                                            to={{
-                                                                pathname: `/Material_details/${item.id}`,
-                                                            }}
-                                                        ><i
-                                                            className="fi-rs-shopping-cart mr-5"></i>View </Link>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-
+                            <div className="row">
+                                {data.length === 0 ? (
+                                    <p className="text-center text-muted">No materials available.</p>
+                                ) : (
+                                    data.map(item => <MaterialCard key={item.id} item={item} />)
+                                )}
                             </div>
 
                             <section className="section-padding pb-5">

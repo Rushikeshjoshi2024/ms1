@@ -104,10 +104,10 @@ const Material_details = () => {
                                             <div className="d-flex align-items-center">
                                                 <div className="product-rate me-2">
                                                     <div
-                                                        className="product-rating bg-warning"
+                                                        className="product-rating"
                                                         style={{
-                                                            width: "90%",
-                                                            height: "10px",
+                                                            width: "55%",
+                                                            height: "12px",
                                                             borderRadius: "5px",
                                                         }}
                                                     ></div>

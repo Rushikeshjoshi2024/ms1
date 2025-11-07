@@ -75,7 +75,7 @@ function Footer() {
                                 </ul>
                                 <h4 className="widget-title">Quick Links</h4>
                                 <ul class="footer-list mb-sm-5 mb-md-0">
-                                    <li><a href="/">Shop by Category</a></li>
+                                    <li><a href="/#Categories">Shop by Category</a></li>
                                     <li><a href="/">All Products</a></li>
                                     {/* <li><a href="/">FAQs</a></li> */}
                                 </ul>
@@ -94,11 +94,11 @@ function Footer() {
                             <div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
                                 <h4 class="widget-title">Popular</h4>
                                 <ul class="footer-list mb-sm-5 mb-md-0">
-                                    <li><a href="/">Cement</a></li>
-                                    <li><a href="/">Tiles</a></li>
-                                    <li><a href="/">Marbel</a></li>
-                                    <li><a href="/">Granite</a></li>
-                                    <li><a href="/">More</a></li>
+                                    <li><a href="/#/Category_material/cement">Cement</a></li>
+                                    <li><a href="/#/Category_material/tiles">Tiles</a></li>
+                                    <li><a href="/#/Category_material/marbel">Marbel</a></li>
+                                    <li><a href="/#/Category_material/granite">Granite</a></li>
+                                    <li><a href="/#/Categories">More</a></li>
                                 </ul>
                             </div>
                         </div>

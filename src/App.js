@@ -24,6 +24,8 @@ import User_account from './pages/User_account';
 import Material_details from './pages/Material_details';
 import Category_material from './pages/Category_material';
 import Sellers_home_scr from './components/Sellers_home_scr';
+import ScrollToTop from "../src/components/scrollToTop";
+
 function App() {
 
 
@@ -31,6 +33,9 @@ function App() {
     <div>
       <>
         {/* This is the alias of BrowserRouter i.e. Router */}
+
+        <ScrollToTop />
+
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/Login" element={<Login />} />

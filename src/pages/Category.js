@@ -3,7 +3,7 @@ import axios from 'axios';
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom';
-const Contact = () => {
+const Category = () => {
     const [data, setData] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -137,4 +137,4 @@ const Contact = () => {
 
     )
 };
-export default Contact;
+export default Category;

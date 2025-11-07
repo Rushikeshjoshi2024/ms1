@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Footer from "../components/Footer";
+import MaterialCard from "../../src/components/MatCard";
+
 const Category_material = (props) => {
     const { category } = useParams();
 
@@ -99,80 +101,14 @@ const Category_material = (props) => {
                                     </div>
                                 </div>
                             </div>
-
-                            {filteredData.map(item => (
-                                <div className="product-list mb-50">
-                                    <div className="product-cart-wrap" >
-                                        <div className="product-img-action-wrap" key={item.id}>
-                                            <div className="product-img product-img-zoom">
-                                                <div className="product-img-inner">
-                                                    <Link
-                                                        to={{
-                                                            pathname: `/Material_details/${item.id}`,
-                                                            // your data array of objects
-                                                        }}
-                                                    >
-                                                        <img className="default-img" src={`https://server-f8g6.onrender.com/uploads/regd_material/${item.material_image}`} alt="" />
-                                                        {/* <img className="hover-img" src="../assets/imgs/shop/product-2-2.jpg" alt="" /> */}
-                                                    </Link>
-                                                </div>
-                                            </div>
-
-                                            <div className="product-badges product-badges-position product-badges-mrg">
-                                                <span className="hot">NEW</span>
-                                            </div>
-                                        </div>
-                                        <div className="product-content-wrap">
-
-                                            <h2><Link
-                                                to={{
-                                                    pathname: `/Material_details/${item.id}`,
-                                                    // your data array of objects
-                                                }}
-                                            >{item.material_name}</Link></h2>
-                                            <div className="product-rate-cover">
-                                                <div className="product-rate d-inline-block">
-                                                    <div className="product-rating" style={{ width: '90%' }}></div>
-                                                </div>
-                                                <span className="font-small ml-5 text-muted"> (4.0)</span>
-                                                <span className="ml-30">{item.material_brand}</span>
-                                            </div>
-                                            <p className="mt-15 mb-15">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam beatae consectetur, atque inventore aliquam adipisci perspiciatis nostrum qui consequatur praesentium?</p>
-                                            <div className="product-price">
-                                                <span>{item.material_price}/Unit </span>
-                                                {/* <span className="old-price">$245.</span> */}
-                                            </div>
-                                            <div className="mt-30 d-flex align-items-center">
-                                                <a aria-label='Buy now' className='btn' href='/#'><i className="fi-rs-shopping-cart mr-5"></i>Add to Cart</a>
-                                                {/* <a href="/" className="add-wishlish ml-30 text-body font-sm font-heading font-weight-bold"><i className="fi-rs-shuffle mr-5"></i>Add Compare</a> */}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-
-
-
-
-                            {/* <div className="pagination-area mt-20 mb-20">
-                                <nav aria-label="Page navigation example">
-                                    <ul className="pagination justify-content-start">
-                                        <li className="page-item">
-                                            <a className="page-link" href="/"><i className="fi-rs-arrow-small-left"></i></a>
-                                        </li>
-                                        <li className="page-item"><a className="page-link" href="/">1</a></li>
-                                        <li className="page-item active"><a className="page-link" href="/">2</a></li>
-                                        <li className="page-item"><a className="page-link" href="/">3</a></li>
-                                        <li className="page-item"><a className="page-link dot" href="/">...</a></li>
-                                        <li className="page-item"><a className="page-link" href="/">6</a></li>
-                                        <li className="page-item">
-                                            <a className="page-link" href="/"><i className="fi-rs-arrow-small-right"></i></a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div> */}
+                            <div className="row">
+                                {filteredData.length === 0 ? (
+                                    <p className="text-center text-muted">No materials available.</p>
+                                ) : (
+                                    filteredData.map(item => <MaterialCard key={item.id} item={item} />)
+                                )}
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </main >
