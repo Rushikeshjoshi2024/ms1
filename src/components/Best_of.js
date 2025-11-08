@@ -26,7 +26,7 @@ function Best_of() {
         const getData = async () => {
             setLoading(true);
             try {
-                const values = { val: 8 };
+                const values = { val: 10 }
                 const [f, n] = await Promise.all([
                     axios.post("https://server-f8g6.onrender.com/featured_material", values),
                     axios.post("https://server-f8g6.onrender.com/latest_material", values),
@@ -44,7 +44,7 @@ function Best_of() {
     const shown = active === "featured" ? featured : latest;
 
     return (
-        <section className="best-section">
+        <section className="best-section container-fluid-lg">
             <div className="best-cta">
                 <h2>Build Your Dream Space</h2>
                 <p>Premium materials that match your style and elevate your design.</p>
@@ -54,7 +54,7 @@ function Best_of() {
             </div>
 
             <div className="best-header">
-                <h3>Trending Materials</h3>
+                <h2><strong>Trending Materials</strong></h2>
                 <div className="tab-controls">
                     <button
                         className={active === "featured" ? "active" : ""}
