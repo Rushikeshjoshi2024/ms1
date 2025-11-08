@@ -88,10 +88,10 @@ function SellersHomeScreen() {
     return (
         <div className="container-fluid-lg">
             {/* CHANGE IS HERE: Added mb-4 to this div */}
-            <div className="section-title style-2 wow animate__animated animate__fadeIn mb-4">
-                {/* CHANGE IS HERE: Removed mb-4 from h3 */}
-                <h3>Our Sellers</h3>
-                <ul className="nav nav-tabs links" id="myTab" role="tablist">
+            <div className="section-title style-2 wow animate__animated animate__fadeIn mb-4 d-flex justify-content-between align-items-center">
+                <h3 className="m-0">Our Sellers</h3>
+
+                <ul className="nav nav-tabs links m-0" id="myTab" role="tablist">
                     <li className="nav-item" role="presentation">
                         <Link to="/Sellers" className="btn p-0 border-0 bg-transparent">
                             <i className="fas fa-angle-right" style={{ color: 'black', fontSize: '1.5rem' }}></i>
@@ -99,6 +99,7 @@ function SellersHomeScreen() {
                     </li>
                 </ul>
             </div>
+
 
             <div className="row vendor-grid">
                 {data.map((seller) => (

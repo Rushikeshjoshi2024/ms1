@@ -76,7 +76,7 @@ function Footer() {
                                 <h4 className="widget-title">Quick Links</h4>
                                 <ul class="footer-list mb-sm-5 mb-md-0">
                                     <li><a href="/#Categories">Shop by Category</a></li>
-                                    <li><a href="/">All Products</a></li>
+                                    <li><a href="/#/Products">All Products</a></li>
                                     {/* <li><a href="/">FAQs</a></li> */}
                                 </ul>
                             </div>
